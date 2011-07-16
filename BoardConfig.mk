@@ -1,0 +1,52 @@
+USE_CAMERA_STUB := true
+
+# inherit from the proprietary version
+-include vendor/htc/pyramid/BoardConfigVendor.mk
+
+TARGET_NO_BOOTLOADER := true
+TARGET_BOARD_PLATFORM := msm8660
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
+TARGET_CPU_ABI := armeabi-v7a
+TARGET_CPU_ABI2 := armeabi
+TARGET_ARCH_VARIANT := armv7-a-neon
+ARCH_ARM_HAVE_TLS_REGISTER := true
+
+TARGET_BOOTLOADER_BOARD_NAME := pyramid
+
+BOARD_KERNEL_CMDLINE := no_console_suspend=1
+BOARD_KERNEL_BASE := 0x40400000
+BOARD_PAGE_SIZE := 0x00000800
+
+TARGET_USE_SCORPION_BIONIC_OPTIMIZATION := true
+
+BOARD_OVERLAY_FORMAT_YCbCr_420_SP := true
+
+
+TARGET_PREBUILT_KERNEL := device/htc/pyramid/kernel
+
+# cat /proc/emmc
+# dev:        size     erasesize name
+# mmcblk0p31: 000ffa00 00000200 "misc"
+# mmcblk0p21: 00fffc00 00000200 "recovery"
+# mmcblk0p20: 01000000 00000200 "boot"
+# mmcblk0p22: 31fffc00 00000200 "system"
+# mmcblk0p24: 077fde00 00000200 "cache"
+# mmcblk0p23: 4aabc400 00000200 "userdata"
+
+
+
+TARGET_USERIMAGES_USE_EXT4 := true
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 838859776
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 1252770816
+BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
+BOARD_FLASH_BLOCK_SIZE := 262144
+
+TARGET_RELEASETOOLS_EXTENSIONS := device/htc/common
+
+BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/mmcblk1p1
+BOARD_SDCARD_DEVICE_SECONDARY := /dev/block/mmcblk1
+BOARD_SDEXT_DEVICE := /dev/block/mmcblk1p2
+BOARD_USES_MMCUTILS := true
+BOARD_HAS_NO_MISC_PARTITION := true
+BOARD_HAS_NO_SELECT_BUTTON := 1
+BOARD_USES_RECOVERY_CHARGEMODE := true
