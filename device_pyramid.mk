@@ -20,5 +20,7 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, build/target/product/full.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-PRODUCT_NAME := full_pyramid
+PRODUCT_NAME := htc_pyramid
 PRODUCT_DEVICE := pyramid
+PRODUCT_MODEL := HTC Sensation
+PRODUCT_MANUFACTURER := HTC
