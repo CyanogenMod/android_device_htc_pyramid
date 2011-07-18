@@ -1,5 +1,4 @@
 
-
 on boot
     mount debugfs /sys/kernel/debug /sys/kernel/debug
 
@@ -12,24 +11,14 @@ on fs
     mkdir /data 0771 system system
     mkdir /cache 0770 system cache
     mkdir /devlog 0700 root root
-    devwait emmc@system
-	mount ext4 emmc@system /system ro
-        #mount ext4 emmc@system /system remount noauto_da_alloc
-        #mount ext4 emmc@system /system remount ro
-    devwait emmc@userdata
-	mount ext4 emmc@userdata /data noatime nosuid nodev nodelalloc
-        #mount ext4 emmc@userdata /data remount noauto_da_alloc
-        #mount ext4 emmc@userdata /data remount noatime nosuid nodev
-    devwait emmc@cache
-	mount ext4 emmc@cache /cache noatime nosuid nodev nodelalloc
-        #mount ext4 emmc@cache /cache remount noauto_da_alloc
-        #mount ext4 emmc@cache /cache remount noatime nosuid nodev
-    devwait emmc@devlog
-	mount ext4 emmc@devlog /devlog noatime nosuid nodev nodelalloc
-        #mount ext4 emmc@devlog /devlog remount noauto_da_alloc
-        #mount ext4 emmc@devlog /devlog remount noatime nosuid nodev
 
-    #8x60: mount radio partition and create links for modem/q6 firmwares
+    mount ext4 /dev/block/mmcblk0p22 /system wait ro data=ordered noauto_da_alloc
+    mount ext4 /dev/block/mmcblk0p23 /data wait noatime nosuid nodev data=ordered noauto_da_alloc
+    mount ext4 /dev/block/mmcblk0p24 /cache wait noatime nosuid nodev data=ordered noauto_da_alloc
+    mount ext4 /dev/block/mmcblk0p27 /devlog wait noatime nosuid nodev data=ordered noauto_da_alloc
+
+
+# 8x60: mount radio partition and create links for modem/q6 firmwares
     mkdir /vendor               0771 system system
     mkdir /vendor/firmware      0771 system system
     mkdir /vendor/firmware/misc 0771 system system
@@ -56,13 +45,12 @@ on fs
     symlink /vendor/firmware/misc/modem.b00 /vendor/firmware/modem.b00
     symlink /vendor/firmware/misc/modem.mdt /vendor/firmware/modem.mdt
 
-on early-init
-    device /dev/block/mmcblk0p16 0460 radio diag
 
-on init
     # double check the perms and set owner
     chown root root /devlog
     chmod 0700 /devlog
+
+    mount rootfs rootfs / remount
 
     # for Invense MPU3050
     chmod 0664 /dev/mpu
@@ -72,10 +60,7 @@ on init
     chown system system /dev/mpuirq
     chown system system /dev/timerirq
 
-on boot
-# + SSD_RIL: Otis: from Qualcomm QMI and Netmgrd
     mkdir /data/radio 0770 radio radio
-# - SSD_RIL: Otis: from Qualcomm QMI and Netmgrd
     mkdir /data/misc/wifi 0770 wifi wifi
     mkdir /data/misc/wifi/sockets 0770 wifi wifi
     mkdir /data/misc/dhcp 0770 dhcp dhcp
