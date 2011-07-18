@@ -71,7 +71,7 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libaudioalsa.so:obj/lib/libaudioalsa.so \\
     vendor/htc/__DEVICE__/proprietary/libwebkitaccel.so:obj/lib/libwebkitaccel.so
 
-# All the blobs necessary for speedy
+# All the blobs necessary for pyramid
 PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/AdieHWCodec.csv:/system/etc/AdieHWCodec.csv \\
     vendor/htc/__DEVICE__/proprietary/AudioBTID.csv:/system/etc/AudioBTID.csv \\
