@@ -79,6 +79,10 @@ PRODUCT_COPY_FILES += \
     device/htc/pyramid/firmware/leia_pfp_470.fw:system/etc/firmware/leia_pfp_470.fw \
     device/htc/pyramid/firmware/leia_pm4_470.fw:system/etc/firmware/leia_pm4_470.fw
 
+# Wifi Module
+PRODUCT_COPY_FILES += \
+    device/htc/pyramid/modules/bcm4329.ko:system/lib/modules/bcm4329.ko
+
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
