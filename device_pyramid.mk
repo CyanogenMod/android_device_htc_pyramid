@@ -16,7 +16,8 @@
 
 # The gps config appropriate for this device
 PRODUCT_COPY_FILES += \
-    device/htc/pyramid/gps.conf:system/etc/gps.conf
+    device/htc/pyramid/gps.conf:system/etc/gps.conf \
+    device/htc/pyramid/init.qcom.modem_links.sh:system/etc/init.qcom.modem_links.sh
 
 ## (1) First, the most specific values, i.e. the aspects that are specific to GSM
 PRODUCT_PROPERTY_OVERRIDES += \
