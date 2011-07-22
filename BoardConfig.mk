@@ -54,6 +54,7 @@ BOARD_USE_BROADCOM_FM_VOLUME_HACK := true
 TARGET_BOOTLOADER_BOARD_NAME := pyramid
 
 BOARD_USE_NEW_LIBRIL_HTC := true
+TARGET_PROVIDES_LIBRIL := vendor/htc/pyramid/proprietary/libril.so
 
 BOARD_KERNEL_CMDLINE := no_console_suspend=1
 BOARD_KERNEL_BASE := 0x40400000
