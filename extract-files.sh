@@ -58,6 +58,8 @@ adb pull /system/lib/egl/libq3dtools_adreno200.so ../../../vendor/htc/$DEVICE/pr
 adb pull /system/lib/libaudio.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libaudioalsa.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libcamera.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libdiag.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libdll.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libdsutils.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libdsi_netctrl.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libgemini.so ../../../vendor/htc/$DEVICE/proprietary
@@ -65,6 +67,7 @@ adb pull /system/lib/libganril.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libgsl.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libhtc_acoustic.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libhtc_ril.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libidl.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libkineto.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libmmipl.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libmmjpeg.so ../../../vendor/htc/$DEVICE/proprietary
@@ -78,6 +81,7 @@ adb pull /system/lib/libOmxCore.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libOmxVdec.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libOmxCore.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/liboverlay.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libqdp.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libqmi.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libqmiservices.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libril.so ../../../vendor/htc/$DEVICE/proprietary
@@ -156,12 +160,15 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libaudio.so:/system/lib/libaudio.so \\
     vendor/htc/__DEVICE__/proprietary/libaudioalsa.so:/system/lib/libaudioalsa.so \\
     vendor/htc/__DEVICE__/proprietary/libcamera.so:/system/lib/libcamera.so \\
+    vendor/htc/__DEVICE__/proprietary/libdiag.so:/system/lib/libdiag.so \\
+    vendor/htc/__DEVICE__/proprietary/libdll.so:/system/lib/libdll.so \\
     vendor/htc/__DEVICE__/proprietary/libdsutils.so:/system/lib/libdsutils.so \\
     vendor/htc/__DEVICE__/proprietary/libdsi_netctrl.so:/system/lib/libdsi_netctrl.so \\
     vendor/htc/__DEVICE__/proprietary/libgemini.so:/system/lib/libgemini.so \\
     vendor/htc/__DEVICE__/proprietary/libgsl.so:/system/lib/libgsl.so \\
     vendor/htc/__DEVICE__/proprietary/libhtc_acoustic.so:/system/lib/libhtc_acoustic.so \\
     vendor/htc/__DEVICE__/proprietary/libhtc_ril.so:/system/lib/libhtc_ril.so \\
+    vendor/htc/__DEVICE__/proprietary/libidl.so:/system/lib/libidl.so \\
     vendor/htc/__DEVICE__/proprietary/libril.so:/system/lib/libril.so \\
     vendor/htc/__DEVICE__/proprietary/librilswitch.so:/system/lib/librilswitch.so \\
     vendor/htc/__DEVICE__/proprietary/liboverlay.so:/system/lib/liboverlay.so \\
@@ -175,6 +182,7 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libmlplatform.so:/system/lib/libmlplatform.so \\
     vendor/htc/__DEVICE__/proprietary/libnetmgr.so:/system/lib/libnetmgr.so \\
     vendor/htc/__DEVICE__/proprietary/liboemcamera.so:/system/lib/liboemcamera.so \\
+    vendor/htc/__DEVICE__/proprietary/libqdp.so:/system/lib/libqdp.so \\
     vendor/htc/__DEVICE__/proprietary/libqmi.so:/system/lib/libqmi.so \\
     vendor/htc/__DEVICE__/proprietary/libqmiservices.so:/system/lib/libqmiservices.so \\
     vendor/htc/__DEVICE__/proprietary/vpimg:/system/etc/vpimg \\
