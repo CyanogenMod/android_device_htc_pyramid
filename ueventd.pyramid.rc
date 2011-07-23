@@ -14,3 +14,15 @@
 /dev/adsp                 0660   system     audio
 /dev/pmem_audio	          0660   system     audio
 /dev/tpa2051d3	          0660   system     audio
+
+#radio
+/dev/oncrpc/*           0660    radio       system
+/dev/smdcntl0           0640    radio       radio
+/dev/smdcntl1           0640    radio       radio
+/dev/smdcntl2           0640    radio       radio
+/dev/radio_feedback     0660    radio       radio
+/dev/smd0               0640    radio       radio
+/dev/smd9               0600    system      system
+/dev/qmi0               0640    radio       radio
+/dev/qmi1               0640    radio       radio
+/dev/qmi2               0640    radio       radio
