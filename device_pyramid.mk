@@ -29,8 +29,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_COPY_FILES += \
     device/htc/pyramid/init.pyramid.rc:root/init.pyramid.rc \
-    device/htc/pyramid/ueventd.pyramid.rc:root/ueventd.pyramid.rc \
-    device/htc/pyramid/init.qcom.modem_links.sh:system/etc/init.qcom.modem_links.sh
+    device/htc/pyramid/ueventd.pyramid.rc:root/ueventd.pyramid.rc
 
 ## (2) Also get non-open-source GSM-specific aspects if available
 $(call inherit-product-if-exists, vendor/htc/shooter/shooter-vendor.mk)
@@ -76,8 +75,8 @@ PRODUCT_COPY_FILES += \
 # Firmware
 PRODUCT_COPY_FILES += \
     device/htc/pyramid/firmware/BCM4329B1_002.002.023.0589.0632.hcd:system/etc/firmware/BCM4329B1_002.002.023.0589.0632.hcd \
-    device/htc/pyramid/firmware/fw_bcm4329.bin:system/vendor/firmware/fw_bcm4329.bin \
-    device/htc/pyramid/firmware/fw_bcm4329_apsta.bin:system/vendor/firmware/fw_bcm4329_apsta.bin \
+    device/htc/pyramid/firmware/fw_bcm4329.bin:system/etc/firmware/fw_bcm4329.bin \
+    device/htc/pyramid/firmware/fw_bcm4329_apsta.bin:system/etc/firmware/fw_bcm4329_apsta.bin \
     device/htc/pyramid/firmware/vidc_1080p.fw:system/etc/firmware/vidc_1080p.fw \
     device/htc/pyramid/firmware/leia_pfp_470.fw:system/etc/firmware/leia_pfp_470.fw \
     device/htc/pyramid/firmware/leia_pm4_470.fw:system/etc/firmware/leia_pm4_470.fw
