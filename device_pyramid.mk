@@ -16,8 +16,7 @@
 
 # The gps config appropriate for this device
 PRODUCT_COPY_FILES += \
-    device/htc/pyramid/gps.conf:system/etc/gps.conf \
-    device/htc/pyramid/init.qcom.modem_links.sh:system/etc/init.qcom.modem_links.sh
+    device/htc/pyramid/gps.conf:system/etc/gps.conf
 
 ## (1) First, the most specific values, i.e. the aspects that are specific to GSM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -30,7 +29,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_COPY_FILES += \
     device/htc/pyramid/init.pyramid.rc:root/init.pyramid.rc \
-    device/htc/pyramid/ueventd.pyramid.rc:root/ueventd.pyramid.rc
+    device/htc/pyramid/ueventd.pyramid.rc:root/ueventd.pyramid.rc \
+    device/htc/pyramid/init.qcom.modem_links.sh:system/etc/init.qcom.modem_links.sh
 
 ## (2) Also get non-open-source GSM-specific aspects if available
 $(call inherit-product-if-exists, vendor/htc/shooter/shooter-vendor.mk)
@@ -40,6 +40,7 @@ $(call inherit-product-if-exists, vendor/htc/shooter/shooter-vendor.mk)
 DEVICE_PACKAGE_OVERLAYS += device/htc/pyramid/overlay
 
 PRODUCT_COPY_FILES += \
+    frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
     frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
     frameworks/base/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
@@ -48,29 +49,30 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
     frameworks/base/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \
     frameworks/base/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
-    frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
-    frameworks/base/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
-    frameworks/base/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
-    frameworks/base/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml
+    frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
+#PRODUCT_PACKAGES += \
+#    gps.pyramid \
+#    librs_jni \
+#    gralloc.msm8660 \
+#    copybit.msm8660 \
+#    overlay.default \
+#    com.android.future.usb.accessory
+    
 PRODUCT_PACKAGES += \
-    gps.pyramid \
-    librs_jni \
-    gralloc.msm8660 \
-    copybit.msm8660 \
-    overlay.default \
-    com.android.future.usb.accessory
+    librs_jni
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
     device/htc/pyramid/keychars/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin \
     device/htc/pyramid/keychars/qwerty.kcm.bin:system/usr/keychars/qwerty.kcm.bin \
     device/htc/pyramid/keychars/pyramid-keypad.kcm.bin:system/usr/keychars/pyramid-keypad.kcm.bin \
-    device/htc/pyramid/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl\
+    device/htc/pyramid/keychars/BT_HID.kcm.bin:system/usr/keychars/BT_HID.kcm.bin \
+    device/htc/pyramid/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
+    device/htc/pyramid/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
     device/htc/pyramid/keylayout/pyramid-keypad.kl:system/usr/keylayout/pyramid-keypad.kl \
-    device/htc/pyramid/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
-    device/htc/pyramid/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl
-
+    device/htc/pyramid/keylayout/BT_HID.kl:system/usr/keylayout/BT_HID.kl \
+    device/htc/pyramid/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl
 # Firmware
 PRODUCT_COPY_FILES += \
     device/htc/pyramid/firmware/BCM4329B1_002.002.023.0589.0632.hcd:system/etc/firmware/BCM4329B1_002.002.023.0589.0632.hcd \
@@ -122,7 +124,7 @@ $(call inherit-product, device/htc/pyramid/media_htcaudio.mk)
 # stuff common to all HTC phones
 $(call inherit-product, device/htc/common/common.mk)
 
-$(call inherit-product, build/target/product/full.mk)
+$(call inherit-product, build/target/product/full_base.mk)
 
 PRODUCT_NAME := full_pyramid
 PRODUCT_DEVICE := pyramid
