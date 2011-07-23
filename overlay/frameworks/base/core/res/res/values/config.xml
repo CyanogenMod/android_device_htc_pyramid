@@ -24,7 +24,7 @@
          config_hardware_automatic_brightness_available is not set, so we will use software implementation -->
     <bool name="config_automatic_brightness_available">true</bool>
 
-    <!-- disable menu hard key on Passion in non-pattern lockscreen -->
+    <!-- disable menu hard key on Glacier in non-pattern lockscreen -->
     <bool name="config_disableMenuKeyInLockScreen">true</bool>
 
     <!-- Array of light sensor LUX values to define our levels for auto backlight brightness support.
@@ -54,15 +54,15 @@
          than the size of the config_autoBrightnessLevels array.
     -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>81</item>
-        <item>81</item>
-        <item>81</item>
-        <item>112</item>
-        <item>143</item>
-        <item>163</item>
-        <item>186</item>
-        <item>208</item>
-        <item>231</item>
+        <item>77</item>
+        <item>77</item>
+        <item>77</item>
+        <item>77</item>
+        <item>107</item>
+        <item>130</item>
+        <item>160</item>
+        <item>185</item>
+        <item>210</item>
         <item>255</item>
     </integer-array>
 
@@ -71,10 +71,10 @@
          than the size of the config_autoBrightnessLevels array.
     -->
     <integer-array name="config_autoBrightnessButtonBacklightValues">
-        <item>255</item>
-        <item>255</item>
-        <item>255</item>
-        <item>-1</item>
+        <item>30</item>
+        <item>30</item>
+        <item>30</item>
+        <item>30</item>
         <item>0</item>
         <item>0</item>
         <item>0</item>
@@ -86,7 +86,6 @@
     <!-- Array of output values for keyboard backlight corresponding to the LUX values
          in the config_autoBrightnessLevels array.  This array should have size one greater
          than the size of the config_autoBrightnessLevels array.
-         Passion has no keyboard so all values are zero.
     -->
     <integer-array name="config_autoBrightnessKeyboardBacklightValues">
         <item>255</item>
@@ -105,14 +104,14 @@
          specified -->
     <string name="default_wallpaper_component">com.android.wallpaper/.nexus.NexusWallpaper</string>
 
-    <integer name="config_deskDockKeepsScreenOn">0</integer>
+    <integer name="config_deskDockKeepsScreenOn">1</integer>
     <integer name="config_carDockKeepsScreenOn">1</integer>
 
-    <!-- Default color for notification LED is white -->
-    <color name="config_defaultNotificationColor">#ffffffff</color>
+    <!-- Default color for notification LED is green -->
+    <color name="config_defaultNotificationColor">#ff00ff00</color>
 
-    <!-- Default blink frequency for notification LED is 9 seconds. -->
-    <integer name="config_defaultNotificationLedOff">9000</integer>
+    <!-- Default blink frequency for notification LED is 2 seconds. -->
+    <integer name="config_defaultNotificationLedOff">2000</integer>
 
     <!-- Component name of the service providing network location support. -->
     <string name="config_networkLocationProvider">com.google.android.location.NetworkLocationProvider</string>
@@ -131,7 +130,6 @@
          [associated radio-type],[priority]  -->
     <string-array translatable="false" name="networkAttributes">
         <item>"wifi,1,1,1"</item>
-        <item>"wimax,6,6,2"</item>
         <item>"mobile,0,0,0"</item>
         <item>"mobile_mms,2,0,2"</item>
         <item>"mobile_supl,3,0,2"</item>
@@ -145,7 +143,7 @@
     <!-- An Array of "[ConnectivityManager connectionType],
                       [# simultaneous connection types]"  -->
     <string-array translatable="false" name="radioAttributes">
-        <item>"6,1"</item>
+        <item>"2,1"</item>
         <item>"1,1"</item>
         <item>"0,1"</item>
     </string-array>
@@ -162,7 +160,6 @@
     <string-array translatable="false" name="config_tether_upstream_regexs">
         <item>"rmnet\\d"</item>
         <item>"eth\\d"</item>
-        <item>"wimax\\d"</item>
     </string-array>
 
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
@@ -181,27 +178,10 @@
         <item>40</item>
     </integer-array>
 
-    <!--
-    <bool name="config_animateScreenLights">false</bool>
-    -->
-
     <!-- Component name of the default wallpaper. This will be ImageWallpaper if not 
          specified -->
     <string name="default_wallpaper_component">com.android.wallpaper/.nexus.NexusWallpaper</string>
 
     <bool name="config_animateScreenLights">false</bool>
-
-    <!-- Set and Unsets WiMAX -->
-    <bool name="config_wimaxEnabled">true</bool>
-    <!-- Location of the wimax framwork jar location -->
-    <string name="config_wimaxServiceJarLocation">/system/framework/wimax-api.jar</string>
-    <!-- Location of the wimax native library locaiton -->
-    <string name="config_wimaxNativeLibLocation"></string>
-    <!-- Name of the wimax manager class -->
-    <string name="config_wimaxManagerClassname">com.htc.net.wimax.WimaxController</string>
-    <!-- Name of the wimax service class -->
-    <string name="config_wimaxServiceClassname">com.android.server.WimaxService</string>
-    <!-- Name of the wimax state tracker clas -->
-    <string name="config_wimaxStateTrackerClassname">com.htc.net.wimax.WimaxStateTracker</string>
 
 </resources>
