@@ -12,6 +12,7 @@ on early-fs
     device /dev/block/mmcblk0p16 0460 radio diag
 
 on fs
+    devwait /dev/block/mmcblk0p17
     rm /vendor
     #8x60: mount radio partition and create links for modem/q6 firmwares
     mkdir /vendor 0771 system system
