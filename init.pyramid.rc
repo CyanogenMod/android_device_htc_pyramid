@@ -54,7 +54,6 @@ on init
     chown system system /dev/timerirq
 
 on boot
-    exec /system/bin/sh /system/etc/init.qcom.modem_links.sh
 # + SSD_RIL: Otis: from Qualcomm QMI and Netmgrd
     mkdir /data/radio 0770 radio radio
 # - SSD_RIL: Otis: from Qualcomm QMI and Netmgrd
