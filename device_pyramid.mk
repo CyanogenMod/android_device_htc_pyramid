@@ -32,7 +32,7 @@ PRODUCT_COPY_FILES += \
     device/htc/pyramid/ueventd.pyramid.rc:root/ueventd.pyramid.rc
 
 ## (2) Also get non-open-source GSM-specific aspects if available
-$(call inherit-product-if-exists, vendor/htc/shooter/shooter-vendor.mk)
+$(call inherit-product-if-exists, vendor/htc/pyramid/pyramid-vendor.mk)
 
 ## (3)  Finally, the least specific parts, i.e. the non-GSM-specific aspects
 
@@ -99,8 +99,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_eu_supl.mk)
-
-$(call inherit-product-if-exists, vendor/htc/pyramid/pyramid-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/htc/pyramid/overlay
 
