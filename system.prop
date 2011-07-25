@@ -52,3 +52,6 @@ ro.ril.enable.prl.recognition = 1
 
 # For emmc phone storage
 ro.phone_storage = 0
+
+# Make rmt_storage start at init
+ro.emmc = 1
