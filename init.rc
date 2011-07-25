@@ -447,3 +447,12 @@ service dumpstate /system/bin/dumpstate -s
     socket dumpstate stream 0660 shell log
     disabled
     oneshot
+    
+service ipd /system/bin/ipd
+    socket ipd stream 666 root inet
+    
+service charging /system/bin/charging
+    user root
+    group root
+    disabled
+    oneshot
