@@ -29,6 +29,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_COPY_FILES += \
     device/htc/pyramid/init.pyramid.rc:root/init.pyramid.rc \
+    device/htc/pyramid/init.rc:root/init.rc \
     device/htc/pyramid/ueventd.pyramid.rc:root/ueventd.pyramid.rc
 
 ## (2) Also get non-open-source GSM-specific aspects if available
@@ -83,7 +84,8 @@ PRODUCT_COPY_FILES += \
 
 # Wifi Module
 PRODUCT_COPY_FILES += \
-    device/htc/pyramid/modules/bcm4329.ko:system/lib/modules/bcm4329.ko
+    device/htc/pyramid/modules/bcm4329.ko:system/lib/modules/bcm4329.ko \
+    device/htc/pyramid/modules/kineto_gan.ko:system/lib/modules/kineto_gan.ko
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
