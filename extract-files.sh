@@ -21,6 +21,7 @@ mkdir -p ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/awb_camera ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/bma150_usr ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/btld ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/charging ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/dcvs ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/dcvsd ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/hdmid ../../../vendor/htc/$DEVICE/proprietary
@@ -129,6 +130,7 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/awb_camera:/system/bin/awb_camera \\
     vendor/htc/__DEVICE__/proprietary/bma150_usr:/system/bin/bma150_usr \\
     vendor/htc/__DEVICE__/proprietary/btld:/system/bin/btld \\
+    vendor/htc/__DEVICE__/proprietary/charging:/system/bin/charging \\
     vendor/htc/__DEVICE__/proprietary/dcvs:/system/bin/dcvs \\
     vendor/htc/__DEVICE__/proprietary/dcvsd:/system/bin/dcvsd \\
     vendor/htc/__DEVICE__/proprietary/htc_ebdlogd:/system/bin/htc_ebdlogd \\
