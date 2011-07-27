@@ -1,0 +1,2235 @@
+w 30 00 00 # Page Select Register
+w 30 01 01 # Software Reset Register
+w 30 00 01 # Page Select Register
+w 30 01 08 # Power Configuration Register
+w 30 02 21 # LDO Control Register
+w 30 7b 01 # Reference Power-up Configuration Register
+w 30 0a 3b # Common Mode Control Register
+w 30 00 00 # Page Select Register
+w 30 1b 00 # Audio Interface Setting Register 1
+w 30 3c 00 # DAC Signal Processing Block Control Register
+w 30 3d 00 # ADC Signal Processing Block Control Register
+w 30 04 03 # Clock Setting Register 1, Multiplexers
+w 30 05 91 # Clock Setting Register 2, PLL P&R Values
+w 30 06 05 # Clock Setting Register 3, PLL J Values
+w 30 07 04 # Clock Setting Register 4, PLL D Values (MSB)
+w 30 08 b0 # Clock Setting Register 5, PLL D Values (LSB)
+w 30 0b 82 # Clock Setting Register 6, NDAC Values
+w 30 0c 88 # Clock Setting Register 7, MDAC Values
+w 30 0e 80 # DAC OSR Setting Register 2, LSB Value
+w 30 11 08 # DAC miniDSP Interpolation Factor Setting Register
+w 30 1b 0c # Audio Interface Setting Register 1
+w 30 1d 01 # Audio Interface Setting Register 3
+w 30 1e 84 # Clock Setting Register 11, BCLK N Divider
+w 30 15 01 # ADC miniDSP instruction control Register 1
+w 30 16 00 # ADC miniDSP instruction control Register 2
+w 30 0f 01 # DAC miniDSP instruction control Register 1
+w 30 10 e0 # DAC miniDSP instruction control Register 2
+w 30 00 08 # Page Select Register
+w 30 08 ff # C0 (23:16) ADC Buffer A
+w 30 09 ff # C0 (15:8) ADC Buffer A
+w 30 0a ff # C0 (7:0) ADC Buffer A
+w 30 0b 00 # C0 Reserved
+w 30 0c 80 # C1 (23:16) ADC Buffer A
+w 30 0d 00 # C1 (15:8) ADC Buffer A
+w 30 0e 00 # C1 (7:0) ADC Buffer A
+w 30 0f 00 # C1 Reserved
+w 30 10 7f # C2 (23:16) ADC Buffer A
+w 30 11 ff # C2 (15:8) ADC Buffer A
+w 30 12 ff # C2 (7:0) ADC Buffer A
+w 30 13 00 # C2 Reserved
+w 30 14 40 # C3 (23:16) ADC Buffer A
+w 30 15 00 # C3 (15:8) ADC Buffer A
+w 30 16 00 # C3 (7:0) ADC Buffer A
+w 30 17 00 # C3 Reserved
+w 30 18 00 # C4 (23:16) ADC Buffer A
+w 30 19 00 # C4 (15:8) ADC Buffer A
+w 30 1a 00 # C4 (7:0) ADC Buffer A
+w 30 1b 00 # C4 Reserved
+w 30 00 1a # Page Select Register
+w 30 08 ff # C0 (23:16) ADC Buffer B
+w 30 09 ff # C0 (15:8) ADC Buffer B
+w 30 0a ff # C0 (7:0) ADC Buffer B
+w 30 0b 00 # C0 Reserved
+w 30 0c 80 # C1 (23:16) ADC Buffer B
+w 30 0d 00 # C1 (15:8) ADC Buffer B
+w 30 0e 00 # C1 (7:0) ADC Buffer B
+w 30 0f 00 # C1 Reserved
+w 30 10 7f # C2 (23:16) ADC Buffer B
+w 30 11 ff # C2 (15:8) ADC Buffer B
+w 30 12 ff # C2 (7:0) ADC Buffer B
+w 30 13 00 # C2 Reserved
+w 30 14 40 # C3 (23:16) ADC Buffer B
+w 30 15 00 # C3 (15:8) ADC Buffer B
+w 30 16 00 # C3 (7:0) ADC Buffer B
+w 30 17 00 # C3 Reserved
+w 30 18 00 # C4 (23:16) ADC Buffer B
+w 30 19 00 # C4 (15:8) ADC Buffer B
+w 30 1a 00 # C4 (7:0) ADC Buffer B
+w 30 1b 00 # C4 Reserved
+w 30 00 50 # Page Select Register
+w 30 08 88 # ADC miniDSP instruction 
+w 30 09 03 # ADC miniDSP instruction 
+w 30 0a ff # ADC miniDSP instruction 
+w 30 0b 00 # ADC miniDSP instruction 
+w 30 00 2c # Page Select Register
+w 30 08 7e # C0 (23:16) DAC Buffer A
+w 30 09 c9 # C0 (15:8) DAC Buffer A
+w 30 0a b1 # C0 (7:0) DAC Buffer A
+w 30 0b 00 # C0 Reserved
+w 30 0c 81 # C1 (23:16) DAC Buffer A
+w 30 0d a4 # C1 (15:8) DAC Buffer A
+w 30 0e 63 # C1 (7:0) DAC Buffer A
+w 30 0f 00 # C1 Reserved
+w 30 10 7d # C2 (23:16) DAC Buffer A
+w 30 11 ee # C2 (15:8) DAC Buffer A
+w 30 12 96 # C2 (7:0) DAC Buffer A
+w 30 13 00 # C2 Reserved
+w 30 14 7f # C3 (23:16) DAC Buffer A
+w 30 15 a2 # C3 (15:8) DAC Buffer A
+w 30 16 5b # C3 (7:0) DAC Buffer A
+w 30 17 00 # C3 Reserved
+w 30 18 80 # C4 (23:16) DAC Buffer A
+w 30 19 ba # C4 (15:8) DAC Buffer A
+w 30 1a 39 # C4 (7:0) DAC Buffer A
+w 30 1b 00 # C4 Reserved
+w 30 1c ff # C5 (23:16) DAC Buffer A
+w 30 1d ff # C5 (15:8) DAC Buffer A
+w 30 1e ff # C5 (7:0) DAC Buffer A
+w 30 1f 00 # C5 Reserved
+w 30 20 80 # C6 (23:16) DAC Buffer A
+w 30 21 00 # C6 (15:8) DAC Buffer A
+w 30 22 00 # C6 (7:0) DAC Buffer A
+w 30 23 00 # C6 Reserved
+w 30 24 7f # C7 (23:16) DAC Buffer A
+w 30 25 f7 # C7 (15:8) DAC Buffer A
+w 30 26 00 # C7 (7:0) DAC Buffer A
+w 30 27 00 # C7 Reserved
+w 30 28 80 # C8 (23:16) DAC Buffer A
+w 30 29 09 # C8 (15:8) DAC Buffer A
+w 30 2a 00 # C8 (7:0) DAC Buffer A
+w 30 2b 00 # C8 Reserved
+w 30 2c 7f # C9 (23:16) DAC Buffer A
+w 30 2d ef # C9 (15:8) DAC Buffer A
+w 30 2e 00 # C9 (7:0) DAC Buffer A
+w 30 2f 00 # C9 Reserved
+w 30 30 7f # C10 (23:16) DAC Buffer A
+w 30 31 4c # C10 (15:8) DAC Buffer A
+w 30 32 4e # C10 (7:0) DAC Buffer A
+w 30 33 00 # C10 Reserved
+w 30 34 a4 # C11 (23:16) DAC Buffer A
+w 30 35 c0 # C11 (15:8) DAC Buffer A
+w 30 36 de # C11 (7:0) DAC Buffer A
+w 30 37 00 # C11 Reserved
+w 30 38 46 # C12 (23:16) DAC Buffer A
+w 30 39 bf # C12 (15:8) DAC Buffer A
+w 30 3a 11 # C12 (7:0) DAC Buffer A
+w 30 3b 00 # C12 Reserved
+w 30 3c 62 # C13 (23:16) DAC Buffer A
+w 30 3d 1d # C13 (15:8) DAC Buffer A
+w 30 3e 58 # C13 (7:0) DAC Buffer A
+w 30 3f 00 # C13 Reserved
+w 30 40 ab # C14 (23:16) DAC Buffer A
+w 30 41 0c # C14 (15:8) DAC Buffer A
+w 30 42 8b # C14 (7:0) DAC Buffer A
+w 30 43 00 # C14 Reserved
+w 30 44 79 # C15 (23:16) DAC Buffer A
+w 30 45 45 # C15 (15:8) DAC Buffer A
+w 30 46 5b # C15 (7:0) DAC Buffer A
+w 30 47 00 # C15 Reserved
+w 30 48 ac # C16 (23:16) DAC Buffer A
+w 30 49 3c # C16 (15:8) DAC Buffer A
+w 30 4a fe # C16 (7:0) DAC Buffer A
+w 30 4b 00 # C16 Reserved
+w 30 4c 5e # C17 (23:16) DAC Buffer A
+w 30 4d da # C17 (15:8) DAC Buffer A
+w 30 4e 8b # C17 (7:0) DAC Buffer A
+w 30 4f 00 # C17 Reserved
+w 30 50 54 # C18 (23:16) DAC Buffer A
+w 30 51 9b # C18 (15:8) DAC Buffer A
+w 30 52 9a # C18 (7:0) DAC Buffer A
+w 30 53 00 # C18 Reserved
+w 30 54 a5 # C19 (23:16) DAC Buffer A
+w 30 55 b1 # C19 (15:8) DAC Buffer A
+w 30 56 3a # C19 (7:0) DAC Buffer A
+w 30 57 00 # C19 Reserved
+w 30 58 7f # C20 (23:16) DAC Buffer A
+w 30 59 66 # C20 (15:8) DAC Buffer A
+w 30 5a ef # C20 (7:0) DAC Buffer A
+w 30 5b 00 # C20 Reserved
+w 30 5c e8 # C21 (23:16) DAC Buffer A
+w 30 5d 08 # C21 (15:8) DAC Buffer A
+w 30 5e fd # C21 (7:0) DAC Buffer A
+w 30 5f 00 # C21 Reserved
+w 30 60 08 # C22 (23:16) DAC Buffer A
+w 30 61 be # C22 (15:8) DAC Buffer A
+w 30 62 f9 # C22 (7:0) DAC Buffer A
+w 30 63 00 # C22 Reserved
+w 30 64 1a # C23 (23:16) DAC Buffer A
+w 30 65 a0 # C23 (15:8) DAC Buffer A
+w 30 66 ae # C23 (7:0) DAC Buffer A
+w 30 67 00 # C23 Reserved
+w 30 68 e8 # C24 (23:16) DAC Buffer A
+w 30 69 b9 # C24 (15:8) DAC Buffer A
+w 30 6a 6e # C24 (7:0) DAC Buffer A
+w 30 6b 00 # C24 Reserved
+w 30 6c 7f # C25 (23:16) DAC Buffer A
+w 30 6d 2f # C25 (15:8) DAC Buffer A
+w 30 6e e7 # C25 (7:0) DAC Buffer A
+w 30 6f 00 # C25 Reserved
+w 30 70 2d # C26 (23:16) DAC Buffer A
+w 30 71 b3 # C26 (15:8) DAC Buffer A
+w 30 72 46 # C26 (7:0) DAC Buffer A
+w 30 73 00 # C26 Reserved
+w 30 74 2b # C27 (23:16) DAC Buffer A
+w 30 75 29 # C27 (15:8) DAC Buffer A
+w 30 76 7e # C27 (7:0) DAC Buffer A
+w 30 77 00 # C27 Reserved
+w 30 78 ca # C28 (23:16) DAC Buffer A
+w 30 79 3c # C28 (15:8) DAC Buffer A
+w 30 7a 26 # C28 (7:0) DAC Buffer A
+w 30 7b 00 # C28 Reserved
+w 30 7c b7 # C29 (23:16) DAC Buffer A
+w 30 7d 96 # C29 (15:8) DAC Buffer A
+w 30 7e d2 # C29 (7:0) DAC Buffer A
+w 30 7f 00 # C29 Reserved
+w 30 00 2d # Page Select Register
+w 30 08 40 # C30 (23:16) DAC Buffer A
+w 30 09 00 # C30 (15:8) DAC Buffer A
+w 30 0a 00 # C30 (7:0) DAC Buffer A
+w 30 0b 00 # C30 Reserved
+w 30 0c 7f # C31 (23:16) DAC Buffer A
+w 30 0d ff # C31 (15:8) DAC Buffer A
+w 30 0e ff # C31 (7:0) DAC Buffer A
+w 30 0f 00 # C31 Reserved
+w 30 10 00 # C32 (23:16) DAC Buffer A
+w 30 11 00 # C32 (15:8) DAC Buffer A
+w 30 12 00 # C32 (7:0) DAC Buffer A
+w 30 13 00 # C32 Reserved
+w 30 14 00 # C33 (23:16) DAC Buffer A
+w 30 15 00 # C33 (15:8) DAC Buffer A
+w 30 16 00 # C33 (7:0) DAC Buffer A
+w 30 17 00 # C33 Reserved
+w 30 18 00 # C34 (23:16) DAC Buffer A
+w 30 19 00 # C34 (15:8) DAC Buffer A
+w 30 1a 00 # C34 (7:0) DAC Buffer A
+w 30 1b 00 # C34 Reserved
+w 30 1c 00 # C35 (23:16) DAC Buffer A
+w 30 1d 00 # C35 (15:8) DAC Buffer A
+w 30 1e 00 # C35 (7:0) DAC Buffer A
+w 30 1f 00 # C35 Reserved
+w 30 20 40 # C36 (23:16) DAC Buffer A
+w 30 21 00 # C36 (15:8) DAC Buffer A
+w 30 22 00 # C36 (7:0) DAC Buffer A
+w 30 23 00 # C36 Reserved
+w 30 24 c0 # C37 (23:16) DAC Buffer A
+w 30 25 00 # C37 (15:8) DAC Buffer A
+w 30 26 00 # C37 (7:0) DAC Buffer A
+w 30 27 00 # C37 Reserved
+w 30 28 00 # C38 (23:16) DAC Buffer A
+w 30 29 0d # C38 (15:8) DAC Buffer A
+w 30 2a 00 # C38 (7:0) DAC Buffer A
+w 30 2b 00 # C38 Reserved
+w 30 2c 00 # C39 (23:16) DAC Buffer A
+w 30 2d 1c # C39 (15:8) DAC Buffer A
+w 30 2e 00 # C39 (7:0) DAC Buffer A
+w 30 2f 00 # C39 Reserved
+w 30 30 00 # C40 (23:16) DAC Buffer A
+w 30 31 3e # C40 (15:8) DAC Buffer A
+w 30 32 00 # C40 (7:0) DAC Buffer A
+w 30 33 00 # C40 Reserved
+w 30 34 00 # C41 (23:16) DAC Buffer A
+w 30 35 78 # C41 (15:8) DAC Buffer A
+w 30 36 00 # C41 (7:0) DAC Buffer A
+w 30 37 00 # C41 Reserved
+w 30 38 02 # C42 (23:16) DAC Buffer A
+w 30 39 4c # C42 (15:8) DAC Buffer A
+w 30 3a 00 # C42 (7:0) DAC Buffer A
+w 30 3b 00 # C42 Reserved
+w 30 3c 00 # C43 (23:16) DAC Buffer A
+w 30 3d d5 # C43 (15:8) DAC Buffer A
+w 30 3e 00 # C43 (7:0) DAC Buffer A
+w 30 3f 00 # C43 Reserved
+w 30 40 01 # C44 (23:16) DAC Buffer A
+w 30 41 65 # C44 (15:8) DAC Buffer A
+w 30 42 00 # C44 (7:0) DAC Buffer A
+w 30 43 00 # C44 Reserved
+w 30 44 03 # C45 (23:16) DAC Buffer A
+w 30 45 e9 # C45 (15:8) DAC Buffer A
+w 30 46 00 # C45 (7:0) DAC Buffer A
+w 30 47 00 # C45 Reserved
+w 30 48 07 # C46 (23:16) DAC Buffer A
+w 30 49 ca # C46 (15:8) DAC Buffer A
+w 30 4a 00 # C46 (7:0) DAC Buffer A
+w 30 4b 00 # C46 Reserved
+w 30 4c ff # C47 (23:16) DAC Buffer A
+w 30 4d ef # C47 (15:8) DAC Buffer A
+w 30 4e 00 # C47 (7:0) DAC Buffer A
+w 30 4f 00 # C47 Reserved
+w 30 50 fe # C48 (23:16) DAC Buffer A
+w 30 51 eb # C48 (15:8) DAC Buffer A
+w 30 52 00 # C48 (7:0) DAC Buffer A
+w 30 53 00 # C48 Reserved
+w 30 54 ff # C49 (23:16) DAC Buffer A
+w 30 55 a8 # C49 (15:8) DAC Buffer A
+w 30 56 00 # C49 (7:0) DAC Buffer A
+w 30 57 00 # C49 Reserved
+w 30 58 fd # C50 (23:16) DAC Buffer A
+w 30 59 08 # C50 (15:8) DAC Buffer A
+w 30 5a 00 # C50 (7:0) DAC Buffer A
+w 30 5b 00 # C50 Reserved
+w 30 5c ff # C51 (23:16) DAC Buffer A
+w 30 5d 5e # C51 (15:8) DAC Buffer A
+w 30 5e 00 # C51 (7:0) DAC Buffer A
+w 30 5f 00 # C51 Reserved
+w 30 60 ff # C52 (23:16) DAC Buffer A
+w 30 61 d5 # C52 (15:8) DAC Buffer A
+w 30 62 00 # C52 (7:0) DAC Buffer A
+w 30 63 00 # C52 Reserved
+w 30 64 fe # C53 (23:16) DAC Buffer A
+w 30 65 36 # C53 (15:8) DAC Buffer A
+w 30 66 00 # C53 (7:0) DAC Buffer A
+w 30 67 00 # C53 Reserved
+w 30 68 fa # C54 (23:16) DAC Buffer A
+w 30 69 ac # C54 (15:8) DAC Buffer A
+w 30 6a 00 # C54 (7:0) DAC Buffer A
+w 30 6b 00 # C54 Reserved
+w 30 6c 71 # C55 (23:16) DAC Buffer A
+w 30 6d cf # C55 (15:8) DAC Buffer A
+w 30 6e 54 # C55 (7:0) DAC Buffer A
+w 30 6f 00 # C55 Reserved
+w 30 70 f2 # C56 (23:16) DAC Buffer A
+w 30 71 a3 # C56 (15:8) DAC Buffer A
+w 30 72 00 # C56 (7:0) DAC Buffer A
+w 30 73 00 # C56 Reserved
+w 30 74 28 # C57 (23:16) DAC Buffer A
+w 30 75 ab # C57 (15:8) DAC Buffer A
+w 30 76 00 # C57 (7:0) DAC Buffer A
+w 30 77 00 # C57 Reserved
+w 30 78 3f # C58 (23:16) DAC Buffer A
+w 30 79 ff # C58 (15:8) DAC Buffer A
+w 30 7a 00 # C58 (7:0) DAC Buffer A
+w 30 7b 00 # C58 Reserved
+w 30 7c ff # C59 (23:16) DAC Buffer A
+w 30 7d 98 # C59 (15:8) DAC Buffer A
+w 30 7e 00 # C59 (7:0) DAC Buffer A
+w 30 7f 00 # C59 Reserved
+w 30 00 2e # Page Select Register
+w 30 08 f6 # C60 (23:16) DAC Buffer A
+w 30 09 f9 # C60 (15:8) DAC Buffer A
+w 30 0a 00 # C60 (7:0) DAC Buffer A
+w 30 0b 00 # C60 Reserved
+w 30 0c 26 # C61 (23:16) DAC Buffer A
+w 30 0d fb # C61 (15:8) DAC Buffer A
+w 30 0e 00 # C61 (7:0) DAC Buffer A
+w 30 0f 00 # C61 Reserved
+w 30 10 02 # C62 (23:16) DAC Buffer A
+w 30 11 72 # C62 (15:8) DAC Buffer A
+w 30 12 00 # C62 (7:0) DAC Buffer A
+w 30 13 00 # C62 Reserved
+w 30 14 40 # C63 (23:16) DAC Buffer A
+w 30 15 02 # C63 (15:8) DAC Buffer A
+w 30 16 00 # C63 (7:0) DAC Buffer A
+w 30 17 00 # C63 Reserved
+w 30 18 fb # Reserved
+w 30 19 cb # Reserved
+w 30 1a 00 # Reserved
+w 30 1b 00 # Reserved
+w 30 1c 20 # C65 (23:16) DAC Buffer A
+w 30 1d a7 # C65 (15:8) DAC Buffer A
+w 30 1e 00 # C65 (7:0) DAC Buffer A
+w 30 1f 00 # C65 Reserved
+w 30 20 ff # C66 (23:16) DAC Buffer A
+w 30 21 6a # C66 (15:8) DAC Buffer A
+w 30 22 00 # C66 (7:0) DAC Buffer A
+w 30 23 00 # C66 Reserved
+w 30 24 3a # C67 (23:16) DAC Buffer A
+w 30 25 0f # C67 (15:8) DAC Buffer A
+w 30 26 00 # C67 (7:0) DAC Buffer A
+w 30 27 00 # C67 Reserved
+w 30 28 00 # C68 (23:16) DAC Buffer A
+w 30 29 00 # C68 (15:8) DAC Buffer A
+w 30 2a 0a # C68 (7:0) DAC Buffer A
+w 30 2b 00 # C68 Reserved
+w 30 2c 00 # C69 (23:16) DAC Buffer A
+w 30 2d 00 # C69 (15:8) DAC Buffer A
+w 30 2e 31 # C69 (7:0) DAC Buffer A
+w 30 2f 00 # C69 Reserved
+w 30 00 3e # Page Select Register
+w 30 08 7e # C0 (23:16) DAC Buffer B
+w 30 09 c9 # C0 (15:8) DAC Buffer B
+w 30 0a b1 # C0 (7:0) DAC Buffer B
+w 30 0b 00 # C0 Reserved
+w 30 0c 81 # C1 (23:16) DAC Buffer B
+w 30 0d a4 # C1 (15:8) DAC Buffer B
+w 30 0e 63 # C1 (7:0) DAC Buffer B
+w 30 0f 00 # C1 Reserved
+w 30 10 7d # C2 (23:16) DAC Buffer B
+w 30 11 ee # C2 (15:8) DAC Buffer B
+w 30 12 96 # C2 (7:0) DAC Buffer B
+w 30 13 00 # C2 Reserved
+w 30 14 7f # C3 (23:16) DAC Buffer B
+w 30 15 a2 # C3 (15:8) DAC Buffer B
+w 30 16 5b # C3 (7:0) DAC Buffer B
+w 30 17 00 # C3 Reserved
+w 30 18 80 # C4 (23:16) DAC Buffer B
+w 30 19 ba # C4 (15:8) DAC Buffer B
+w 30 1a 39 # C4 (7:0) DAC Buffer B
+w 30 1b 00 # C4 Reserved
+w 30 1c ff # C5 (23:16) DAC Buffer B
+w 30 1d ff # C5 (15:8) DAC Buffer B
+w 30 1e ff # C5 (7:0) DAC Buffer B
+w 30 1f 00 # C5 Reserved
+w 30 20 80 # C6 (23:16) DAC Buffer B
+w 30 21 00 # C6 (15:8) DAC Buffer B
+w 30 22 00 # C6 (7:0) DAC Buffer B
+w 30 23 00 # C6 Reserved
+w 30 24 7f # C7 (23:16) DAC Buffer B
+w 30 25 f7 # C7 (15:8) DAC Buffer B
+w 30 26 00 # C7 (7:0) DAC Buffer B
+w 30 27 00 # C7 Reserved
+w 30 28 80 # C8 (23:16) DAC Buffer B
+w 30 29 09 # C8 (15:8) DAC Buffer B
+w 30 2a 00 # C8 (7:0) DAC Buffer B
+w 30 2b 00 # C8 Reserved
+w 30 2c 7f # C9 (23:16) DAC Buffer B
+w 30 2d ef # C9 (15:8) DAC Buffer B
+w 30 2e 00 # C9 (7:0) DAC Buffer B
+w 30 2f 00 # C9 Reserved
+w 30 30 7f # C10 (23:16) DAC Buffer B
+w 30 31 4c # C10 (15:8) DAC Buffer B
+w 30 32 4e # C10 (7:0) DAC Buffer B
+w 30 33 00 # C10 Reserved
+w 30 34 a4 # C11 (23:16) DAC Buffer B
+w 30 35 c0 # C11 (15:8) DAC Buffer B
+w 30 36 de # C11 (7:0) DAC Buffer B
+w 30 37 00 # C11 Reserved
+w 30 38 46 # C12 (23:16) DAC Buffer B
+w 30 39 bf # C12 (15:8) DAC Buffer B
+w 30 3a 11 # C12 (7:0) DAC Buffer B
+w 30 3b 00 # C12 Reserved
+w 30 3c 62 # C13 (23:16) DAC Buffer B
+w 30 3d 1d # C13 (15:8) DAC Buffer B
+w 30 3e 58 # C13 (7:0) DAC Buffer B
+w 30 3f 00 # C13 Reserved
+w 30 40 ab # C14 (23:16) DAC Buffer B
+w 30 41 0c # C14 (15:8) DAC Buffer B
+w 30 42 8b # C14 (7:0) DAC Buffer B
+w 30 43 00 # C14 Reserved
+w 30 44 79 # C15 (23:16) DAC Buffer B
+w 30 45 45 # C15 (15:8) DAC Buffer B
+w 30 46 5b # C15 (7:0) DAC Buffer B
+w 30 47 00 # C15 Reserved
+w 30 48 ac # C16 (23:16) DAC Buffer B
+w 30 49 3c # C16 (15:8) DAC Buffer B
+w 30 4a fe # C16 (7:0) DAC Buffer B
+w 30 4b 00 # C16 Reserved
+w 30 4c 5e # C17 (23:16) DAC Buffer B
+w 30 4d da # C17 (15:8) DAC Buffer B
+w 30 4e 8b # C17 (7:0) DAC Buffer B
+w 30 4f 00 # C17 Reserved
+w 30 50 54 # C18 (23:16) DAC Buffer B
+w 30 51 9b # C18 (15:8) DAC Buffer B
+w 30 52 9a # C18 (7:0) DAC Buffer B
+w 30 53 00 # C18 Reserved
+w 30 54 a5 # C19 (23:16) DAC Buffer B
+w 30 55 b1 # C19 (15:8) DAC Buffer B
+w 30 56 3a # C19 (7:0) DAC Buffer B
+w 30 57 00 # C19 Reserved
+w 30 58 7f # C20 (23:16) DAC Buffer B
+w 30 59 66 # C20 (15:8) DAC Buffer B
+w 30 5a ef # C20 (7:0) DAC Buffer B
+w 30 5b 00 # C20 Reserved
+w 30 5c e8 # C21 (23:16) DAC Buffer B
+w 30 5d 08 # C21 (15:8) DAC Buffer B
+w 30 5e fd # C21 (7:0) DAC Buffer B
+w 30 5f 00 # C21 Reserved
+w 30 60 08 # C22 (23:16) DAC Buffer B
+w 30 61 be # C22 (15:8) DAC Buffer B
+w 30 62 f9 # C22 (7:0) DAC Buffer B
+w 30 63 00 # C22 Reserved
+w 30 64 1a # C23 (23:16) DAC Buffer B
+w 30 65 a0 # C23 (15:8) DAC Buffer B
+w 30 66 ae # C23 (7:0) DAC Buffer B
+w 30 67 00 # C23 Reserved
+w 30 68 e8 # C24 (23:16) DAC Buffer B
+w 30 69 b9 # C24 (15:8) DAC Buffer B
+w 30 6a 6e # C24 (7:0) DAC Buffer B
+w 30 6b 00 # C24 Reserved
+w 30 6c 7f # C25 (23:16) DAC Buffer B
+w 30 6d 2f # C25 (15:8) DAC Buffer B
+w 30 6e e7 # C25 (7:0) DAC Buffer B
+w 30 6f 00 # C25 Reserved
+w 30 70 2d # C26 (23:16) DAC Buffer B
+w 30 71 b3 # C26 (15:8) DAC Buffer B
+w 30 72 46 # C26 (7:0) DAC Buffer B
+w 30 73 00 # C26 Reserved
+w 30 74 2b # C27 (23:16) DAC Buffer B
+w 30 75 29 # C27 (15:8) DAC Buffer B
+w 30 76 7e # C27 (7:0) DAC Buffer B
+w 30 77 00 # C27 Reserved
+w 30 78 ca # C28 (23:16) DAC Buffer B
+w 30 79 3c # C28 (15:8) DAC Buffer B
+w 30 7a 26 # C28 (7:0) DAC Buffer B
+w 30 7b 00 # C28 Reserved
+w 30 7c b7 # C29 (23:16) DAC Buffer B
+w 30 7d 96 # C29 (15:8) DAC Buffer B
+w 30 7e d2 # C29 (7:0) DAC Buffer B
+w 30 7f 00 # C29 Reserved
+w 30 00 3f # Page Select Register
+w 30 08 40 # C30 (23:16) DAC Buffer B
+w 30 09 00 # C30 (15:8) DAC Buffer B
+w 30 0a 00 # C30 (7:0) DAC Buffer B
+w 30 0b 00 # C30 Reserved
+w 30 0c 7f # C31 (23:16) DAC Buffer B
+w 30 0d ff # C31 (15:8) DAC Buffer B
+w 30 0e ff # C31 (7:0) DAC Buffer B
+w 30 0f 00 # C31 Reserved
+w 30 10 00 # C32 (23:16) DAC Buffer B
+w 30 11 00 # C32 (15:8) DAC Buffer B
+w 30 12 00 # C32 (7:0) DAC Buffer B
+w 30 13 00 # C32 Reserved
+w 30 14 00 # C33 (23:16) DAC Buffer B
+w 30 15 00 # C33 (15:8) DAC Buffer B
+w 30 16 00 # C33 (7:0) DAC Buffer B
+w 30 17 00 # C33 Reserved
+w 30 18 00 # C34 (23:16) DAC Buffer B
+w 30 19 00 # C34 (15:8) DAC Buffer B
+w 30 1a 00 # C34 (7:0) DAC Buffer B
+w 30 1b 00 # C34 Reserved
+w 30 1c 00 # C35 (23:16) DAC Buffer B
+w 30 1d 00 # C35 (15:8) DAC Buffer B
+w 30 1e 00 # C35 (7:0) DAC Buffer B
+w 30 1f 00 # C35 Reserved
+w 30 20 40 # C36 (23:16) DAC Buffer B
+w 30 21 00 # C36 (15:8) DAC Buffer B
+w 30 22 00 # C36 (7:0) DAC Buffer B
+w 30 23 00 # C36 Reserved
+w 30 24 c0 # C37 (23:16) DAC Buffer B
+w 30 25 00 # C37 (15:8) DAC Buffer B
+w 30 26 00 # C37 (7:0) DAC Buffer B
+w 30 27 00 # C37 Reserved
+w 30 28 00 # C38 (23:16) DAC Buffer B
+w 30 29 0d # C38 (15:8) DAC Buffer B
+w 30 2a 00 # C38 (7:0) DAC Buffer B
+w 30 2b 00 # C38 Reserved
+w 30 2c 00 # C39 (23:16) DAC Buffer B
+w 30 2d 1c # C39 (15:8) DAC Buffer B
+w 30 2e 00 # C39 (7:0) DAC Buffer B
+w 30 2f 00 # C39 Reserved
+w 30 30 00 # C40 (23:16) DAC Buffer B
+w 30 31 3e # C40 (15:8) DAC Buffer B
+w 30 32 00 # C40 (7:0) DAC Buffer B
+w 30 33 00 # C40 Reserved
+w 30 34 00 # C41 (23:16) DAC Buffer B
+w 30 35 78 # C41 (15:8) DAC Buffer B
+w 30 36 00 # C41 (7:0) DAC Buffer B
+w 30 37 00 # C41 Reserved
+w 30 38 02 # C42 (23:16) DAC Buffer B
+w 30 39 4c # C42 (15:8) DAC Buffer B
+w 30 3a 00 # C42 (7:0) DAC Buffer B
+w 30 3b 00 # C42 Reserved
+w 30 3c 00 # C43 (23:16) DAC Buffer B
+w 30 3d d5 # C43 (15:8) DAC Buffer B
+w 30 3e 00 # C43 (7:0) DAC Buffer B
+w 30 3f 00 # C43 Reserved
+w 30 40 01 # C44 (23:16) DAC Buffer B
+w 30 41 65 # C44 (15:8) DAC Buffer B
+w 30 42 00 # C44 (7:0) DAC Buffer B
+w 30 43 00 # C44 Reserved
+w 30 44 03 # C45 (23:16) DAC Buffer B
+w 30 45 e9 # C45 (15:8) DAC Buffer B
+w 30 46 00 # C45 (7:0) DAC Buffer B
+w 30 47 00 # C45 Reserved
+w 30 48 07 # C46 (23:16) DAC Buffer B
+w 30 49 ca # C46 (15:8) DAC Buffer B
+w 30 4a 00 # C46 (7:0) DAC Buffer B
+w 30 4b 00 # C46 Reserved
+w 30 4c ff # C47 (23:16) DAC Buffer B
+w 30 4d ef # C47 (15:8) DAC Buffer B
+w 30 4e 00 # C47 (7:0) DAC Buffer B
+w 30 4f 00 # C47 Reserved
+w 30 50 fe # C48 (23:16) DAC Buffer B
+w 30 51 eb # C48 (15:8) DAC Buffer B
+w 30 52 00 # C48 (7:0) DAC Buffer B
+w 30 53 00 # C48 Reserved
+w 30 54 ff # C49 (23:16) DAC Buffer B
+w 30 55 a8 # C49 (15:8) DAC Buffer B
+w 30 56 00 # C49 (7:0) DAC Buffer B
+w 30 57 00 # C49 Reserved
+w 30 58 fd # C50 (23:16) DAC Buffer B
+w 30 59 08 # C50 (15:8) DAC Buffer B
+w 30 5a 00 # C50 (7:0) DAC Buffer B
+w 30 5b 00 # C50 Reserved
+w 30 5c ff # C51 (23:16) DAC Buffer B
+w 30 5d 5e # C51 (15:8) DAC Buffer B
+w 30 5e 00 # C51 (7:0) DAC Buffer B
+w 30 5f 00 # C51 Reserved
+w 30 60 ff # C52 (23:16) DAC Buffer B
+w 30 61 d5 # C52 (15:8) DAC Buffer B
+w 30 62 00 # C52 (7:0) DAC Buffer B
+w 30 63 00 # C52 Reserved
+w 30 64 fe # C53 (23:16) DAC Buffer B
+w 30 65 36 # C53 (15:8) DAC Buffer B
+w 30 66 00 # C53 (7:0) DAC Buffer B
+w 30 67 00 # C53 Reserved
+w 30 68 fa # C54 (23:16) DAC Buffer B
+w 30 69 ac # C54 (15:8) DAC Buffer B
+w 30 6a 00 # C54 (7:0) DAC Buffer B
+w 30 6b 00 # C54 Reserved
+w 30 6c 71 # C55 (23:16) DAC Buffer B
+w 30 6d cf # C55 (15:8) DAC Buffer B
+w 30 6e 54 # C55 (7:0) DAC Buffer B
+w 30 6f 00 # C55 Reserved
+w 30 70 f2 # C56 (23:16) DAC Buffer B
+w 30 71 a3 # C56 (15:8) DAC Buffer B
+w 30 72 00 # C56 (7:0) DAC Buffer B
+w 30 73 00 # C56 Reserved
+w 30 74 28 # C57 (23:16) DAC Buffer B
+w 30 75 ab # C57 (15:8) DAC Buffer B
+w 30 76 00 # C57 (7:0) DAC Buffer B
+w 30 77 00 # C57 Reserved
+w 30 78 3f # C58 (23:16) DAC Buffer B
+w 30 79 ff # C58 (15:8) DAC Buffer B
+w 30 7a 00 # C58 (7:0) DAC Buffer B
+w 30 7b 00 # C58 Reserved
+w 30 7c ff # C59 (23:16) DAC Buffer B
+w 30 7d 98 # C59 (15:8) DAC Buffer B
+w 30 7e 00 # C59 (7:0) DAC Buffer B
+w 30 7f 00 # C59 Reserved
+w 30 00 40 # Page Select Register
+w 30 08 f6 # C60 (23:16) DAC Buffer B
+w 30 09 f9 # C60 (15:8) DAC Buffer B
+w 30 0a 00 # C60 (7:0) DAC Buffer B
+w 30 0b 00 # C60 Reserved
+w 30 0c 26 # C61 (23:16) DAC Buffer B
+w 30 0d fb # C61 (15:8) DAC Buffer B
+w 30 0e 00 # C61 (7:0) DAC Buffer B
+w 30 0f 00 # C61 Reserved
+w 30 10 02 # C62 (23:16) DAC Buffer B
+w 30 11 72 # C62 (15:8) DAC Buffer B
+w 30 12 00 # C62 (7:0) DAC Buffer B
+w 30 13 00 # C62 Reserved
+w 30 14 40 # C63 (23:16) DAC Buffer B
+w 30 15 02 # C63 (15:8) DAC Buffer B
+w 30 16 00 # C63 (7:0) DAC Buffer B
+w 30 17 00 # C63 Reserved
+w 30 18 fb # Reserved
+w 30 19 cb # Reserved
+w 30 1a 00 # Reserved
+w 30 1b 00 # Reserved
+w 30 1c 20 # C65 (23:16) DAC Buffer B
+w 30 1d a7 # C65 (15:8) DAC Buffer B
+w 30 1e 00 # C65 (7:0) DAC Buffer B
+w 30 1f 00 # C65 Reserved
+w 30 20 ff # C66 (23:16) DAC Buffer B
+w 30 21 6a # C66 (15:8) DAC Buffer B
+w 30 22 00 # C66 (7:0) DAC Buffer B
+w 30 23 00 # C66 Reserved
+w 30 24 3a # C67 (23:16) DAC Buffer B
+w 30 25 0f # C67 (15:8) DAC Buffer B
+w 30 26 00 # C67 (7:0) DAC Buffer B
+w 30 27 00 # C67 Reserved
+w 30 28 00 # C68 (23:16) DAC Buffer B
+w 30 29 00 # C68 (15:8) DAC Buffer B
+w 30 2a 0a # C68 (7:0) DAC Buffer B
+w 30 2b 00 # C68 Reserved
+w 30 2c 00 # C69 (23:16) DAC Buffer B
+w 30 2d 00 # C69 (15:8) DAC Buffer B
+w 30 2e 31 # C69 (7:0) DAC Buffer B
+w 30 2f 00 # C69 Reserved
+w 30 00 98 # Page Select Register
+w 30 08 00 # DAC miniDSP instruction 
+w 30 09 00 # DAC miniDSP instruction 
+w 30 0a 00 # DAC miniDSP instruction 
+w 30 0b 00 # DAC miniDSP instruction 
+w 30 0c 00 # DAC miniDSP instruction 
+w 30 0d 00 # DAC miniDSP instruction 
+w 30 0e 00 # DAC miniDSP instruction 
+w 30 0f 00 # DAC miniDSP instruction 
+w 30 10 08 # DAC miniDSP instruction 
+w 30 11 00 # DAC miniDSP instruction 
+w 30 12 00 # DAC miniDSP instruction 
+w 30 13 00 # DAC miniDSP instruction 
+w 30 14 08 # DAC miniDSP instruction 
+w 30 15 04 # DAC miniDSP instruction 
+w 30 16 01 # DAC miniDSP instruction 
+w 30 17 00 # DAC miniDSP instruction 
+w 30 18 30 # DAC miniDSP instruction 
+w 30 19 20 # DAC miniDSP instruction 
+w 30 1a 32 # DAC miniDSP instruction 
+w 30 1b 00 # DAC miniDSP instruction 
+w 30 1c 38 # DAC miniDSP instruction 
+w 30 1d 24 # DAC miniDSP instruction 
+w 30 1e 34 # DAC miniDSP instruction 
+w 30 1f 00 # DAC miniDSP instruction 
+w 30 20 38 # DAC miniDSP instruction 
+w 30 21 1c # DAC miniDSP instruction 
+w 30 22 31 # DAC miniDSP instruction 
+w 30 23 00 # DAC miniDSP instruction 
+w 30 24 10 # DAC miniDSP instruction 
+w 30 25 00 # DAC miniDSP instruction 
+w 30 26 68 # DAC miniDSP instruction 
+w 30 27 00 # DAC miniDSP instruction 
+w 30 28 10 # DAC miniDSP instruction 
+w 30 29 04 # DAC miniDSP instruction 
+w 30 2a a9 # DAC miniDSP instruction 
+w 30 2b 00 # DAC miniDSP instruction 
+w 30 2c 28 # DAC miniDSP instruction 
+w 30 2d 00 # DAC miniDSP instruction 
+w 30 2e 33 # DAC miniDSP instruction 
+w 30 2f 00 # DAC miniDSP instruction 
+w 30 30 30 # DAC miniDSP instruction 
+w 30 31 98 # DAC miniDSP instruction 
+w 30 32 58 # DAC miniDSP instruction 
+w 30 33 00 # DAC miniDSP instruction 
+w 30 34 38 # DAC miniDSP instruction 
+w 30 35 9c # DAC miniDSP instruction 
+w 30 36 35 # DAC miniDSP instruction 
+w 30 37 00 # DAC miniDSP instruction 
+w 30 38 a0 # DAC miniDSP instruction 
+w 30 39 98 # DAC miniDSP instruction 
+w 30 3a 33 # DAC miniDSP instruction 
+w 30 3b 00 # DAC miniDSP instruction 
+w 30 3c 38 # DAC miniDSP instruction 
+w 30 3d 9c # DAC miniDSP instruction 
+w 30 3e 56 # DAC miniDSP instruction 
+w 30 3f 00 # DAC miniDSP instruction 
+w 30 40 38 # DAC miniDSP instruction 
+w 30 41 a0 # DAC miniDSP instruction 
+w 30 42 37 # DAC miniDSP instruction 
+w 30 43 00 # DAC miniDSP instruction 
+w 30 44 38 # DAC miniDSP instruction 
+w 30 45 a0 # DAC miniDSP instruction 
+w 30 46 54 # DAC miniDSP instruction 
+w 30 47 00 # DAC miniDSP instruction 
+w 30 48 38 # DAC miniDSP instruction 
+w 30 49 a4 # DAC miniDSP instruction 
+w 30 4a 39 # DAC miniDSP instruction 
+w 30 4b 00 # DAC miniDSP instruction 
+w 30 4c 38 # DAC miniDSP instruction 
+w 30 4d a4 # DAC miniDSP instruction 
+w 30 4e 52 # DAC miniDSP instruction 
+w 30 4f 00 # DAC miniDSP instruction 
+w 30 50 38 # DAC miniDSP instruction 
+w 30 51 a8 # DAC miniDSP instruction 
+w 30 52 3f # DAC miniDSP instruction 
+w 30 53 00 # DAC miniDSP instruction 
+w 30 54 38 # DAC miniDSP instruction 
+w 30 55 a8 # DAC miniDSP instruction 
+w 30 56 4c # DAC miniDSP instruction 
+w 30 57 00 # DAC miniDSP instruction 
+w 30 58 38 # DAC miniDSP instruction 
+w 30 59 ac # DAC miniDSP instruction 
+w 30 5a 3b # DAC miniDSP instruction 
+w 30 5b 00 # DAC miniDSP instruction 
+w 30 5c 38 # DAC miniDSP instruction 
+w 30 5d ac # DAC miniDSP instruction 
+w 30 5e 50 # DAC miniDSP instruction 
+w 30 5f 00 # DAC miniDSP instruction 
+w 30 60 38 # DAC miniDSP instruction 
+w 30 61 b0 # DAC miniDSP instruction 
+w 30 62 3d # DAC miniDSP instruction 
+w 30 63 00 # DAC miniDSP instruction 
+w 30 64 38 # DAC miniDSP instruction 
+w 30 65 b0 # DAC miniDSP instruction 
+w 30 66 4e # DAC miniDSP instruction 
+w 30 67 00 # DAC miniDSP instruction 
+w 30 68 38 # DAC miniDSP instruction 
+w 30 69 b4 # DAC miniDSP instruction 
+w 30 6a 41 # DAC miniDSP instruction 
+w 30 6b 00 # DAC miniDSP instruction 
+w 30 6c 38 # DAC miniDSP instruction 
+w 30 6d b4 # DAC miniDSP instruction 
+w 30 6e 4a # DAC miniDSP instruction 
+w 30 6f 00 # DAC miniDSP instruction 
+w 30 70 38 # DAC miniDSP instruction 
+w 30 71 b8 # DAC miniDSP instruction 
+w 30 72 43 # DAC miniDSP instruction 
+w 30 73 00 # DAC miniDSP instruction 
+w 30 74 38 # DAC miniDSP instruction 
+w 30 75 b8 # DAC miniDSP instruction 
+w 30 76 48 # DAC miniDSP instruction 
+w 30 77 00 # DAC miniDSP instruction 
+w 30 78 38 # DAC miniDSP instruction 
+w 30 79 bc # DAC miniDSP instruction 
+w 30 7a 34 # DAC miniDSP instruction 
+w 30 7b 00 # DAC miniDSP instruction 
+w 30 7c 38 # DAC miniDSP instruction 
+w 30 7d bc # DAC miniDSP instruction 
+w 30 7e 57 # DAC miniDSP instruction 
+w 30 7f 00 # DAC miniDSP instruction 
+w 30 00 99 # Page Select Register
+w 30 08 38 # DAC miniDSP instruction 
+w 30 09 c0 # DAC miniDSP instruction 
+w 30 0a 3c # DAC miniDSP instruction 
+w 30 0b 00 # DAC miniDSP instruction 
+w 30 0c 38 # DAC miniDSP instruction 
+w 30 0d c0 # DAC miniDSP instruction 
+w 30 0e 4f # DAC miniDSP instruction 
+w 30 0f 00 # DAC miniDSP instruction 
+w 30 10 38 # DAC miniDSP instruction 
+w 30 11 c4 # DAC miniDSP instruction 
+w 30 12 38 # DAC miniDSP instruction 
+w 30 13 00 # DAC miniDSP instruction 
+w 30 14 38 # DAC miniDSP instruction 
+w 30 15 c4 # DAC miniDSP instruction 
+w 30 16 53 # DAC miniDSP instruction 
+w 30 17 00 # DAC miniDSP instruction 
+w 30 18 38 # DAC miniDSP instruction 
+w 30 19 c8 # DAC miniDSP instruction 
+w 30 1a 40 # DAC miniDSP instruction 
+w 30 1b 00 # DAC miniDSP instruction 
+w 30 1c 38 # DAC miniDSP instruction 
+w 30 1d c8 # DAC miniDSP instruction 
+w 30 1e 4b # DAC miniDSP instruction 
+w 30 1f 00 # DAC miniDSP instruction 
+w 30 20 38 # DAC miniDSP instruction 
+w 30 21 cc # DAC miniDSP instruction 
+w 30 22 3a # DAC miniDSP instruction 
+w 30 23 00 # DAC miniDSP instruction 
+w 30 24 38 # DAC miniDSP instruction 
+w 30 25 cc # DAC miniDSP instruction 
+w 30 26 51 # DAC miniDSP instruction 
+w 30 27 00 # DAC miniDSP instruction 
+w 30 28 38 # DAC miniDSP instruction 
+w 30 29 d0 # DAC miniDSP instruction 
+w 30 2a 36 # DAC miniDSP instruction 
+w 30 2b 00 # DAC miniDSP instruction 
+w 30 2c 38 # DAC miniDSP instruction 
+w 30 2d d0 # DAC miniDSP instruction 
+w 30 2e 55 # DAC miniDSP instruction 
+w 30 2f 00 # DAC miniDSP instruction 
+w 30 30 38 # DAC miniDSP instruction 
+w 30 31 d4 # DAC miniDSP instruction 
+w 30 32 3e # DAC miniDSP instruction 
+w 30 33 00 # DAC miniDSP instruction 
+w 30 34 38 # DAC miniDSP instruction 
+w 30 35 d4 # DAC miniDSP instruction 
+w 30 36 4d # DAC miniDSP instruction 
+w 30 37 00 # DAC miniDSP instruction 
+w 30 38 38 # DAC miniDSP instruction 
+w 30 39 d8 # DAC miniDSP instruction 
+w 30 3a 42 # DAC miniDSP instruction 
+w 30 3b 00 # DAC miniDSP instruction 
+w 30 3c 38 # DAC miniDSP instruction 
+w 30 3d d8 # DAC miniDSP instruction 
+w 30 3e 49 # DAC miniDSP instruction 
+w 30 3f 00 # DAC miniDSP instruction 
+w 30 40 38 # DAC miniDSP instruction 
+w 30 41 e0 # DAC miniDSP instruction 
+w 30 42 44 # DAC miniDSP instruction 
+w 30 43 00 # DAC miniDSP instruction 
+w 30 44 38 # DAC miniDSP instruction 
+w 30 45 e0 # DAC miniDSP instruction 
+w 30 46 47 # DAC miniDSP instruction 
+w 30 47 00 # DAC miniDSP instruction 
+w 30 48 38 # DAC miniDSP instruction 
+w 30 49 e4 # DAC miniDSP instruction 
+w 30 4a 45 # DAC miniDSP instruction 
+w 30 4b 00 # DAC miniDSP instruction 
+w 30 4c 38 # DAC miniDSP instruction 
+w 30 4d e4 # DAC miniDSP instruction 
+w 30 4e 46 # DAC miniDSP instruction 
+w 30 4f 00 # DAC miniDSP instruction 
+w 30 50 30 # DAC miniDSP instruction 
+w 30 51 20 # DAC miniDSP instruction 
+w 30 52 71 # DAC miniDSP instruction 
+w 30 53 00 # DAC miniDSP instruction 
+w 30 54 38 # DAC miniDSP instruction 
+w 30 55 24 # DAC miniDSP instruction 
+w 30 56 75 # DAC miniDSP instruction 
+w 30 57 00 # DAC miniDSP instruction 
+w 30 58 20 # DAC miniDSP instruction 
+w 30 59 00 # DAC miniDSP instruction 
+w 30 5a 5d # DAC miniDSP instruction 
+w 30 5b 00 # DAC miniDSP instruction 
+w 30 5c 38 # DAC miniDSP instruction 
+w 30 5d 1c # DAC miniDSP instruction 
+w 30 5e 70 # DAC miniDSP instruction 
+w 30 5f 00 # DAC miniDSP instruction 
+w 30 60 00 # DAC miniDSP instruction 
+w 30 61 00 # DAC miniDSP instruction 
+w 30 62 00 # DAC miniDSP instruction 
+w 30 63 00 # DAC miniDSP instruction 
+w 30 64 00 # DAC miniDSP instruction 
+w 30 65 00 # DAC miniDSP instruction 
+w 30 66 00 # DAC miniDSP instruction 
+w 30 67 00 # DAC miniDSP instruction 
+w 30 68 28 # DAC miniDSP instruction 
+w 30 69 00 # DAC miniDSP instruction 
+w 30 6a 74 # DAC miniDSP instruction 
+w 30 6b 00 # DAC miniDSP instruction 
+w 30 6c 30 # DAC miniDSP instruction 
+w 30 6d 98 # DAC miniDSP instruction 
+w 30 6e 99 # DAC miniDSP instruction 
+w 30 6f 00 # DAC miniDSP instruction 
+w 30 70 38 # DAC miniDSP instruction 
+w 30 71 9c # DAC miniDSP instruction 
+w 30 72 76 # DAC miniDSP instruction 
+w 30 73 00 # DAC miniDSP instruction 
+w 30 74 a0 # DAC miniDSP instruction 
+w 30 75 98 # DAC miniDSP instruction 
+w 30 76 74 # DAC miniDSP instruction 
+w 30 77 00 # DAC miniDSP instruction 
+w 30 78 38 # DAC miniDSP instruction 
+w 30 79 9c # DAC miniDSP instruction 
+w 30 7a 97 # DAC miniDSP instruction 
+w 30 7b 00 # DAC miniDSP instruction 
+w 30 7c 38 # DAC miniDSP instruction 
+w 30 7d a0 # DAC miniDSP instruction 
+w 30 7e 78 # DAC miniDSP instruction 
+w 30 7f 00 # DAC miniDSP instruction 
+w 30 00 9a # Page Select Register
+w 30 08 38 # DAC miniDSP instruction 
+w 30 09 a0 # DAC miniDSP instruction 
+w 30 0a 95 # DAC miniDSP instruction 
+w 30 0b 00 # DAC miniDSP instruction 
+w 30 0c 38 # DAC miniDSP instruction 
+w 30 0d a4 # DAC miniDSP instruction 
+w 30 0e 7a # DAC miniDSP instruction 
+w 30 0f 00 # DAC miniDSP instruction 
+w 30 10 38 # DAC miniDSP instruction 
+w 30 11 a4 # DAC miniDSP instruction 
+w 30 12 93 # DAC miniDSP instruction 
+w 30 13 00 # DAC miniDSP instruction 
+w 30 14 38 # DAC miniDSP instruction 
+w 30 15 a8 # DAC miniDSP instruction 
+w 30 16 80 # DAC miniDSP instruction 
+w 30 17 00 # DAC miniDSP instruction 
+w 30 18 38 # DAC miniDSP instruction 
+w 30 19 a8 # DAC miniDSP instruction 
+w 30 1a 8d # DAC miniDSP instruction 
+w 30 1b 00 # DAC miniDSP instruction 
+w 30 1c 38 # DAC miniDSP instruction 
+w 30 1d ac # DAC miniDSP instruction 
+w 30 1e 7c # DAC miniDSP instruction 
+w 30 1f 00 # DAC miniDSP instruction 
+w 30 20 38 # DAC miniDSP instruction 
+w 30 21 ac # DAC miniDSP instruction 
+w 30 22 91 # DAC miniDSP instruction 
+w 30 23 00 # DAC miniDSP instruction 
+w 30 24 38 # DAC miniDSP instruction 
+w 30 25 b0 # DAC miniDSP instruction 
+w 30 26 7e # DAC miniDSP instruction 
+w 30 27 00 # DAC miniDSP instruction 
+w 30 28 38 # DAC miniDSP instruction 
+w 30 29 b0 # DAC miniDSP instruction 
+w 30 2a 8f # DAC miniDSP instruction 
+w 30 2b 00 # DAC miniDSP instruction 
+w 30 2c 38 # DAC miniDSP instruction 
+w 30 2d b4 # DAC miniDSP instruction 
+w 30 2e 82 # DAC miniDSP instruction 
+w 30 2f 00 # DAC miniDSP instruction 
+w 30 30 38 # DAC miniDSP instruction 
+w 30 31 b4 # DAC miniDSP instruction 
+w 30 32 8b # DAC miniDSP instruction 
+w 30 33 00 # DAC miniDSP instruction 
+w 30 34 38 # DAC miniDSP instruction 
+w 30 35 b8 # DAC miniDSP instruction 
+w 30 36 84 # DAC miniDSP instruction 
+w 30 37 00 # DAC miniDSP instruction 
+w 30 38 38 # DAC miniDSP instruction 
+w 30 39 b8 # DAC miniDSP instruction 
+w 30 3a 89 # DAC miniDSP instruction 
+w 30 3b 00 # DAC miniDSP instruction 
+w 30 3c 38 # DAC miniDSP instruction 
+w 30 3d bc # DAC miniDSP instruction 
+w 30 3e 75 # DAC miniDSP instruction 
+w 30 3f 00 # DAC miniDSP instruction 
+w 30 40 38 # DAC miniDSP instruction 
+w 30 41 bc # DAC miniDSP instruction 
+w 30 42 98 # DAC miniDSP instruction 
+w 30 43 00 # DAC miniDSP instruction 
+w 30 44 38 # DAC miniDSP instruction 
+w 30 45 c0 # DAC miniDSP instruction 
+w 30 46 7d # DAC miniDSP instruction 
+w 30 47 00 # DAC miniDSP instruction 
+w 30 48 38 # DAC miniDSP instruction 
+w 30 49 c0 # DAC miniDSP instruction 
+w 30 4a 90 # DAC miniDSP instruction 
+w 30 4b 00 # DAC miniDSP instruction 
+w 30 4c 38 # DAC miniDSP instruction 
+w 30 4d c4 # DAC miniDSP instruction 
+w 30 4e 79 # DAC miniDSP instruction 
+w 30 4f 00 # DAC miniDSP instruction 
+w 30 50 38 # DAC miniDSP instruction 
+w 30 51 c4 # DAC miniDSP instruction 
+w 30 52 94 # DAC miniDSP instruction 
+w 30 53 00 # DAC miniDSP instruction 
+w 30 54 38 # DAC miniDSP instruction 
+w 30 55 c8 # DAC miniDSP instruction 
+w 30 56 81 # DAC miniDSP instruction 
+w 30 57 00 # DAC miniDSP instruction 
+w 30 58 38 # DAC miniDSP instruction 
+w 30 59 c8 # DAC miniDSP instruction 
+w 30 5a 8c # DAC miniDSP instruction 
+w 30 5b 00 # DAC miniDSP instruction 
+w 30 5c 38 # DAC miniDSP instruction 
+w 30 5d cc # DAC miniDSP instruction 
+w 30 5e 7b # DAC miniDSP instruction 
+w 30 5f 00 # DAC miniDSP instruction 
+w 30 60 38 # DAC miniDSP instruction 
+w 30 61 cc # DAC miniDSP instruction 
+w 30 62 92 # DAC miniDSP instruction 
+w 30 63 00 # DAC miniDSP instruction 
+w 30 64 38 # DAC miniDSP instruction 
+w 30 65 d0 # DAC miniDSP instruction 
+w 30 66 77 # DAC miniDSP instruction 
+w 30 67 00 # DAC miniDSP instruction 
+w 30 68 38 # DAC miniDSP instruction 
+w 30 69 d0 # DAC miniDSP instruction 
+w 30 6a 96 # DAC miniDSP instruction 
+w 30 6b 00 # DAC miniDSP instruction 
+w 30 6c 10 # DAC miniDSP instruction 
+w 30 6d 00 # DAC miniDSP instruction 
+w 30 6e 67 # DAC miniDSP instruction 
+w 30 6f 00 # DAC miniDSP instruction 
+w 30 70 10 # DAC miniDSP instruction 
+w 30 71 04 # DAC miniDSP instruction 
+w 30 72 a8 # DAC miniDSP instruction 
+w 30 73 00 # DAC miniDSP instruction 
+w 30 74 38 # DAC miniDSP instruction 
+w 30 75 d4 # DAC miniDSP instruction 
+w 30 76 7f # DAC miniDSP instruction 
+w 30 77 00 # DAC miniDSP instruction 
+w 30 78 38 # DAC miniDSP instruction 
+w 30 79 d4 # DAC miniDSP instruction 
+w 30 7a 8e # DAC miniDSP instruction 
+w 30 7b 00 # DAC miniDSP instruction 
+w 30 7c 38 # DAC miniDSP instruction 
+w 30 7d d8 # DAC miniDSP instruction 
+w 30 7e 83 # DAC miniDSP instruction 
+w 30 7f 00 # DAC miniDSP instruction 
+w 30 00 9b # Page Select Register
+w 30 08 38 # DAC miniDSP instruction 
+w 30 09 d8 # DAC miniDSP instruction 
+w 30 0a 8a # DAC miniDSP instruction 
+w 30 0b 00 # DAC miniDSP instruction 
+w 30 0c 38 # DAC miniDSP instruction 
+w 30 0d e0 # DAC miniDSP instruction 
+w 30 0e 85 # DAC miniDSP instruction 
+w 30 0f 00 # DAC miniDSP instruction 
+w 30 10 38 # DAC miniDSP instruction 
+w 30 11 e0 # DAC miniDSP instruction 
+w 30 12 88 # DAC miniDSP instruction 
+w 30 13 00 # DAC miniDSP instruction 
+w 30 14 38 # DAC miniDSP instruction 
+w 30 15 e4 # DAC miniDSP instruction 
+w 30 16 86 # DAC miniDSP instruction 
+w 30 17 00 # DAC miniDSP instruction 
+w 30 18 38 # DAC miniDSP instruction 
+w 30 19 e4 # DAC miniDSP instruction 
+w 30 1a 87 # DAC miniDSP instruction 
+w 30 1b 00 # DAC miniDSP instruction 
+w 30 1c 30 # DAC miniDSP instruction 
+w 30 1d ec # DAC miniDSP instruction 
+w 30 1e 9d # DAC miniDSP instruction 
+w 30 1f 00 # DAC miniDSP instruction 
+w 30 20 38 # DAC miniDSP instruction 
+w 30 21 f0 # DAC miniDSP instruction 
+w 30 22 9f # DAC miniDSP instruction 
+w 30 23 00 # DAC miniDSP instruction 
+w 30 24 98 # DAC miniDSP instruction 
+w 30 25 ec # DAC miniDSP instruction 
+w 30 26 9e # DAC miniDSP instruction 
+w 30 27 00 # DAC miniDSP instruction 
+w 30 28 38 # DAC miniDSP instruction 
+w 30 29 f0 # DAC miniDSP instruction 
+w 30 2a 9c # DAC miniDSP instruction 
+w 30 2b 00 # DAC miniDSP instruction 
+w 30 2c 38 # DAC miniDSP instruction 
+w 30 2d f4 # DAC miniDSP instruction 
+w 30 2e 9b # DAC miniDSP instruction 
+w 30 2f 00 # DAC miniDSP instruction 
+w 30 30 38 # DAC miniDSP instruction 
+w 30 31 f4 # DAC miniDSP instruction 
+w 30 32 a0 # DAC miniDSP instruction 
+w 30 33 00 # DAC miniDSP instruction 
+w 30 34 38 # DAC miniDSP instruction 
+w 30 35 f8 # DAC miniDSP instruction 
+w 30 36 9a # DAC miniDSP instruction 
+w 30 37 00 # DAC miniDSP instruction 
+w 30 38 38 # DAC miniDSP instruction 
+w 30 39 f8 # DAC miniDSP instruction 
+w 30 3a a1 # DAC miniDSP instruction 
+w 30 3b 00 # DAC miniDSP instruction 
+w 30 3c 31 # DAC miniDSP instruction 
+w 30 3d 04 # DAC miniDSP instruction 
+w 30 3e a2 # DAC miniDSP instruction 
+w 30 3f 00 # DAC miniDSP instruction 
+w 30 40 39 # DAC miniDSP instruction 
+w 30 41 04 # DAC miniDSP instruction 
+w 30 42 a4 # DAC miniDSP instruction 
+w 30 43 00 # DAC miniDSP instruction 
+w 30 44 99 # DAC miniDSP instruction 
+w 30 45 00 # DAC miniDSP instruction 
+w 30 46 a5 # DAC miniDSP instruction 
+w 30 47 00 # DAC miniDSP instruction 
+w 30 48 39 # DAC miniDSP instruction 
+w 30 49 00 # DAC miniDSP instruction 
+w 30 4a a7 # DAC miniDSP instruction 
+w 30 4b 00 # DAC miniDSP instruction 
+w 30 4c 00 # DAC miniDSP instruction 
+w 30 4d 00 # DAC miniDSP instruction 
+w 30 4e 00 # DAC miniDSP instruction 
+w 30 4f 00 # DAC miniDSP instruction 
+w 30 50 50 # DAC miniDSP instruction 
+w 30 51 04 # DAC miniDSP instruction 
+w 30 52 03 # DAC miniDSP instruction 
+w 30 53 00 # DAC miniDSP instruction 
+w 30 54 30 # DAC miniDSP instruction 
+w 30 55 ec # DAC miniDSP instruction 
+w 30 56 5c # DAC miniDSP instruction 
+w 30 57 00 # DAC miniDSP instruction 
+w 30 58 38 # DAC miniDSP instruction 
+w 30 59 ec # DAC miniDSP instruction 
+w 30 5a 5d # DAC miniDSP instruction 
+w 30 5b 00 # DAC miniDSP instruction 
+w 30 5c 20 # DAC miniDSP instruction 
+w 30 5d 08 # DAC miniDSP instruction 
+w 30 5e ae # DAC miniDSP instruction 
+w 30 5f 00 # DAC miniDSP instruction 
+w 30 60 38 # DAC miniDSP instruction 
+w 30 61 f0 # DAC miniDSP instruction 
+w 30 62 5e # DAC miniDSP instruction 
+w 30 63 00 # DAC miniDSP instruction 
+w 30 64 38 # DAC miniDSP instruction 
+w 30 65 f0 # DAC miniDSP instruction 
+w 30 66 5b # DAC miniDSP instruction 
+w 30 67 00 # DAC miniDSP instruction 
+w 30 68 38 # DAC miniDSP instruction 
+w 30 69 f4 # DAC miniDSP instruction 
+w 30 6a 5a # DAC miniDSP instruction 
+w 30 6b 00 # DAC miniDSP instruction 
+w 30 6c 38 # DAC miniDSP instruction 
+w 30 6d f4 # DAC miniDSP instruction 
+w 30 6e 5f # DAC miniDSP instruction 
+w 30 6f 00 # DAC miniDSP instruction 
+w 30 70 38 # DAC miniDSP instruction 
+w 30 71 f8 # DAC miniDSP instruction 
+w 30 72 59 # DAC miniDSP instruction 
+w 30 73 00 # DAC miniDSP instruction 
+w 30 74 38 # DAC miniDSP instruction 
+w 30 75 f8 # DAC miniDSP instruction 
+w 30 76 60 # DAC miniDSP instruction 
+w 30 77 00 # DAC miniDSP instruction 
+w 30 78 31 # DAC miniDSP instruction 
+w 30 79 04 # DAC miniDSP instruction 
+w 30 7a 61 # DAC miniDSP instruction 
+w 30 7b 00 # DAC miniDSP instruction 
+w 30 7c 39 # DAC miniDSP instruction 
+w 30 7d 04 # DAC miniDSP instruction 
+w 30 7e 63 # DAC miniDSP instruction 
+w 30 7f 00 # DAC miniDSP instruction 
+w 30 00 9c # Page Select Register
+w 30 08 99 # DAC miniDSP instruction 
+w 30 09 00 # DAC miniDSP instruction 
+w 30 0a 64 # DAC miniDSP instruction 
+w 30 0b 00 # DAC miniDSP instruction 
+w 30 0c 39 # DAC miniDSP instruction 
+w 30 0d 00 # DAC miniDSP instruction 
+w 30 0e 66 # DAC miniDSP instruction 
+w 30 0f 00 # DAC miniDSP instruction 
+w 30 10 00 # DAC miniDSP instruction 
+w 30 11 00 # DAC miniDSP instruction 
+w 30 12 00 # DAC miniDSP instruction 
+w 30 13 00 # DAC miniDSP instruction 
+w 30 14 50 # DAC miniDSP instruction 
+w 30 15 00 # DAC miniDSP instruction 
+w 30 16 03 # DAC miniDSP instruction 
+w 30 17 00 # DAC miniDSP instruction 
+w 30 18 31 # DAC miniDSP instruction 
+w 30 19 08 # DAC miniDSP instruction 
+w 30 1a a5 # DAC miniDSP instruction 
+w 30 1b 00 # DAC miniDSP instruction 
+w 30 1c 39 # DAC miniDSP instruction 
+w 30 1d 08 # DAC miniDSP instruction 
+w 30 1e a4 # DAC miniDSP instruction 
+w 30 1f 00 # DAC miniDSP instruction 
+w 30 20 20 # DAC miniDSP instruction 
+w 30 21 08 # DAC miniDSP instruction 
+w 30 22 6d # DAC miniDSP instruction 
+w 30 23 00 # DAC miniDSP instruction 
+w 30 24 39 # DAC miniDSP instruction 
+w 30 25 0c # DAC miniDSP instruction 
+w 30 26 a2 # DAC miniDSP instruction 
+w 30 27 00 # DAC miniDSP instruction 
+w 30 28 00 # DAC miniDSP instruction 
+w 30 29 00 # DAC miniDSP instruction 
+w 30 2a 00 # DAC miniDSP instruction 
+w 30 2b 00 # DAC miniDSP instruction 
+w 30 2c 50 # DAC miniDSP instruction 
+w 30 2d 04 # DAC miniDSP instruction 
+w 30 2e 03 # DAC miniDSP instruction 
+w 30 2f 00 # DAC miniDSP instruction 
+w 30 30 10 # DAC miniDSP instruction 
+w 30 31 00 # DAC miniDSP instruction 
+w 30 32 6d # DAC miniDSP instruction 
+w 30 33 00 # DAC miniDSP instruction 
+w 30 34 10 # DAC miniDSP instruction 
+w 30 35 04 # DAC miniDSP instruction 
+w 30 36 ae # DAC miniDSP instruction 
+w 30 37 00 # DAC miniDSP instruction 
+w 30 38 31 # DAC miniDSP instruction 
+w 30 39 08 # DAC miniDSP instruction 
+w 30 3a 64 # DAC miniDSP instruction 
+w 30 3b 00 # DAC miniDSP instruction 
+w 30 3c 39 # DAC miniDSP instruction 
+w 30 3d 08 # DAC miniDSP instruction 
+w 30 3e 63 # DAC miniDSP instruction 
+w 30 3f 00 # DAC miniDSP instruction 
+w 30 40 20 # DAC miniDSP instruction 
+w 30 41 08 # DAC miniDSP instruction 
+w 30 42 ad # DAC miniDSP instruction 
+w 30 43 00 # DAC miniDSP instruction 
+w 30 44 39 # DAC miniDSP instruction 
+w 30 45 0c # DAC miniDSP instruction 
+w 30 46 61 # DAC miniDSP instruction 
+w 30 47 00 # DAC miniDSP instruction 
+w 30 48 30 # DAC miniDSP instruction 
+w 30 49 fc # DAC miniDSP instruction 
+w 30 4a 9b # DAC miniDSP instruction 
+w 30 4b 00 # DAC miniDSP instruction 
+w 30 4c 50 # DAC miniDSP instruction 
+w 30 4d 00 # DAC miniDSP instruction 
+w 30 4e 03 # DAC miniDSP instruction 
+w 30 4f 00 # DAC miniDSP instruction 
+w 30 50 31 # DAC miniDSP instruction 
+w 30 51 00 # DAC miniDSP instruction 
+w 30 52 a4 # DAC miniDSP instruction 
+w 30 53 00 # DAC miniDSP instruction 
+w 30 54 99 # DAC miniDSP instruction 
+w 30 55 00 # DAC miniDSP instruction 
+w 30 56 a6 # DAC miniDSP instruction 
+w 30 57 00 # DAC miniDSP instruction 
+w 30 58 20 # DAC miniDSP instruction 
+w 30 59 08 # DAC miniDSP instruction 
+w 30 5a 6c # DAC miniDSP instruction 
+w 30 5b 00 # DAC miniDSP instruction 
+w 30 5c 39 # DAC miniDSP instruction 
+w 30 5d 04 # DAC miniDSP instruction 
+w 30 5e a5 # DAC miniDSP instruction 
+w 30 5f 00 # DAC miniDSP instruction 
+w 30 60 39 # DAC miniDSP instruction 
+w 30 61 04 # DAC miniDSP instruction 
+w 30 62 a2 # DAC miniDSP instruction 
+w 30 63 00 # DAC miniDSP instruction 
+w 30 64 30 # DAC miniDSP instruction 
+w 30 65 fc # DAC miniDSP instruction 
+w 30 66 5a # DAC miniDSP instruction 
+w 30 67 00 # DAC miniDSP instruction 
+w 30 68 50 # DAC miniDSP instruction 
+w 30 69 04 # DAC miniDSP instruction 
+w 30 6a 03 # DAC miniDSP instruction 
+w 30 6b 00 # DAC miniDSP instruction 
+w 30 6c 31 # DAC miniDSP instruction 
+w 30 6d 00 # DAC miniDSP instruction 
+w 30 6e 63 # DAC miniDSP instruction 
+w 30 6f 00 # DAC miniDSP instruction 
+w 30 70 99 # DAC miniDSP instruction 
+w 30 71 00 # DAC miniDSP instruction 
+w 30 72 65 # DAC miniDSP instruction 
+w 30 73 00 # DAC miniDSP instruction 
+w 30 74 20 # DAC miniDSP instruction 
+w 30 75 08 # DAC miniDSP instruction 
+w 30 76 ac # DAC miniDSP instruction 
+w 30 77 00 # DAC miniDSP instruction 
+w 30 78 39 # DAC miniDSP instruction 
+w 30 79 04 # DAC miniDSP instruction 
+w 30 7a 64 # DAC miniDSP instruction 
+w 30 7b 00 # DAC miniDSP instruction 
+w 30 7c 39 # DAC miniDSP instruction 
+w 30 7d 04 # DAC miniDSP instruction 
+w 30 7e 61 # DAC miniDSP instruction 
+w 30 7f 00 # DAC miniDSP instruction 
+w 30 00 9d # Page Select Register
+w 30 08 00 # DAC miniDSP instruction 
+w 30 09 00 # DAC miniDSP instruction 
+w 30 0a 00 # DAC miniDSP instruction 
+w 30 0b 00 # DAC miniDSP instruction 
+w 30 0c 50 # DAC miniDSP instruction 
+w 30 0d 00 # DAC miniDSP instruction 
+w 30 0e 03 # DAC miniDSP instruction 
+w 30 0f 00 # DAC miniDSP instruction 
+w 30 10 31 # DAC miniDSP instruction 
+w 30 11 08 # DAC miniDSP instruction 
+w 30 12 a6 # DAC miniDSP instruction 
+w 30 13 00 # DAC miniDSP instruction 
+w 30 14 39 # DAC miniDSP instruction 
+w 30 15 08 # DAC miniDSP instruction 
+w 30 16 a2 # DAC miniDSP instruction 
+w 30 17 00 # DAC miniDSP instruction 
+w 30 18 20 # DAC miniDSP instruction 
+w 30 19 08 # DAC miniDSP instruction 
+w 30 1a 6b # DAC miniDSP instruction 
+w 30 1b 00 # DAC miniDSP instruction 
+w 30 1c 39 # DAC miniDSP instruction 
+w 30 1d 0c # DAC miniDSP instruction 
+w 30 1e a5 # DAC miniDSP instruction 
+w 30 1f 00 # DAC miniDSP instruction 
+w 30 20 00 # DAC miniDSP instruction 
+w 30 21 00 # DAC miniDSP instruction 
+w 30 22 00 # DAC miniDSP instruction 
+w 30 23 00 # DAC miniDSP instruction 
+w 30 24 50 # DAC miniDSP instruction 
+w 30 25 04 # DAC miniDSP instruction 
+w 30 26 03 # DAC miniDSP instruction 
+w 30 27 00 # DAC miniDSP instruction 
+w 30 28 31 # DAC miniDSP instruction 
+w 30 29 08 # DAC miniDSP instruction 
+w 30 2a 65 # DAC miniDSP instruction 
+w 30 2b 00 # DAC miniDSP instruction 
+w 30 2c 39 # DAC miniDSP instruction 
+w 30 2d 08 # DAC miniDSP instruction 
+w 30 2e 61 # DAC miniDSP instruction 
+w 30 2f 00 # DAC miniDSP instruction 
+w 30 30 20 # DAC miniDSP instruction 
+w 30 31 08 # DAC miniDSP instruction 
+w 30 32 ab # DAC miniDSP instruction 
+w 30 33 00 # DAC miniDSP instruction 
+w 30 34 39 # DAC miniDSP instruction 
+w 30 35 0c # DAC miniDSP instruction 
+w 30 36 64 # DAC miniDSP instruction 
+w 30 37 00 # DAC miniDSP instruction 
+w 30 38 30 # DAC miniDSP instruction 
+w 30 39 e8 # DAC miniDSP instruction 
+w 30 3a 86 # DAC miniDSP instruction 
+w 30 3b 00 # DAC miniDSP instruction 
+w 30 3c 50 # DAC miniDSP instruction 
+w 30 3d 00 # DAC miniDSP instruction 
+w 30 3e 03 # DAC miniDSP instruction 
+w 30 3f 00 # DAC miniDSP instruction 
+w 30 40 30 # DAC miniDSP instruction 
+w 30 41 ec # DAC miniDSP instruction 
+w 30 42 a1 # DAC miniDSP instruction 
+w 30 43 00 # DAC miniDSP instruction 
+w 30 44 98 # DAC miniDSP instruction 
+w 30 45 ec # DAC miniDSP instruction 
+w 30 46 99 # DAC miniDSP instruction 
+w 30 47 00 # DAC miniDSP instruction 
+w 30 48 20 # DAC miniDSP instruction 
+w 30 49 08 # DAC miniDSP instruction 
+w 30 4a 6a # DAC miniDSP instruction 
+w 30 4b 00 # DAC miniDSP instruction 
+w 30 4c 38 # DAC miniDSP instruction 
+w 30 4d f0 # DAC miniDSP instruction 
+w 30 4e 9a # DAC miniDSP instruction 
+w 30 4f 00 # DAC miniDSP instruction 
+w 30 50 38 # DAC miniDSP instruction 
+w 30 51 f0 # DAC miniDSP instruction 
+w 30 52 a0 # DAC miniDSP instruction 
+w 30 53 00 # DAC miniDSP instruction 
+w 30 54 38 # DAC miniDSP instruction 
+w 30 55 f4 # DAC miniDSP instruction 
+w 30 56 9f # DAC miniDSP instruction 
+w 30 57 00 # DAC miniDSP instruction 
+w 30 58 38 # DAC miniDSP instruction 
+w 30 59 f4 # DAC miniDSP instruction 
+w 30 5a 9b # DAC miniDSP instruction 
+w 30 5b 00 # DAC miniDSP instruction 
+w 30 5c 38 # DAC miniDSP instruction 
+w 30 5d f8 # DAC miniDSP instruction 
+w 30 5e 9e # DAC miniDSP instruction 
+w 30 5f 00 # DAC miniDSP instruction 
+w 30 60 38 # DAC miniDSP instruction 
+w 30 61 f8 # DAC miniDSP instruction 
+w 30 62 9c # DAC miniDSP instruction 
+w 30 63 00 # DAC miniDSP instruction 
+w 30 64 31 # DAC miniDSP instruction 
+w 30 65 04 # DAC miniDSP instruction 
+w 30 66 a6 # DAC miniDSP instruction 
+w 30 67 00 # DAC miniDSP instruction 
+w 30 68 39 # DAC miniDSP instruction 
+w 30 69 04 # DAC miniDSP instruction 
+w 30 6a a5 # DAC miniDSP instruction 
+w 30 6b 00 # DAC miniDSP instruction 
+w 30 6c 99 # DAC miniDSP instruction 
+w 30 6d 00 # DAC miniDSP instruction 
+w 30 6e a3 # DAC miniDSP instruction 
+w 30 6f 00 # DAC miniDSP instruction 
+w 30 70 39 # DAC miniDSP instruction 
+w 30 71 00 # DAC miniDSP instruction 
+w 30 72 a2 # DAC miniDSP instruction 
+w 30 73 00 # DAC miniDSP instruction 
+w 30 74 30 # DAC miniDSP instruction 
+w 30 75 e8 # DAC miniDSP instruction 
+w 30 76 45 # DAC miniDSP instruction 
+w 30 77 00 # DAC miniDSP instruction 
+w 30 78 50 # DAC miniDSP instruction 
+w 30 79 04 # DAC miniDSP instruction 
+w 30 7a 03 # DAC miniDSP instruction 
+w 30 7b 00 # DAC miniDSP instruction 
+w 30 7c 30 # DAC miniDSP instruction 
+w 30 7d ec # DAC miniDSP instruction 
+w 30 7e 60 # DAC miniDSP instruction 
+w 30 7f 00 # DAC miniDSP instruction 
+w 30 00 9e # Page Select Register
+w 30 08 98 # DAC miniDSP instruction 
+w 30 09 ec # DAC miniDSP instruction 
+w 30 0a 58 # DAC miniDSP instruction 
+w 30 0b 00 # DAC miniDSP instruction 
+w 30 0c 20 # DAC miniDSP instruction 
+w 30 0d 08 # DAC miniDSP instruction 
+w 30 0e aa # DAC miniDSP instruction 
+w 30 0f 00 # DAC miniDSP instruction 
+w 30 10 38 # DAC miniDSP instruction 
+w 30 11 f0 # DAC miniDSP instruction 
+w 30 12 59 # DAC miniDSP instruction 
+w 30 13 00 # DAC miniDSP instruction 
+w 30 14 38 # DAC miniDSP instruction 
+w 30 15 f0 # DAC miniDSP instruction 
+w 30 16 5f # DAC miniDSP instruction 
+w 30 17 00 # DAC miniDSP instruction 
+w 30 18 38 # DAC miniDSP instruction 
+w 30 19 f4 # DAC miniDSP instruction 
+w 30 1a 5e # DAC miniDSP instruction 
+w 30 1b 00 # DAC miniDSP instruction 
+w 30 1c 38 # DAC miniDSP instruction 
+w 30 1d f4 # DAC miniDSP instruction 
+w 30 1e 5a # DAC miniDSP instruction 
+w 30 1f 00 # DAC miniDSP instruction 
+w 30 20 38 # DAC miniDSP instruction 
+w 30 21 f8 # DAC miniDSP instruction 
+w 30 22 5d # DAC miniDSP instruction 
+w 30 23 00 # DAC miniDSP instruction 
+w 30 24 38 # DAC miniDSP instruction 
+w 30 25 f8 # DAC miniDSP instruction 
+w 30 26 5b # DAC miniDSP instruction 
+w 30 27 00 # DAC miniDSP instruction 
+w 30 28 31 # DAC miniDSP instruction 
+w 30 29 04 # DAC miniDSP instruction 
+w 30 2a 65 # DAC miniDSP instruction 
+w 30 2b 00 # DAC miniDSP instruction 
+w 30 2c 39 # DAC miniDSP instruction 
+w 30 2d 04 # DAC miniDSP instruction 
+w 30 2e 64 # DAC miniDSP instruction 
+w 30 2f 00 # DAC miniDSP instruction 
+w 30 30 99 # DAC miniDSP instruction 
+w 30 31 00 # DAC miniDSP instruction 
+w 30 32 62 # DAC miniDSP instruction 
+w 30 33 00 # DAC miniDSP instruction 
+w 30 34 39 # DAC miniDSP instruction 
+w 30 35 00 # DAC miniDSP instruction 
+w 30 36 61 # DAC miniDSP instruction 
+w 30 37 00 # DAC miniDSP instruction 
+w 30 38 00 # DAC miniDSP instruction 
+w 30 39 00 # DAC miniDSP instruction 
+w 30 3a 00 # DAC miniDSP instruction 
+w 30 3b 00 # DAC miniDSP instruction 
+w 30 3c 50 # DAC miniDSP instruction 
+w 30 3d 00 # DAC miniDSP instruction 
+w 30 3e 03 # DAC miniDSP instruction 
+w 30 3f 00 # DAC miniDSP instruction 
+w 30 40 31 # DAC miniDSP instruction 
+w 30 41 08 # DAC miniDSP instruction 
+w 30 42 a3 # DAC miniDSP instruction 
+w 30 43 00 # DAC miniDSP instruction 
+w 30 44 39 # DAC miniDSP instruction 
+w 30 45 08 # DAC miniDSP instruction 
+w 30 46 a5 # DAC miniDSP instruction 
+w 30 47 00 # DAC miniDSP instruction 
+w 30 48 20 # DAC miniDSP instruction 
+w 30 49 08 # DAC miniDSP instruction 
+w 30 4a 69 # DAC miniDSP instruction 
+w 30 4b 00 # DAC miniDSP instruction 
+w 30 4c 39 # DAC miniDSP instruction 
+w 30 4d 0c # DAC miniDSP instruction 
+w 30 4e a6 # DAC miniDSP instruction 
+w 30 4f 00 # DAC miniDSP instruction 
+w 30 50 00 # DAC miniDSP instruction 
+w 30 51 00 # DAC miniDSP instruction 
+w 30 52 00 # DAC miniDSP instruction 
+w 30 53 00 # DAC miniDSP instruction 
+w 30 54 50 # DAC miniDSP instruction 
+w 30 55 04 # DAC miniDSP instruction 
+w 30 56 03 # DAC miniDSP instruction 
+w 30 57 00 # DAC miniDSP instruction 
+w 30 58 31 # DAC miniDSP instruction 
+w 30 59 08 # DAC miniDSP instruction 
+w 30 5a 62 # DAC miniDSP instruction 
+w 30 5b 00 # DAC miniDSP instruction 
+w 30 5c 39 # DAC miniDSP instruction 
+w 30 5d 08 # DAC miniDSP instruction 
+w 30 5e 64 # DAC miniDSP instruction 
+w 30 5f 00 # DAC miniDSP instruction 
+w 30 60 20 # DAC miniDSP instruction 
+w 30 61 08 # DAC miniDSP instruction 
+w 30 62 a9 # DAC miniDSP instruction 
+w 30 63 00 # DAC miniDSP instruction 
+w 30 64 39 # DAC miniDSP instruction 
+w 30 65 0c # DAC miniDSP instruction 
+w 30 66 65 # DAC miniDSP instruction 
+w 30 67 00 # DAC miniDSP instruction 
+w 30 68 30 # DAC miniDSP instruction 
+w 30 69 fc # DAC miniDSP instruction 
+w 30 6a 9f # DAC miniDSP instruction 
+w 30 6b 00 # DAC miniDSP instruction 
+w 30 6c 50 # DAC miniDSP instruction 
+w 30 6d 00 # DAC miniDSP instruction 
+w 30 6e 03 # DAC miniDSP instruction 
+w 30 6f 00 # DAC miniDSP instruction 
+w 30 70 31 # DAC miniDSP instruction 
+w 30 71 00 # DAC miniDSP instruction 
+w 30 72 a5 # DAC miniDSP instruction 
+w 30 73 00 # DAC miniDSP instruction 
+w 30 74 99 # DAC miniDSP instruction 
+w 30 75 00 # DAC miniDSP instruction 
+w 30 76 a1 # DAC miniDSP instruction 
+w 30 77 00 # DAC miniDSP instruction 
+w 30 78 20 # DAC miniDSP instruction 
+w 30 79 08 # DAC miniDSP instruction 
+w 30 7a 68 # DAC miniDSP instruction 
+w 30 7b 00 # DAC miniDSP instruction 
+w 30 7c 10 # DAC miniDSP instruction 
+w 30 7d 00 # DAC miniDSP instruction 
+w 30 7e 6c # DAC miniDSP instruction 
+w 30 7f 00 # DAC miniDSP instruction 
+w 30 00 9f # Page Select Register
+w 30 08 10 # DAC miniDSP instruction 
+w 30 09 04 # DAC miniDSP instruction 
+w 30 0a ad # DAC miniDSP instruction 
+w 30 0b 00 # DAC miniDSP instruction 
+w 30 0c 39 # DAC miniDSP instruction 
+w 30 0d 04 # DAC miniDSP instruction 
+w 30 0e a3 # DAC miniDSP instruction 
+w 30 0f 00 # DAC miniDSP instruction 
+w 30 10 39 # DAC miniDSP instruction 
+w 30 11 04 # DAC miniDSP instruction 
+w 30 12 a6 # DAC miniDSP instruction 
+w 30 13 00 # DAC miniDSP instruction 
+w 30 14 30 # DAC miniDSP instruction 
+w 30 15 fc # DAC miniDSP instruction 
+w 30 16 5e # DAC miniDSP instruction 
+w 30 17 00 # DAC miniDSP instruction 
+w 30 18 50 # DAC miniDSP instruction 
+w 30 19 04 # DAC miniDSP instruction 
+w 30 1a 03 # DAC miniDSP instruction 
+w 30 1b 00 # DAC miniDSP instruction 
+w 30 1c 31 # DAC miniDSP instruction 
+w 30 1d 00 # DAC miniDSP instruction 
+w 30 1e 64 # DAC miniDSP instruction 
+w 30 1f 00 # DAC miniDSP instruction 
+w 30 20 99 # DAC miniDSP instruction 
+w 30 21 00 # DAC miniDSP instruction 
+w 30 22 60 # DAC miniDSP instruction 
+w 30 23 00 # DAC miniDSP instruction 
+w 30 24 20 # DAC miniDSP instruction 
+w 30 25 08 # DAC miniDSP instruction 
+w 30 26 a8 # DAC miniDSP instruction 
+w 30 27 00 # DAC miniDSP instruction 
+w 30 28 39 # DAC miniDSP instruction 
+w 30 29 04 # DAC miniDSP instruction 
+w 30 2a 62 # DAC miniDSP instruction 
+w 30 2b 00 # DAC miniDSP instruction 
+w 30 2c 39 # DAC miniDSP instruction 
+w 30 2d 04 # DAC miniDSP instruction 
+w 30 2e 65 # DAC miniDSP instruction 
+w 30 2f 00 # DAC miniDSP instruction 
+w 30 30 00 # DAC miniDSP instruction 
+w 30 31 00 # DAC miniDSP instruction 
+w 30 32 00 # DAC miniDSP instruction 
+w 30 33 00 # DAC miniDSP instruction 
+w 30 34 50 # DAC miniDSP instruction 
+w 30 35 00 # DAC miniDSP instruction 
+w 30 36 03 # DAC miniDSP instruction 
+w 30 37 00 # DAC miniDSP instruction 
+w 30 38 31 # DAC miniDSP instruction 
+w 30 39 08 # DAC miniDSP instruction 
+w 30 3a a1 # DAC miniDSP instruction 
+w 30 3b 00 # DAC miniDSP instruction 
+w 30 3c 39 # DAC miniDSP instruction 
+w 30 3d 08 # DAC miniDSP instruction 
+w 30 3e a6 # DAC miniDSP instruction 
+w 30 3f 00 # DAC miniDSP instruction 
+w 30 40 20 # DAC miniDSP instruction 
+w 30 41 08 # DAC miniDSP instruction 
+w 30 42 67 # DAC miniDSP instruction 
+w 30 43 00 # DAC miniDSP instruction 
+w 30 44 39 # DAC miniDSP instruction 
+w 30 45 0c # DAC miniDSP instruction 
+w 30 46 a3 # DAC miniDSP instruction 
+w 30 47 00 # DAC miniDSP instruction 
+w 30 48 00 # DAC miniDSP instruction 
+w 30 49 00 # DAC miniDSP instruction 
+w 30 4a 00 # DAC miniDSP instruction 
+w 30 4b 00 # DAC miniDSP instruction 
+w 30 4c 50 # DAC miniDSP instruction 
+w 30 4d 04 # DAC miniDSP instruction 
+w 30 4e 03 # DAC miniDSP instruction 
+w 30 4f 00 # DAC miniDSP instruction 
+w 30 50 31 # DAC miniDSP instruction 
+w 30 51 08 # DAC miniDSP instruction 
+w 30 52 60 # DAC miniDSP instruction 
+w 30 53 00 # DAC miniDSP instruction 
+w 30 54 39 # DAC miniDSP instruction 
+w 30 55 08 # DAC miniDSP instruction 
+w 30 56 65 # DAC miniDSP instruction 
+w 30 57 00 # DAC miniDSP instruction 
+w 30 58 20 # DAC miniDSP instruction 
+w 30 59 08 # DAC miniDSP instruction 
+w 30 5a a7 # DAC miniDSP instruction 
+w 30 5b 00 # DAC miniDSP instruction 
+w 30 5c 39 # DAC miniDSP instruction 
+w 30 5d 0c # DAC miniDSP instruction 
+w 30 5e 62 # DAC miniDSP instruction 
+w 30 5f 00 # DAC miniDSP instruction 
+w 30 60 00 # DAC miniDSP instruction 
+w 30 61 00 # DAC miniDSP instruction 
+w 30 62 00 # DAC miniDSP instruction 
+w 30 63 00 # DAC miniDSP instruction 
+w 30 64 50 # DAC miniDSP instruction 
+w 30 65 00 # DAC miniDSP instruction 
+w 30 66 03 # DAC miniDSP instruction 
+w 30 67 00 # DAC miniDSP instruction 
+w 30 68 00 # DAC miniDSP instruction 
+w 30 69 00 # DAC miniDSP instruction 
+w 30 6a 00 # DAC miniDSP instruction 
+w 30 6b 00 # DAC miniDSP instruction 
+w 30 6c 00 # DAC miniDSP instruction 
+w 30 6d 00 # DAC miniDSP instruction 
+w 30 6e 00 # DAC miniDSP instruction 
+w 30 6f 00 # DAC miniDSP instruction 
+w 30 70 20 # DAC miniDSP instruction 
+w 30 71 08 # DAC miniDSP instruction 
+w 30 72 66 # DAC miniDSP instruction 
+w 30 73 00 # DAC miniDSP instruction 
+w 30 74 00 # DAC miniDSP instruction 
+w 30 75 00 # DAC miniDSP instruction 
+w 30 76 00 # DAC miniDSP instruction 
+w 30 77 00 # DAC miniDSP instruction 
+w 30 78 00 # DAC miniDSP instruction 
+w 30 79 00 # DAC miniDSP instruction 
+w 30 7a 00 # DAC miniDSP instruction 
+w 30 7b 00 # DAC miniDSP instruction 
+w 30 7c 00 # DAC miniDSP instruction 
+w 30 7d 00 # DAC miniDSP instruction 
+w 30 7e 00 # DAC miniDSP instruction 
+w 30 7f 00 # DAC miniDSP instruction 
+w 30 00 a0 # Page Select Register
+w 30 08 10 # DAC miniDSP instruction 
+w 30 09 00 # DAC miniDSP instruction 
+w 30 0a 6b # DAC miniDSP instruction 
+w 30 0b 00 # DAC miniDSP instruction 
+w 30 0c 10 # DAC miniDSP instruction 
+w 30 0d 04 # DAC miniDSP instruction 
+w 30 0e ac # DAC miniDSP instruction 
+w 30 0f 00 # DAC miniDSP instruction 
+w 30 10 30 # DAC miniDSP instruction 
+w 30 11 78 # DAC miniDSP instruction 
+w 30 12 00 # DAC miniDSP instruction 
+w 30 13 00 # DAC miniDSP instruction 
+w 30 14 00 # DAC miniDSP instruction 
+w 30 15 00 # DAC miniDSP instruction 
+w 30 16 00 # DAC miniDSP instruction 
+w 30 17 00 # DAC miniDSP instruction 
+w 30 18 00 # DAC miniDSP instruction 
+w 30 19 00 # DAC miniDSP instruction 
+w 30 1a 00 # DAC miniDSP instruction 
+w 30 1b 00 # DAC miniDSP instruction 
+w 30 1c 20 # DAC miniDSP instruction 
+w 30 1d 04 # DAC miniDSP instruction 
+w 30 1e 02 # DAC miniDSP instruction 
+w 30 1f 00 # DAC miniDSP instruction 
+w 30 20 30 # DAC miniDSP instruction 
+w 30 21 00 # DAC miniDSP instruction 
+w 30 22 02 # DAC miniDSP instruction 
+w 30 23 00 # DAC miniDSP instruction 
+w 30 24 d8 # DAC miniDSP instruction 
+w 30 25 04 # DAC miniDSP instruction 
+w 30 26 03 # DAC miniDSP instruction 
+w 30 27 00 # DAC miniDSP instruction 
+w 30 28 38 # DAC miniDSP instruction 
+w 30 29 08 # DAC miniDSP instruction 
+w 30 2a 04 # DAC miniDSP instruction 
+w 30 2b 00 # DAC miniDSP instruction 
+w 30 2c d8 # DAC miniDSP instruction 
+w 30 2d 0c # DAC miniDSP instruction 
+w 30 2e 06 # DAC miniDSP instruction 
+w 30 2f 00 # DAC miniDSP instruction 
+w 30 30 38 # DAC miniDSP instruction 
+w 30 31 10 # DAC miniDSP instruction 
+w 30 32 07 # DAC miniDSP instruction 
+w 30 33 00 # DAC miniDSP instruction 
+w 30 34 30 # DAC miniDSP instruction 
+w 30 35 30 # DAC miniDSP instruction 
+w 30 36 07 # DAC miniDSP instruction 
+w 30 37 00 # DAC miniDSP instruction 
+w 30 38 d8 # DAC miniDSP instruction 
+w 30 39 2c # DAC miniDSP instruction 
+w 30 3a 06 # DAC miniDSP instruction 
+w 30 3b 00 # DAC miniDSP instruction 
+w 30 3c 98 # DAC miniDSP instruction 
+w 30 3d 28 # DAC miniDSP instruction 
+w 30 3e 05 # DAC miniDSP instruction 
+w 30 3f 00 # DAC miniDSP instruction 
+w 30 40 d8 # DAC miniDSP instruction 
+w 30 41 34 # DAC miniDSP instruction 
+w 30 42 09 # DAC miniDSP instruction 
+w 30 43 00 # DAC miniDSP instruction 
+w 30 44 38 # DAC miniDSP instruction 
+w 30 45 38 # DAC miniDSP instruction 
+w 30 46 0a # DAC miniDSP instruction 
+w 30 47 00 # DAC miniDSP instruction 
+w 30 48 30 # DAC miniDSP instruction 
+w 30 49 44 # DAC miniDSP instruction 
+w 30 4a 0a # DAC miniDSP instruction 
+w 30 4b 00 # DAC miniDSP instruction 
+w 30 4c d8 # DAC miniDSP instruction 
+w 30 4d 40 # DAC miniDSP instruction 
+w 30 4e 09 # DAC miniDSP instruction 
+w 30 4f 00 # DAC miniDSP instruction 
+w 30 50 98 # DAC miniDSP instruction 
+w 30 51 3c # DAC miniDSP instruction 
+w 30 52 08 # DAC miniDSP instruction 
+w 30 53 00 # DAC miniDSP instruction 
+w 30 54 d8 # DAC miniDSP instruction 
+w 30 55 48 # DAC miniDSP instruction 
+w 30 56 0c # DAC miniDSP instruction 
+w 30 57 00 # DAC miniDSP instruction 
+w 30 58 38 # DAC miniDSP instruction 
+w 30 59 4c # DAC miniDSP instruction 
+w 30 5a 0d # DAC miniDSP instruction 
+w 30 5b 00 # DAC miniDSP instruction 
+w 30 5c 30 # DAC miniDSP instruction 
+w 30 5d 58 # DAC miniDSP instruction 
+w 30 5e 0d # DAC miniDSP instruction 
+w 30 5f 00 # DAC miniDSP instruction 
+w 30 60 d8 # DAC miniDSP instruction 
+w 30 61 54 # DAC miniDSP instruction 
+w 30 62 0c # DAC miniDSP instruction 
+w 30 63 00 # DAC miniDSP instruction 
+w 30 64 98 # DAC miniDSP instruction 
+w 30 65 50 # DAC miniDSP instruction 
+w 30 66 0b # DAC miniDSP instruction 
+w 30 67 00 # DAC miniDSP instruction 
+w 30 68 d8 # DAC miniDSP instruction 
+w 30 69 5c # DAC miniDSP instruction 
+w 30 6a 0f # DAC miniDSP instruction 
+w 30 6b 00 # DAC miniDSP instruction 
+w 30 6c 38 # DAC miniDSP instruction 
+w 30 6d 60 # DAC miniDSP instruction 
+w 30 6e 10 # DAC miniDSP instruction 
+w 30 6f 00 # DAC miniDSP instruction 
+w 30 70 30 # DAC miniDSP instruction 
+w 30 71 6c # DAC miniDSP instruction 
+w 30 72 10 # DAC miniDSP instruction 
+w 30 73 00 # DAC miniDSP instruction 
+w 30 74 d8 # DAC miniDSP instruction 
+w 30 75 68 # DAC miniDSP instruction 
+w 30 76 0f # DAC miniDSP instruction 
+w 30 77 00 # DAC miniDSP instruction 
+w 30 78 98 # DAC miniDSP instruction 
+w 30 79 64 # DAC miniDSP instruction 
+w 30 7a 0e # DAC miniDSP instruction 
+w 30 7b 00 # DAC miniDSP instruction 
+w 30 7c d8 # DAC miniDSP instruction 
+w 30 7d 70 # DAC miniDSP instruction 
+w 30 7e 12 # DAC miniDSP instruction 
+w 30 7f 00 # DAC miniDSP instruction 
+w 30 00 a1 # Page Select Register
+w 30 08 38 # DAC miniDSP instruction 
+w 30 09 74 # DAC miniDSP instruction 
+w 30 0a 13 # DAC miniDSP instruction 
+w 30 0b 00 # DAC miniDSP instruction 
+w 30 0c 00 # DAC miniDSP instruction 
+w 30 0d 00 # DAC miniDSP instruction 
+w 30 0e 00 # DAC miniDSP instruction 
+w 30 0f 00 # DAC miniDSP instruction 
+w 30 10 00 # DAC miniDSP instruction 
+w 30 11 00 # DAC miniDSP instruction 
+w 30 12 00 # DAC miniDSP instruction 
+w 30 13 00 # DAC miniDSP instruction 
+w 30 14 20 # DAC miniDSP instruction 
+w 30 15 00 # DAC miniDSP instruction 
+w 30 16 11 # DAC miniDSP instruction 
+w 30 17 00 # DAC miniDSP instruction 
+w 30 18 31 # DAC miniDSP instruction 
+w 30 19 13 # DAC miniDSP instruction 
+w 30 1a fb # DAC miniDSP instruction 
+w 30 1b 00 # DAC miniDSP instruction 
+w 30 1c 00 # DAC miniDSP instruction 
+w 30 1d 00 # DAC miniDSP instruction 
+w 30 1e 00 # DAC miniDSP instruction 
+w 30 1f 00 # DAC miniDSP instruction 
+w 30 20 38 # DAC miniDSP instruction 
+w 30 21 17 # DAC miniDSP instruction 
+w 30 22 fb # DAC miniDSP instruction 
+w 30 23 00 # DAC miniDSP instruction 
+w 30 24 88 # DAC miniDSP instruction 
+w 30 25 17 # DAC miniDSP instruction 
+w 30 26 fe # DAC miniDSP instruction 
+w 30 27 00 # DAC miniDSP instruction 
+w 30 28 10 # DAC miniDSP instruction 
+w 30 29 00 # DAC miniDSP instruction 
+w 30 2a 6a # DAC miniDSP instruction 
+w 30 2b 00 # DAC miniDSP instruction 
+w 30 2c 10 # DAC miniDSP instruction 
+w 30 2d 04 # DAC miniDSP instruction 
+w 30 2e ab # DAC miniDSP instruction 
+w 30 2f 00 # DAC miniDSP instruction 
+w 30 30 30 # DAC miniDSP instruction 
+w 30 31 78 # DAC miniDSP instruction 
+w 30 32 01 # DAC miniDSP instruction 
+w 30 33 00 # DAC miniDSP instruction 
+w 30 34 00 # DAC miniDSP instruction 
+w 30 35 00 # DAC miniDSP instruction 
+w 30 36 00 # DAC miniDSP instruction 
+w 30 37 00 # DAC miniDSP instruction 
+w 30 38 00 # DAC miniDSP instruction 
+w 30 39 00 # DAC miniDSP instruction 
+w 30 3a 00 # DAC miniDSP instruction 
+w 30 3b 00 # DAC miniDSP instruction 
+w 30 3c 20 # DAC miniDSP instruction 
+w 30 3d 04 # DAC miniDSP instruction 
+w 30 3e 14 # DAC miniDSP instruction 
+w 30 3f 00 # DAC miniDSP instruction 
+w 30 40 30 # DAC miniDSP instruction 
+w 30 41 00 # DAC miniDSP instruction 
+w 30 42 14 # DAC miniDSP instruction 
+w 30 43 00 # DAC miniDSP instruction 
+w 30 44 d8 # DAC miniDSP instruction 
+w 30 45 04 # DAC miniDSP instruction 
+w 30 46 15 # DAC miniDSP instruction 
+w 30 47 00 # DAC miniDSP instruction 
+w 30 48 38 # DAC miniDSP instruction 
+w 30 49 08 # DAC miniDSP instruction 
+w 30 4a 16 # DAC miniDSP instruction 
+w 30 4b 00 # DAC miniDSP instruction 
+w 30 4c d8 # DAC miniDSP instruction 
+w 30 4d 0c # DAC miniDSP instruction 
+w 30 4e 18 # DAC miniDSP instruction 
+w 30 4f 00 # DAC miniDSP instruction 
+w 30 50 38 # DAC miniDSP instruction 
+w 30 51 10 # DAC miniDSP instruction 
+w 30 52 19 # DAC miniDSP instruction 
+w 30 53 00 # DAC miniDSP instruction 
+w 30 54 30 # DAC miniDSP instruction 
+w 30 55 30 # DAC miniDSP instruction 
+w 30 56 19 # DAC miniDSP instruction 
+w 30 57 00 # DAC miniDSP instruction 
+w 30 58 d8 # DAC miniDSP instruction 
+w 30 59 2c # DAC miniDSP instruction 
+w 30 5a 18 # DAC miniDSP instruction 
+w 30 5b 00 # DAC miniDSP instruction 
+w 30 5c 98 # DAC miniDSP instruction 
+w 30 5d 28 # DAC miniDSP instruction 
+w 30 5e 17 # DAC miniDSP instruction 
+w 30 5f 00 # DAC miniDSP instruction 
+w 30 60 d8 # DAC miniDSP instruction 
+w 30 61 34 # DAC miniDSP instruction 
+w 30 62 1b # DAC miniDSP instruction 
+w 30 63 00 # DAC miniDSP instruction 
+w 30 64 38 # DAC miniDSP instruction 
+w 30 65 38 # DAC miniDSP instruction 
+w 30 66 1c # DAC miniDSP instruction 
+w 30 67 00 # DAC miniDSP instruction 
+w 30 68 30 # DAC miniDSP instruction 
+w 30 69 44 # DAC miniDSP instruction 
+w 30 6a 1c # DAC miniDSP instruction 
+w 30 6b 00 # DAC miniDSP instruction 
+w 30 6c d8 # DAC miniDSP instruction 
+w 30 6d 40 # DAC miniDSP instruction 
+w 30 6e 1b # DAC miniDSP instruction 
+w 30 6f 00 # DAC miniDSP instruction 
+w 30 70 98 # DAC miniDSP instruction 
+w 30 71 3c # DAC miniDSP instruction 
+w 30 72 1a # DAC miniDSP instruction 
+w 30 73 00 # DAC miniDSP instruction 
+w 30 74 d8 # DAC miniDSP instruction 
+w 30 75 48 # DAC miniDSP instruction 
+w 30 76 1e # DAC miniDSP instruction 
+w 30 77 00 # DAC miniDSP instruction 
+w 30 78 38 # DAC miniDSP instruction 
+w 30 79 4c # DAC miniDSP instruction 
+w 30 7a 1f # DAC miniDSP instruction 
+w 30 7b 00 # DAC miniDSP instruction 
+w 30 7c 30 # DAC miniDSP instruction 
+w 30 7d 58 # DAC miniDSP instruction 
+w 30 7e 1f # DAC miniDSP instruction 
+w 30 7f 00 # DAC miniDSP instruction 
+w 30 00 a2 # Page Select Register
+w 30 08 d8 # DAC miniDSP instruction 
+w 30 09 54 # DAC miniDSP instruction 
+w 30 0a 1e # DAC miniDSP instruction 
+w 30 0b 00 # DAC miniDSP instruction 
+w 30 0c 98 # DAC miniDSP instruction 
+w 30 0d 50 # DAC miniDSP instruction 
+w 30 0e 1d # DAC miniDSP instruction 
+w 30 0f 00 # DAC miniDSP instruction 
+w 30 10 d8 # DAC miniDSP instruction 
+w 30 11 5c # DAC miniDSP instruction 
+w 30 12 21 # DAC miniDSP instruction 
+w 30 13 00 # DAC miniDSP instruction 
+w 30 14 38 # DAC miniDSP instruction 
+w 30 15 60 # DAC miniDSP instruction 
+w 30 16 22 # DAC miniDSP instruction 
+w 30 17 00 # DAC miniDSP instruction 
+w 30 18 30 # DAC miniDSP instruction 
+w 30 19 6c # DAC miniDSP instruction 
+w 30 1a 22 # DAC miniDSP instruction 
+w 30 1b 00 # DAC miniDSP instruction 
+w 30 1c d8 # DAC miniDSP instruction 
+w 30 1d 68 # DAC miniDSP instruction 
+w 30 1e 21 # DAC miniDSP instruction 
+w 30 1f 00 # DAC miniDSP instruction 
+w 30 20 98 # DAC miniDSP instruction 
+w 30 21 64 # DAC miniDSP instruction 
+w 30 22 20 # DAC miniDSP instruction 
+w 30 23 00 # DAC miniDSP instruction 
+w 30 24 d8 # DAC miniDSP instruction 
+w 30 25 70 # DAC miniDSP instruction 
+w 30 26 24 # DAC miniDSP instruction 
+w 30 27 00 # DAC miniDSP instruction 
+w 30 28 38 # DAC miniDSP instruction 
+w 30 29 74 # DAC miniDSP instruction 
+w 30 2a 25 # DAC miniDSP instruction 
+w 30 2b 00 # DAC miniDSP instruction 
+w 30 2c 00 # DAC miniDSP instruction 
+w 30 2d 00 # DAC miniDSP instruction 
+w 30 2e 00 # DAC miniDSP instruction 
+w 30 2f 00 # DAC miniDSP instruction 
+w 30 30 00 # DAC miniDSP instruction 
+w 30 31 00 # DAC miniDSP instruction 
+w 30 32 00 # DAC miniDSP instruction 
+w 30 33 00 # DAC miniDSP instruction 
+w 30 34 20 # DAC miniDSP instruction 
+w 30 35 00 # DAC miniDSP instruction 
+w 30 36 23 # DAC miniDSP instruction 
+w 30 37 00 # DAC miniDSP instruction 
+w 30 38 30 # DAC miniDSP instruction 
+w 30 39 df # DAC miniDSP instruction 
+w 30 3a fb # DAC miniDSP instruction 
+w 30 3b 00 # DAC miniDSP instruction 
+w 30 3c 80 # DAC miniDSP instruction 
+w 30 3d 94 # DAC miniDSP instruction 
+w 30 3e 2d # DAC miniDSP instruction 
+w 30 3f 00 # DAC miniDSP instruction 
+w 30 40 38 # DAC miniDSP instruction 
+w 30 41 94 # DAC miniDSP instruction 
+w 30 42 2b # DAC miniDSP instruction 
+w 30 43 00 # DAC miniDSP instruction 
+w 30 44 20 # DAC miniDSP instruction 
+w 30 45 04 # DAC miniDSP instruction 
+w 30 46 2c # DAC miniDSP instruction 
+w 30 47 00 # DAC miniDSP instruction 
+w 30 48 88 # DAC miniDSP instruction 
+w 30 49 08 # DAC miniDSP instruction 
+w 30 4a 05 # DAC miniDSP instruction 
+w 30 4b 00 # DAC miniDSP instruction 
+w 30 4c 20 # DAC miniDSP instruction 
+w 30 4d dc # DAC miniDSP instruction 
+w 30 4e 29 # DAC miniDSP instruction 
+w 30 4f 00 # DAC miniDSP instruction 
+w 30 50 00 # DAC miniDSP instruction 
+w 30 51 00 # DAC miniDSP instruction 
+w 30 52 00 # DAC miniDSP instruction 
+w 30 53 00 # DAC miniDSP instruction 
+w 30 54 00 # DAC miniDSP instruction 
+w 30 55 00 # DAC miniDSP instruction 
+w 30 56 00 # DAC miniDSP instruction 
+w 30 57 00 # DAC miniDSP instruction 
+w 30 58 00 # DAC miniDSP instruction 
+w 30 59 00 # DAC miniDSP instruction 
+w 30 5a 00 # DAC miniDSP instruction 
+w 30 5b 00 # DAC miniDSP instruction 
+w 30 5c 88 # DAC miniDSP instruction 
+w 30 5d 00 # DAC miniDSP instruction 
+w 30 5e 1e # DAC miniDSP instruction 
+w 30 5f 00 # DAC miniDSP instruction 
+w 30 60 30 # DAC miniDSP instruction 
+w 30 61 90 # DAC miniDSP instruction 
+w 30 62 29 # DAC miniDSP instruction 
+w 30 63 00 # DAC miniDSP instruction 
+w 30 64 80 # DAC miniDSP instruction 
+w 30 65 8f # DAC miniDSP instruction 
+w 30 66 fb # DAC miniDSP instruction 
+w 30 67 00 # DAC miniDSP instruction 
+w 30 68 00 # DAC miniDSP instruction 
+w 30 69 00 # DAC miniDSP instruction 
+w 30 6a 00 # DAC miniDSP instruction 
+w 30 6b 00 # DAC miniDSP instruction 
+w 30 6c 88 # DAC miniDSP instruction 
+w 30 6d 18 # DAC miniDSP instruction 
+w 30 6e 0d # DAC miniDSP instruction 
+w 30 6f 00 # DAC miniDSP instruction 
+w 30 70 88 # DAC miniDSP instruction 
+w 30 71 08 # DAC miniDSP instruction 
+w 30 72 19 # DAC miniDSP instruction 
+w 30 73 00 # DAC miniDSP instruction 
+w 30 74 38 # DAC miniDSP instruction 
+w 30 75 90 # DAC miniDSP instruction 
+w 30 76 2b # DAC miniDSP instruction 
+w 30 77 00 # DAC miniDSP instruction 
+w 30 78 80 # DAC miniDSP instruction 
+w 30 79 94 # DAC miniDSP instruction 
+w 30 7a 2c # DAC miniDSP instruction 
+w 30 7b 00 # DAC miniDSP instruction 
+w 30 7c 00 # DAC miniDSP instruction 
+w 30 7d 00 # DAC miniDSP instruction 
+w 30 7e 00 # DAC miniDSP instruction 
+w 30 7f 00 # DAC miniDSP instruction 
+w 30 00 a3 # Page Select Register
+w 30 08 20 # DAC miniDSP instruction 
+w 30 09 04 # DAC miniDSP instruction 
+w 30 0a 2a # DAC miniDSP instruction 
+w 30 0b 00 # DAC miniDSP instruction 
+w 30 0c 88 # DAC miniDSP instruction 
+w 30 0d 10 # DAC miniDSP instruction 
+w 30 0e 19 # DAC miniDSP instruction 
+w 30 0f 00 # DAC miniDSP instruction 
+w 30 10 30 # DAC miniDSP instruction 
+w 30 11 8f # DAC miniDSP instruction 
+w 30 12 fb # DAC miniDSP instruction 
+w 30 13 00 # DAC miniDSP instruction 
+w 30 14 30 # DAC miniDSP instruction 
+w 30 15 90 # DAC miniDSP instruction 
+w 30 16 2c # DAC miniDSP instruction 
+w 30 17 00 # DAC miniDSP instruction 
+w 30 18 00 # DAC miniDSP instruction 
+w 30 19 00 # DAC miniDSP instruction 
+w 30 1a 00 # DAC miniDSP instruction 
+w 30 1b 00 # DAC miniDSP instruction 
+w 30 1c 20 # DAC miniDSP instruction 
+w 30 1d 00 # DAC miniDSP instruction 
+w 30 1e 28 # DAC miniDSP instruction 
+w 30 1f 00 # DAC miniDSP instruction 
+w 30 20 20 # DAC miniDSP instruction 
+w 30 21 04 # DAC miniDSP instruction 
+w 30 22 2a # DAC miniDSP instruction 
+w 30 23 00 # DAC miniDSP instruction 
+w 30 24 40 # DAC miniDSP instruction 
+w 30 25 84 # DAC miniDSP instruction 
+w 30 26 02 # DAC miniDSP instruction 
+w 30 27 00 # DAC miniDSP instruction 
+w 30 28 88 # DAC miniDSP instruction 
+w 30 29 00 # DAC miniDSP instruction 
+w 30 2a 19 # DAC miniDSP instruction 
+w 30 2b 00 # DAC miniDSP instruction 
+w 30 2c 00 # DAC miniDSP instruction 
+w 30 2d 00 # DAC miniDSP instruction 
+w 30 2e 00 # DAC miniDSP instruction 
+w 30 2f 00 # DAC miniDSP instruction 
+w 30 30 38 # DAC miniDSP instruction 
+w 30 31 90 # DAC miniDSP instruction 
+w 30 32 2b # DAC miniDSP instruction 
+w 30 33 00 # DAC miniDSP instruction 
+w 30 34 80 # DAC miniDSP instruction 
+w 30 35 94 # DAC miniDSP instruction 
+w 30 36 2c # DAC miniDSP instruction 
+w 30 37 00 # DAC miniDSP instruction 
+w 30 38 00 # DAC miniDSP instruction 
+w 30 39 00 # DAC miniDSP instruction 
+w 30 3a 00 # DAC miniDSP instruction 
+w 30 3b 00 # DAC miniDSP instruction 
+w 30 3c 20 # DAC miniDSP instruction 
+w 30 3d 04 # DAC miniDSP instruction 
+w 30 3e 2a # DAC miniDSP instruction 
+w 30 3f 00 # DAC miniDSP instruction 
+w 30 40 88 # DAC miniDSP instruction 
+w 30 41 0c # DAC miniDSP instruction 
+w 30 42 0c # DAC miniDSP instruction 
+w 30 43 00 # DAC miniDSP instruction 
+w 30 44 30 # DAC miniDSP instruction 
+w 30 45 8f # DAC miniDSP instruction 
+w 30 46 fb # DAC miniDSP instruction 
+w 30 47 00 # DAC miniDSP instruction 
+w 30 48 30 # DAC miniDSP instruction 
+w 30 49 90 # DAC miniDSP instruction 
+w 30 4a 2c # DAC miniDSP instruction 
+w 30 4b 00 # DAC miniDSP instruction 
+w 30 4c 00 # DAC miniDSP instruction 
+w 30 4d 00 # DAC miniDSP instruction 
+w 30 4e 00 # DAC miniDSP instruction 
+w 30 4f 00 # DAC miniDSP instruction 
+w 30 50 20 # DAC miniDSP instruction 
+w 30 51 00 # DAC miniDSP instruction 
+w 30 52 28 # DAC miniDSP instruction 
+w 30 53 00 # DAC miniDSP instruction 
+w 30 54 20 # DAC miniDSP instruction 
+w 30 55 04 # DAC miniDSP instruction 
+w 30 56 2a # DAC miniDSP instruction 
+w 30 57 00 # DAC miniDSP instruction 
+w 30 58 40 # DAC miniDSP instruction 
+w 30 59 84 # DAC miniDSP instruction 
+w 30 5a 02 # DAC miniDSP instruction 
+w 30 5b 00 # DAC miniDSP instruction 
+w 30 5c 88 # DAC miniDSP instruction 
+w 30 5d 00 # DAC miniDSP instruction 
+w 30 5e 0c # DAC miniDSP instruction 
+w 30 5f 00 # DAC miniDSP instruction 
+w 30 60 00 # DAC miniDSP instruction 
+w 30 61 00 # DAC miniDSP instruction 
+w 30 62 00 # DAC miniDSP instruction 
+w 30 63 00 # DAC miniDSP instruction 
+w 30 64 30 # DAC miniDSP instruction 
+w 30 65 90 # DAC miniDSP instruction 
+w 30 66 2b # DAC miniDSP instruction 
+w 30 67 00 # DAC miniDSP instruction 
+w 30 68 00 # DAC miniDSP instruction 
+w 30 69 00 # DAC miniDSP instruction 
+w 30 6a 00 # DAC miniDSP instruction 
+w 30 6b 00 # DAC miniDSP instruction 
+w 30 6c 00 # DAC miniDSP instruction 
+w 30 6d 00 # DAC miniDSP instruction 
+w 30 6e 00 # DAC miniDSP instruction 
+w 30 6f 00 # DAC miniDSP instruction 
+w 30 70 20 # DAC miniDSP instruction 
+w 30 71 04 # DAC miniDSP instruction 
+w 30 72 2a # DAC miniDSP instruction 
+w 30 73 00 # DAC miniDSP instruction 
+w 30 74 40 # DAC miniDSP instruction 
+w 30 75 84 # DAC miniDSP instruction 
+w 30 76 02 # DAC miniDSP instruction 
+w 30 77 00 # DAC miniDSP instruction 
+w 30 78 00 # DAC miniDSP instruction 
+w 30 79 00 # DAC miniDSP instruction 
+w 30 7a 00 # DAC miniDSP instruction 
+w 30 7b 00 # DAC miniDSP instruction 
+w 30 7c 00 # DAC miniDSP instruction 
+w 30 7d 00 # DAC miniDSP instruction 
+w 30 7e 00 # DAC miniDSP instruction 
+w 30 7f 00 # DAC miniDSP instruction 
+w 30 00 a4 # Page Select Register
+w 30 08 30 # DAC miniDSP instruction 
+w 30 09 90 # DAC miniDSP instruction 
+w 30 0a 29 # DAC miniDSP instruction 
+w 30 0b 00 # DAC miniDSP instruction 
+w 30 0c 00 # DAC miniDSP instruction 
+w 30 0d 00 # DAC miniDSP instruction 
+w 30 0e 00 # DAC miniDSP instruction 
+w 30 0f 00 # DAC miniDSP instruction 
+w 30 10 00 # DAC miniDSP instruction 
+w 30 11 00 # DAC miniDSP instruction 
+w 30 12 00 # DAC miniDSP instruction 
+w 30 13 00 # DAC miniDSP instruction 
+w 30 14 20 # DAC miniDSP instruction 
+w 30 15 04 # DAC miniDSP instruction 
+w 30 16 28 # DAC miniDSP instruction 
+w 30 17 00 # DAC miniDSP instruction 
+w 30 18 00 # DAC miniDSP instruction 
+w 30 19 00 # DAC miniDSP instruction 
+w 30 1a 00 # DAC miniDSP instruction 
+w 30 1b 00 # DAC miniDSP instruction 
+w 30 1c 00 # DAC miniDSP instruction 
+w 30 1d 00 # DAC miniDSP instruction 
+w 30 1e 00 # DAC miniDSP instruction 
+w 30 1f 00 # DAC miniDSP instruction 
+w 30 20 00 # DAC miniDSP instruction 
+w 30 21 00 # DAC miniDSP instruction 
+w 30 22 00 # DAC miniDSP instruction 
+w 30 23 00 # DAC miniDSP instruction 
+w 30 24 00 # DAC miniDSP instruction 
+w 30 25 00 # DAC miniDSP instruction 
+w 30 26 00 # DAC miniDSP instruction 
+w 30 27 00 # DAC miniDSP instruction 
+w 30 28 10 # DAC miniDSP instruction 
+w 30 29 00 # DAC miniDSP instruction 
+w 30 2a 69 # DAC miniDSP instruction 
+w 30 2b 00 # DAC miniDSP instruction 
+w 30 2c 10 # DAC miniDSP instruction 
+w 30 2d 04 # DAC miniDSP instruction 
+w 30 2e aa # DAC miniDSP instruction 
+w 30 2f 00 # DAC miniDSP instruction 
+w 30 30 30 # DAC miniDSP instruction 
+w 30 31 84 # DAC miniDSP instruction 
+w 30 32 11 # DAC miniDSP instruction 
+w 30 33 00 # DAC miniDSP instruction 
+w 30 34 30 # DAC miniDSP instruction 
+w 30 35 84 # DAC miniDSP instruction 
+w 30 36 23 # DAC miniDSP instruction 
+w 30 37 00 # DAC miniDSP instruction 
+w 30 38 30 # DAC miniDSP instruction 
+w 30 39 87 # DAC miniDSP instruction 
+w 30 3a fb # DAC miniDSP instruction 
+w 30 3b 00 # DAC miniDSP instruction 
+w 30 3c 20 # DAC miniDSP instruction 
+w 30 3d 04 # DAC miniDSP instruction 
+w 30 3e 26 # DAC miniDSP instruction 
+w 30 3f 00 # DAC miniDSP instruction 
+w 30 40 20 # DAC miniDSP instruction 
+w 30 41 04 # DAC miniDSP instruction 
+w 30 42 27 # DAC miniDSP instruction 
+w 30 43 00 # DAC miniDSP instruction 
+w 30 44 40 # DAC miniDSP instruction 
+w 30 45 88 # DAC miniDSP instruction 
+w 30 46 3f # DAC miniDSP instruction 
+w 30 47 00 # DAC miniDSP instruction 
+w 30 48 31 # DAC miniDSP instruction 
+w 30 49 17 # DAC miniDSP instruction 
+w 30 4a fb # DAC miniDSP instruction 
+w 30 4b 00 # DAC miniDSP instruction 
+w 30 4c 00 # DAC miniDSP instruction 
+w 30 4d 00 # DAC miniDSP instruction 
+w 30 4e 00 # DAC miniDSP instruction 
+w 30 4f 00 # DAC miniDSP instruction 
+w 30 50 38 # DAC miniDSP instruction 
+w 30 51 17 # DAC miniDSP instruction 
+w 30 52 fb # DAC miniDSP instruction 
+w 30 53 00 # DAC miniDSP instruction 
+w 30 54 88 # DAC miniDSP instruction 
+w 30 55 17 # DAC miniDSP instruction 
+w 30 56 fe # DAC miniDSP instruction 
+w 30 57 00 # DAC miniDSP instruction 
+w 30 58 30 # DAC miniDSP instruction 
+w 30 59 7c # DAC miniDSP instruction 
+w 30 5a 26 # DAC miniDSP instruction 
+w 30 5b 00 # DAC miniDSP instruction 
+w 30 5c 30 # DAC miniDSP instruction 
+w 30 5d 7c # DAC miniDSP instruction 
+w 30 5e 27 # DAC miniDSP instruction 
+w 30 5f 00 # DAC miniDSP instruction 
+w 30 60 00 # DAC miniDSP instruction 
+w 30 61 00 # DAC miniDSP instruction 
+w 30 62 00 # DAC miniDSP instruction 
+w 30 63 00 # DAC miniDSP instruction 
+w 30 64 20 # DAC miniDSP instruction 
+w 30 65 00 # DAC miniDSP instruction 
+w 30 66 30 # DAC miniDSP instruction 
+w 30 67 00 # DAC miniDSP instruction 
+w 30 68 20 # DAC miniDSP instruction 
+w 30 69 00 # DAC miniDSP instruction 
+w 30 6a 6f # DAC miniDSP instruction 
+w 30 6b 00 # DAC miniDSP instruction 
+w 30 6c 10 # DAC miniDSP instruction 
+w 30 6d 00 # DAC miniDSP instruction 
+w 30 6e 68 # DAC miniDSP instruction 
+w 30 6f 00 # DAC miniDSP instruction 
+w 30 70 10 # DAC miniDSP instruction 
+w 30 71 04 # DAC miniDSP instruction 
+w 30 72 a9 # DAC miniDSP instruction 
+w 30 73 00 # DAC miniDSP instruction 
+w 30 74 88 # DAC miniDSP instruction 
+w 30 75 03 # DAC miniDSP instruction 
+w 30 76 ff # DAC miniDSP instruction 
+w 30 77 00 # DAC miniDSP instruction 
+w 30 00 00 # Page Select Register
+w 30 12 82 # Clock Setting Register 8, NDAC Values
+w 30 13 88 # Clock Setting Register 9, MDAC Values
+w 30 14 80 # ADC Oversampling (AOSR) Register
+w 30 17 04 # ADC miniDSP Decimation Factor Setting Register
+w 30 00 01 # Page Select Register
+w 30 47 30 # Analog Input Quick Charging Configuration Register
+w 30 14 35 # Headphone Driver Startup Control Register
+w 30 0c 08 # HPL Routing Selection Register
+w 30 0d 08 # HPR Routing Selection Register
+w 30 0e 08 # LOL Routing Selection Register
+w 30 0f 08 # LOR Routing Selection Register
+w 30 00 00 # Page Select Register
+w 30 3f d4 # DAC Channel Setup Register 1
+w 30 40 00 # DAC Channel Setup Register 2
+w 30 51 c2 # ADC Channel Setup Register
+w 30 52 00 # ADC Fine Gain Adjust Register
+w 30 00 08 # Page Select Register
+w 30 01 04 # ADC Adaptive Filter Configuration Register
+w 30 00 2c # Page Select Register
+w 30 01 04 # DAC Adaptive Filter Configuration Register
+w 30 00 00 # Page Select Register
+w 30 52 00 # ADC Fine Gain Adjust Register
+w 30 53 00 # Left ADC Channel Volume Control Register
+w 30 54 00 # Right ADC Channel Volume Control Register
+w 30 41 00 # Left DAC Channel Digital Volume Control Register
+w 30 42 00 # Right DAC Channel Digital Volume Control Register
+w 30 44 1f # DRC Control Register 1
+w 30 45 00 # DRC Control Register 2
+w 30 46 c6 # DRC Control Register 3
