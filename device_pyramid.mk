@@ -65,7 +65,7 @@ PRODUCT_PACKAGES += \
 # Audio
 PRODUCT_COPY_FILES += \
     device/htc/pyramid/dsp/AIC3254_REG.csv:system/etc/AIC3254_REG.csv \
-    device/htc/pyramid/dsp/AIC3254_REG_DualMic.csv:system/etc/AIC3254_REG.csv \
+    device/htc/pyramid/dsp/AIC3254_REG_DualMic.csv:system/etc/AIC3254_REG_DualMic.csv \
     device/htc/pyramid/dsp/TPA2051_CFG.csv:system/etc/TPA2051_CFG.csv \
     device/htc/pyramid/dsp/TPA2051_CFG_XC.csv:system/etc/TPA2051_CFG_XC.csv \
     device/htc/pyramid/dsp/CodecDSPID.txt:system/etc/CodecDSPID.txt \
