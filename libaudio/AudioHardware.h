@@ -28,9 +28,11 @@
 
 extern "C" {
 #include <linux/msm_audio.h>
-#include <linux/msm_audio_qcp.h>
 #include <linux/msm_audio_aac.h>
+#ifdef WITH_QCOM_SPEECH	
+#include <linux/msm_audio_qcp.h>
 #include <linux/msm_audio_amrnb.h>
+#endif	
 }
 
 namespace android {
@@ -88,7 +90,27 @@ struct msm_audio_stats {
     uint32_t out_bytes;
     uint32_t unused[3];
 };
+	
+enum tty_modes {
+	TTY_OFF = 0,
+	TTY_VCO = 1,
+	TTY_HCO = 2,
+	TTY_FULL = 3
+};
+	
+#define CODEC_TYPE_PCM 0
+#define AUDIO_HW_NUM_OUT_BUF 2  // Number of buffers in audio driver for output
+	// TODO: determine actual audio DSP and hardware latency
+#define AUDIO_HW_OUT_LATENCY_MS 0  // Additionnal latency introduced by audio DSP and hardware in ms
+	
+#define AUDIO_HW_IN_SAMPLERATE 8000                 // Default audio input sample rate
+#define AUDIO_HW_IN_CHANNELS (AudioSystem::CHANNEL_IN_MONO) // Default audio input channel mask
+#define AUDIO_HW_IN_BUFFERSIZE 2048                 // Default audio input buffer size
+#define AUDIO_HW_IN_FORMAT (AudioSystem::PCM_16_BIT)  // Default audio input sample format
+	
+#define VOICE_VOLUME_MAX 100  // Maximum voice volume	
 
+#ifdef WITH_QCOM_SPEECH
 /* AMR frame type definitions */
 typedef enum {
   AMRSUP_SPEECH_GOOD,          /* Good speech frame              */
@@ -259,6 +281,7 @@ const amrsup_frame_order_type amrsup_122_framing = {
   AMR_CLASS_C_BITS_122,
   (unsigned short *) amrsup_bit_order_122_c
 };
+#endif
 
 // ----------------------------------------------------------------------------
 
@@ -266,7 +289,9 @@ const amrsup_frame_order_type amrsup_122_framing = {
 class AudioHardware : public  AudioHardwareBase
 {
     class AudioStreamOutMSM72xx;
+#ifdef WITH_QCOM_LPA
     class AudioSessionOutMSM7xxx;
+#endif
     class AudioStreamInMSM72xx;
 
 public:
@@ -294,13 +319,14 @@ public:
                                 uint32_t *channels=0,
                                 uint32_t *sampleRate=0,
                                 status_t *status=0);
-
+#ifdef WITH_QCOM_LPA
     virtual AudioStreamOut* openOutputSession(
                                 uint32_t devices,
                                 int *format=0,
                                 status_t *status=0,
                                 int sessionId=-1);
-
+#endif
+	
     virtual AudioStreamIn* openInputStream(
 
                                 uint32_t devices,
@@ -367,6 +393,7 @@ private:
                 uint32_t    mDevices;
     };
 
+#ifdef WITH_QCOM_LPA
     class AudioSessionOutMSM7xxx : public AudioStreamOut {
     public:
                             AudioSessionOutMSM7xxx();
@@ -399,6 +426,7 @@ private:
                 uint32_t    mDevices;
                 int         mSessionId;
     };
+#endif
 
     class AudioStreamInMSM72xx : public AudioStreamIn {
     public:

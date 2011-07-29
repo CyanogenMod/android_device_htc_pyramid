@@ -38,6 +38,14 @@ LOCAL_SHARED_LIBRARIES += libaudioalsa
 LOCAL_SHARED_LIBRARIES += libacdbloader
 LOCAL_SHARED_LIBRARIES += libacdbmapper
 
+ifeq ($(BOARD_USE_QCOM_SPEECH),true)
+  LOCAL_CFLAGS += -DWITH_QCOM_SPEECH
+endif
+
+ifeq ($(BOARD_USES_QCOM_LPA),true)
+  LOCAL_CFLAGS += -DWITH_QCOM_LPA
+endif
+
 ifeq ($TARGET_OS)-$(TARGET_SIMULATOR),linux-true)
 LOCAL_LDLIBS += -ldl
 endif
@@ -49,11 +57,11 @@ LOCAL_SHARED_LIBRARIES += liba2dp libbinder
 endif
 
 LOCAL_C_INCLUDES += $(TARGET_OUT_HEADERS)/mm-audio/audio-alsa
-LOCAL_C_INCLUDES += $(TARGET_OUT_HEADERS)/mm-audio/audcal
-LOCAL_C_INCLUDES += $(TARGET_OUT_HEADERS)/mm-audio/audio-acdb-util
+LOCAL_C_INCLUDES += ../../../kernel
+#LOCAL_C_INCLUDES += $(TARGET_OUT_HEADERS)/mm-audio/audcal
+#LOCAL_C_INCLUDES += $(TARGET_OUT_HEADERS)/mm-audio/audio-acdb-util
 LOCAL_SRC_FILES += AudioHardware.cpp
 LOCAL_CFLAGS += -fno-short-enums
-LOCAL_CFLAGS += -DQC_PROP
 LOCAL_STATIC_LIBRARIES += libaudiointerface
 
 include $(BUILD_SHARED_LIBRARY)
