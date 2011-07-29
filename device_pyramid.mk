@@ -114,7 +114,8 @@ PRODUCT_COPY_FILES += \
     device/htc/pyramid/dsp/soundimage/srs_geq10.cfg:system/etc/soundimage/srs_geq10.cfg \
     device/htc/pyramid/dsp/soundimage/srsfx_trumedia_51.cfg:system/etc/soundimage/srsfx_trumedia_51.cfg \
     device/htc/pyramid/dsp/soundimage/srsfx_trumedia_movie.cfg:system/etc/soundimage/srsfx_trumedia_movie.cfg \
-    device/htc/pyramid/dsp/soundimage/srsfx_trumedia_music.cfg:system/etc/soundimage/srsfx_trumedia_music.cfg
+    device/htc/pyramid/dsp/soundimage/srsfx_trumedia_music.cfg:system/etc/soundimage/srsfx_trumedia_music.cfg \
+    device/htc/pyramid/prebuilt/snd3254:system/bin/snd3254
 
 # Wifi Module
 PRODUCT_COPY_FILES += \
