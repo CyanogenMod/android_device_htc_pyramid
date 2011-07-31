@@ -3,6 +3,8 @@ USE_CAMERA_STUB := true
 # inherit from the proprietary version
 -include vendor/htc/pyramid/BoardConfigVendor.mk
 
+TARGET_SPECIFIC_HEADER_PATH := device/htc/pyramid/include 
+
 TARGET_NO_BOOTLOADER := true
 
 TARGET_BOARD_PLATFORM := msm8660
