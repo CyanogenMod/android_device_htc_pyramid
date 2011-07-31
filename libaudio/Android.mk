@@ -1,4 +1,3 @@
-
 ifneq ($(BUILD_TINY_ANDROID),true)
 
 LOCAL_PATH := $(call my-dir)
@@ -57,7 +56,6 @@ LOCAL_SHARED_LIBRARIES += liba2dp libbinder
 endif
 
 LOCAL_C_INCLUDES += $(TARGET_OUT_HEADERS)/mm-audio/audio-alsa
-LOCAL_C_INCLUDES += ../../../kernel
 #LOCAL_C_INCLUDES += $(TARGET_OUT_HEADERS)/mm-audio/audcal
 #LOCAL_C_INCLUDES += $(TARGET_OUT_HEADERS)/mm-audio/audio-acdb-util
 LOCAL_SRC_FILES += AudioHardware.cpp
@@ -67,4 +65,3 @@ LOCAL_STATIC_LIBRARIES += libaudiointerface
 include $(BUILD_SHARED_LIBRARY)
 
 endif # not BUILD_TINY_ANDROID
-

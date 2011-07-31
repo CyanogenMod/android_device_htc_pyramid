@@ -36,7 +36,8 @@ public:
                     mLPADecodeOutput = -1;
                     mLPAMuted = false;
                     mLPAStreamType = AudioSystem::DEFAULT;
-#endif                }
+#endif                
+				}
 
         virtual ~AudioPolicyManager() {}
 
