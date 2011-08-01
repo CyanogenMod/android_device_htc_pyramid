@@ -561,6 +561,15 @@ AudioHardware::AudioHardware() :
     int fluence_mode = FLUENCE_MODE_ENDFIRE;
     char value[128];
 
+	acoustic =:: dlopen("/system/lib/libhtc_acoustic.so", RTLD_NOW);
+    if (acoustic == NULL ) {
+        LOGD("Could not open libhtc_acoustic.so");
+        /* this is not really an error on non-htc devices... */
+        mNumBTEndpoints = 0;
+        mInit = true;
+        return;
+    }
+	
         head = (Routing_table* ) malloc(sizeof(Routing_table));
         head->next = NULL;
 
