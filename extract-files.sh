@@ -53,10 +53,6 @@ adb pull /system/lib/egl/libGLESv1_CM_adreno200.so ../../../vendor/htc/$DEVICE/p
 adb pull /system/lib/egl/libGLESv2_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/egl/libq3dtools_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
 
-adb pull /system/lib/libacdbloader.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libacdbmapper.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libaudcal.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libaudio.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libaudioalsa.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libcamera.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libdiag.so ../../../vendor/htc/$DEVICE/proprietary
@@ -117,9 +113,6 @@ adb pull /system/lib/hw/sensors.pyramid.so ../../../vendor/htc/$DEVICE/proprieta
 PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libcamera.so:obj/lib/libcamera.so \\
     vendor/htc/__DEVICE__/proprietary/libaudioalsa.so:obj/lib/libaudioalsa.so \\
-    vendor/htc/__DEVICE__/proprietary/libaudcal.so:obj/lib/libaudcal.so \\
-    vendor/htc/__DEVICE__/proprietary/libacdbloader.so:obj/lib/libacdbloader.so \\
-    vendor/htc/__DEVICE__/proprietary/libacdbmapper.so:obj/lib/libacdbmapper.so \\
     vendor/htc/__DEVICE__/proprietary/libril.so:obj/lib/libril.so
 
 # All the blobs necessary for pyramid
@@ -158,9 +151,6 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libOmxVdec.so:/system/lib/libOmxVdec.so \\
     vendor/htc/__DEVICE__/proprietary/libOmxCore.so:/system/lib/libOmxCore.so \\
     vendor/htc/__DEVICE__/proprietary/libOmxVenc.so:/system/lib/libOmxVenc.so \\
-    vendor/htc/__DEVICE__/proprietary/libacdbloader.so:/system/lib/libacdbloader.so \\
-    vendor/htc/__DEVICE__/proprietary/libacdbmapper.so:/system/lib/libacdbmapper.so \\
-    vendor/htc/__DEVICE__/proprietary/libaudcal.so:/system/lib/libaudcal.so \\
     vendor/htc/__DEVICE__/proprietary/libaudioalsa.so:/system/lib/libaudioalsa.so \\
     vendor/htc/__DEVICE__/proprietary/libcamera.so:/system/lib/libcamera.so \\
     vendor/htc/__DEVICE__/proprietary/libdiag.so:/system/lib/libdiag.so \\
