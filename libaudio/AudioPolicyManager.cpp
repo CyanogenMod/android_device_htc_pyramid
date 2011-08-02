@@ -121,7 +121,7 @@ uint32_t AudioPolicyManager::getDeviceForStrategy(routing_strategy strategy, boo
     break;
 
     case STRATEGY_SONIFICATION:
-
+	case STRATEGY_MEDIA_SONIFICATION:
         // If incall, just select the STRATEGY_PHONE device: The rest of the behavior is handled by
         // handleIncallSonification().
         if (isInCall()) {
@@ -476,7 +476,7 @@ void AudioPolicyManager::setPhoneState(int state)
         // force routing command to audio hardware when starting a call
         // even if no device change is needed
         force = true;
-    } else if (isStateInCall(oldState) && (state == AudioSystem::MODE_NORMAL)) {
+    } else if (isStateInCall(oldState) &&  !isStateInCall(state)) {
         LOGV("  Exiting call in setPhoneState()");
         // force routing command to audio hardware when exiting a call
         // even if no device change is needed
@@ -917,16 +917,7 @@ status_t AudioPolicyManager::checkAndSetVolume(int stream, int index, audio_io_h
             if (stream == AudioSystem::VOICE_CALL) {
                 voiceVolume = (float)index/(float)mStreams[stream].mIndexMax;
             } else if (stream == AudioSystem::BLUETOOTH_SCO) {
-                String8 key ("bt_headset_vgs");
-                mpClientInterface->getParameters(output,key);
-                AudioParameter result(mpClientInterface->getParameters(0,key));
-                int value;
-                if(result.getInt(String8("isVGS"),value) == NO_ERROR){
-                   LOGD("BT-SCO Voice Volume %f",(float)index/(float)mStreams[stream].mIndexMax);
-                   voiceVolume = 1.0;
-                } else {
-                   voiceVolume = (float)index/(float)mStreams[stream].mIndexMax;
-                }
+                voiceVolume = 1.0;
             }
             if (voiceVolume >= 0 && output == mHardwareOutput) {
                 mpClientInterface->setVoiceVolume(voiceVolume, delayMs);
