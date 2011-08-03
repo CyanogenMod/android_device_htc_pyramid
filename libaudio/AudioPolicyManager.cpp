@@ -16,7 +16,7 @@
  */
 
 #define LOG_TAG "AudioPolicyManager"
-//#define LOG_NDEBUG 0
+#define LOG_NDEBUG 0
 #define LOG_NDDEBUG 0
 #include <utils/Log.h>
 #include "AudioPolicyManager.h"
@@ -79,12 +79,6 @@ uint32_t AudioPolicyManager::getDeviceForStrategy(routing_strategy strategy, boo
             if (device) break;
             device = mAvailableOutputDevices & AudioSystem::DEVICE_OUT_WIRED_HEADSET;
             if (device) break;
-#ifdef WITH_ANC
-            device = mAvailableOutputDevices & AudioSystem::DEVICE_OUT_ANC_HEADPHONE;
-            if (device) break;
-            device = mAvailableOutputDevices & AudioSystem::DEVICE_OUT_ANC_HEADSET;
-            if (device) break;
-#endif
             device = mAvailableOutputDevices & AudioSystem::DEVICE_OUT_EARPIECE;
             if (device == 0) {
                 LOGE("getDeviceForStrategy() earpiece device not found");
@@ -201,14 +195,6 @@ uint32_t AudioPolicyManager::getDeviceForStrategy(routing_strategy strategy, boo
 #ifdef DEVICE_OUT_FM_TX	
         if (mAvailableOutputDevices & AudioSystem::DEVICE_OUT_FM) {
             device |= AudioSystem::DEVICE_OUT_FM;
-        }
-#endif
-#ifdef WITH_ANC
-        if (mAvailableOutputDevices & AudioSystem::DEVICE_OUT_ANC_HEADSET) {
-            device |= AudioSystem::DEVICE_OUT_ANC_HEADSET;
-        }
-        if (mAvailableOutputDevices & AudioSystem::DEVICE_OUT_ANC_HEADPHONE) {
-            device |= AudioSystem::DEVICE_OUT_ANC_HEADPHONE;
         }
 #endif
         // Do not play media stream if in call and the requested device would change the hardware
@@ -353,14 +339,6 @@ status_t AudioPolicyManager::setDeviceConnectionState(AudioSystem::audio_devices
             }
         }
 #endif
-#ifdef WITH_ANC
-        if(device == AudioSystem::DEVICE_OUT_ANC_HEADPHONE ||
-            device == AudioSystem::DEVICE_OUT_ANC_HEADSET) {
-            if(newDevice == 0){
-                newDevice = getDeviceForStrategy(STRATEGY_MEDIA, false);
-            }
-        }
-#endif
 #ifdef WITH_A2DP
         AudioPolicyManagerBase::checkOutputForAllStrategies();
         // A2DP outputs must be closed after checkOutputForAllStrategies() is executed
@@ -381,10 +359,6 @@ status_t AudioPolicyManager::setDeviceConnectionState(AudioSystem::audio_devices
                    device == AudioSystem::DEVICE_OUT_BLUETOOTH_SCO_HEADSET ||
                    device == AudioSystem::DEVICE_OUT_BLUETOOTH_SCO_CARKIT) {
             device = AudioSystem::DEVICE_IN_BLUETOOTH_SCO_HEADSET;
-#ifdef WITH_ANC	
-        } else if(device == AudioSystem::DEVICE_OUT_ANC_HEADSET){
-               device = AudioSystem::DEVICE_IN_ANC_HEADSET; //wait for actual ANC device
-#endif
 		} else {
             return NO_ERROR;
         }
@@ -515,9 +489,7 @@ void AudioPolicyManager::setPhoneState(int state)
     // even if no device change is needed
     if (isStateInCall(oldState) && newDevice == 0) {
         newDevice = hwOutputDesc->device();
-        if(state == AudioSystem::MODE_NORMAL) {
-            force = true;
-        }
+        force = true;
     }
 
     // when changing from ring tone to in call mode, mute the ringing tone
@@ -660,7 +632,7 @@ void AudioPolicyManager::releaseSession(audio_io_handle_t output)
 
 status_t AudioPolicyManager::startOutput(audio_io_handle_t output, AudioSystem::stream_type stream, int session)
 {
-    LOGV("startOutput() output %d, stream %d", output, stream);
+    LOGV("startOutput() output %d, stream %d, session %d", output, stream, session);
     ssize_t index = mOutputs.indexOfKey(output);
     if (index < 0) {
         LOGW("startOutput() unknow output %d", output);
@@ -706,7 +678,7 @@ status_t AudioPolicyManager::startOutput(audio_io_handle_t output, AudioSystem::
 
 status_t AudioPolicyManager::stopOutput(audio_io_handle_t output, AudioSystem::stream_type stream, int session)
 {
-    LOGV("stopOutput() output %d, stream %d", output, stream);
+    LOGV("stopOutput() output %d, stream %d, session %d", output, stream, session);
     ssize_t index = mOutputs.indexOfKey(output);
     if (index < 0) {
         LOGW("stopOutput() unknow output %d", output);
@@ -802,18 +774,8 @@ void AudioPolicyManager::setOutputDevice(audio_io_handle_t output, uint32_t devi
 
     outputDesc->mDevice = device;
     // mute media streams if both speaker and headset are selected
-#ifdef WITH_ANC
     if (device == (AudioSystem::DEVICE_OUT_SPEAKER | AudioSystem::DEVICE_OUT_WIRED_HEADSET) ||
-        device == (AudioSystem::DEVICE_OUT_SPEAKER | AudioSystem::DEVICE_OUT_ANC_HEADSET) ||
-         device == (AudioSystem::DEVICE_OUT_SPEAKER | AudioSystem::DEVICE_OUT_WIRED_HEADPHONE) ||
-         device == (AudioSystem::DEVICE_OUT_SPEAKER | AudioSystem::DEVICE_OUT_ANC_HEADPHONE) ||
-        device == (AudioSystem::DEVICE_OUT_SPEAKER | AudioSystem::DEVICE_OUT_WIRED_HEADSET | AudioSystem::DEVICE_OUT_FM) ||
-        device == (AudioSystem::DEVICE_OUT_SPEAKER | AudioSystem::DEVICE_OUT_WIRED_HEADPHONE | AudioSystem::DEVICE_OUT_FM) ||
-        device == (AudioSystem::DEVICE_OUT_SPEAKER | AudioSystem::DEVICE_OUT_FM_TX)){
-#else
-		if (device == (AudioSystem::DEVICE_OUT_SPEAKER | AudioSystem::DEVICE_OUT_WIRED_HEADSET) ||
 			device == (AudioSystem::DEVICE_OUT_SPEAKER | AudioSystem::DEVICE_OUT_WIRED_HEADPHONE)){	
-#endif
         setStrategyMute(STRATEGY_MEDIA, true, output);
 #ifdef WITH_QCOM_LPA
         // Mute LPA output also if it belongs to STRATEGY_MEDIA
@@ -856,18 +818,8 @@ void AudioPolicyManager::setOutputDevice(audio_io_handle_t output, uint32_t devi
     }
 #endif
     // if changing from a combined headset + speaker route, unmute media streams
-#ifdef WITH_ANC
     if (prevDevice == (AudioSystem::DEVICE_OUT_SPEAKER | AudioSystem::DEVICE_OUT_WIRED_HEADSET) ||
-	 prevDevice == (AudioSystem::DEVICE_OUT_SPEAKER | AudioSystem::DEVICE_OUT_ANC_HEADSET) ||
-        prevDevice == (AudioSystem::DEVICE_OUT_SPEAKER | AudioSystem::DEVICE_OUT_WIRED_HEADPHONE) ||
-        prevDevice == (AudioSystem::DEVICE_OUT_SPEAKER | AudioSystem::DEVICE_OUT_ANC_HEADPHONE) ||
-        prevDevice == (AudioSystem::DEVICE_OUT_SPEAKER | AudioSystem::DEVICE_OUT_WIRED_HEADSET | AudioSystem::DEVICE_OUT_FM) ||
-        prevDevice == (AudioSystem::DEVICE_OUT_SPEAKER | AudioSystem::DEVICE_OUT_WIRED_HEADPHONE | AudioSystem::DEVICE_OUT_FM) ||
-        prevDevice == (AudioSystem::DEVICE_OUT_SPEAKER | AudioSystem::DEVICE_OUT_FM_TX)){
-#else
-		if (prevDevice == (AudioSystem::DEVICE_OUT_SPEAKER | AudioSystem::DEVICE_OUT_WIRED_HEADSET) ||
-			prevDevice == (AudioSystem::DEVICE_OUT_SPEAKER | AudioSystem::DEVICE_OUT_WIRED_HEADPHONE)){	
-#endif		
+			prevDevice == (AudioSystem::DEVICE_OUT_SPEAKER | AudioSystem::DEVICE_OUT_WIRED_HEADPHONE)){			
         setStrategyMute(STRATEGY_MEDIA, false, output, delayMs);
 #ifdef WITH_QCOM_LPA
         // Unmute LPA output also if it belongs to STRATEGY_MEDIA

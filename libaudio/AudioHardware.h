@@ -380,15 +380,13 @@ private:
     status_t    get_mRecordState();
     status_t    get_snd_dev();
     status_t    doRouting(AudioStreamInMSM72xx *input);
-	status_t    get_batt_temp(int *batt_temp);
-    uint32_t    getACDB(int mode, uint32_t device);
-    status_t    do_aic3254_control(int mode, bool record, bool standby, uint32_t device);
+	uint32_t    getACDB(int mode, uint32_t device);
+    status_t    do_aic3254_control(uint32_t device);
     void        aic3254_config(uint32_t device, const char* active_ap, const char* aic_effect);
     int         aic3254_ioctl(int cmd, const int argc);
     void        aic3254_powerdown();
     int         aic3254_set_volume(int volume);
     status_t    enableFM(int sndDevice);
-    status_t enableComboDevice(uint32_t sndDevice, bool enableOrDisable);
     status_t    disableFM();
     AudioStreamInMSM72xx*   getActiveInput_l();
 
@@ -506,8 +504,7 @@ private:
     };
 
             static const uint32_t inputSamplingRates[];
-			bool        mRecordState;
-            bool        mInit;
+			bool        mInit;
             bool        mMicMute;
             bool        mBluetoothNrec;
             uint32_t    mBluetoothId;
@@ -523,6 +520,7 @@ private:
 			int         mTtyMode;
 			int         mNoiseSuppressionState;
 			bool        mDualMicEnabled;
+            bool        mRecordState;
 	        char        mCurDspProfile[18];
 	        bool        mEffectEnabled;
 	        char        mActiveAP[8];
