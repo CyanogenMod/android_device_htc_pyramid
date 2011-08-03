@@ -16,4 +16,4 @@
 
 PRODUCT_PROPERTY_OVERRIDES += \
       htc.audio.alt.enable=0 \
-      htc.audio.hac.enable=0
+      htc.audio.hac.enable=1
