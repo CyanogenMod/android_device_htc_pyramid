@@ -186,9 +186,7 @@ enum STREAM_TYPES {
     FM_RADIO
 };
 
-#define MAX_DEVICE_COUNT 30
 #define DEV_ID(X) device_list[X].dev_id
-#define CAPABILITY(X) device_list[X].capability
 void addToTable(int decoder_id,int device_id,int device_id_tx,int stream_type,bool active) {
 	LOGD("addToTable (dec_id %d, dev_rx %d, dev_tx %d, type %d, active %d)", decoder_id, device_id, device_id_tx, stream_type, active);
     Routing_table* temp_ptr;
@@ -325,7 +323,6 @@ void deleteFromTable(int Stream_type) {
         }
         temp_ptr=temp_ptr->next;
     }
-
 }
 
 bool isDeviceListEmpty() {
@@ -389,23 +386,23 @@ int enableDevice(int device,short enable) {
     }
     return 0;
 }
-	
+
 void updateACDB(uint32_t new_rx_device, uint32_t new_tx_device, uint32_t new_rx_acdb, uint32_t new_tx_acdb)
 {
-	LOGD("updateACDB: (%d, %d, %d, %d) ", new_tx_device, new_rx_device, new_tx_acdb, new_rx_acdb);
-	
-	int rc = -1;
-	int (*update_acdb_id)(uint32_t, uint32_t, uint32_t, uint32_t);
-	
-	update_acdb_id = (int (*)(uint32_t, uint32_t, uint32_t, uint32_t))::dlsym(acoustic, "update_acdb_id");
-	if ((*update_acdb_id) == 0 ) {
-		LOGE("Could not open update_acdb_id()");
-	}
-	
-	rc = update_acdb_id(new_tx_device, new_rx_device, new_tx_acdb, new_rx_acdb);
-	if (rc < 0) {
-		LOGE("Could not set update_acdb_id: %d", rc);
-	}
+    LOGD("updateACDB: (%d, %d, %d, %d) ", new_tx_device, new_rx_device, new_tx_acdb, new_rx_acdb);
+
+    int rc = -1;
+    int (*update_acdb_id)(uint32_t, uint32_t, uint32_t, uint32_t);
+
+    update_acdb_id = (int (*)(uint32_t, uint32_t, uint32_t, uint32_t))::dlsym(acoustic, "update_acdb_id");
+    if ((*update_acdb_id) == 0 ) {
+        LOGE("Could not open update_acdb_id()");
+    }
+
+    rc = update_acdb_id(new_tx_device, new_rx_device, new_tx_acdb, new_rx_acdb);
+    if (rc < 0) {
+        LOGE("Could not set update_acdb_id: %d", rc);
+    }
 }
 
 static status_t updateDeviceInfo(uint32_t rx_device, uint32_t tx_device,
@@ -580,7 +577,7 @@ AudioHardware::AudioHardware() :
     mInit(false), mMicMute(true), mBluetoothNrec(true), mBluetoothId(0),
 	mHACSetting(false), mBluetoothIdTx(0), mBluetoothIdRx(0),
     mOutput(0), mCurSndDevice(INVALID_DEVICE), mVoiceVolume(VOICE_VOLUME_MAX),
-    mTtyMode(TTY_OFF), mDualMicEnabled(false), mEffectEnabled(false)
+    mTtyMode(TTY_OFF), mDualMicEnabled(false),  mRecordState(false), mEffectEnabled(false)
 {
 	int (*snd_get_num)();
     int (*snd_get_bt_endpoint)(msm_bt_endpoint *);
@@ -3232,30 +3229,6 @@ status_t AudioHardware::AudioStreamInMSM72xx::set(
     }
     //mHardware->setMicMute_nosync(false);
     mState = AUDIO_INPUT_OPENED;
-
-    if (!acoustic)
-        return NO_ERROR;
-
-    audpre_index = calculate_audpre_table_index(mSampleRate);
-    tx_iir_index = (audpre_index * 2) + (hw->checkOutputStandby() ? 0 : 1);
-    LOGD("audpre_index = %d, tx_iir_index = %d\n", audpre_index, tx_iir_index);
-
-    /**
-     * If audio-preprocessing failed, we should not block record.
-     */
-    int (*msm72xx_set_audpre_params)(int, int);
-    msm72xx_set_audpre_params = (int (*)(int, int))::dlsym(acoustic, "msm72xx_set_audpre_params");
-    status = msm72xx_set_audpre_params(audpre_index, tx_iir_index);
-    if (status < 0)
-        LOGE("Cannot set audpre parameters");
-
-    int (*msm72xx_enable_audpre)(int, int, int);
-    msm72xx_enable_audpre = (int (*)(int, int, int))::dlsym(acoustic, "msm72xx_enable_audpre");
-    mAcoustics = acoustic_flags;
-    status = msm72xx_enable_audpre((int)acoustic_flags, audpre_index, tx_iir_index);
-    if (status < 0)
-        LOGE("Cannot enable audpre");
-
     return NO_ERROR;
 
 Error:
