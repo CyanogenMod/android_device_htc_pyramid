@@ -54,7 +54,41 @@ adb pull /system/lib/egl/libGLESv2_adreno200.so ../../../vendor/htc/$DEVICE/prop
 adb pull /system/lib/egl/libq3dtools_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
 
 adb pull /system/lib/libaudioalsa.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libC2D2.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libcamera.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libcamera_client.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_imx074_default_video.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_imx074_preview.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_imx105_default_video.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_imx105_preview.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_mt9p012_ar.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_mt9p012_default_video.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_mt9p012_km_default_video.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_mt9p012_km_preview.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_mt9p012_preview.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_mt9e013_ar.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_mt9e013_default_video.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_mt9e013_preview.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_mt9t013_default_video.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_mt9t013_preview.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_ov8810_default_video.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_ov8810_preview.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_ov9726_preview.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_ov9726_video.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_s5k3e2fx_default_video.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_s5k3e2fx_preview.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_s5k3h1gx_default_video.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_s5k3h1gx_preview.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_s5k3h2yx_default_video.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_s5k3h2yx_preview.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_s5k4e1gx_default_video.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_s5k4e1gx_preview.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_sn12m0pz_default_video.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_sn12m0pz_preview.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_vb6801_default_video.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_vb6801_preview.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_vx6953_default_video.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_vx6953_preview.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libdiag.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libdll.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libdsutils.so ../../../vendor/htc/$DEVICE/proprietary
@@ -77,6 +111,7 @@ adb pull /system/lib/liboemcamera.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libOmxCore.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libOmxVdec.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libOmxVenc.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libOpenVG.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/liboverlay.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libqdp.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libqmi.so ../../../vendor/htc/$DEVICE/proprietary
@@ -152,7 +187,41 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libOmxCore.so:/system/lib/libOmxCore.so \\
     vendor/htc/__DEVICE__/proprietary/libOmxVenc.so:/system/lib/libOmxVenc.so \\
     vendor/htc/__DEVICE__/proprietary/libaudioalsa.so:/system/lib/libaudioalsa.so \\
+    vendor/htc/__DEVICE__/proprietary/libC2D2.so:/system/lib/libC2D2.so \\
     vendor/htc/__DEVICE__/proprietary/libcamera.so:/system/lib/libcamera.so \\
+    vendor/htc/__DEVICE__/proprietary/libcamera_client.so:/system/lib/libcamera_client.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_imx074_default_video.so:/system/lib/libchromatix_imx074_default_video.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_imx074_preview.so:/system/lib/libchromatix_imx074_preview.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_imx105_default_video.so:/system/lib/libchromatix_imx105_default_video.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_imx105_preview.so:/system/lib/libchromatix_imx105_preview.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_mt9p012_ar.so:/system/lib/libchromatix_mt9p012_ar.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_mt9p012_default_video.so:/system/lib/libchromatix_mt9p012_default_video.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_mt9p012_km_default_video.so:/system/lib/libchromatix_mt9p012_km_default_video.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_mt9p012_km_preview.so:/system/lib/libchromatix_mt9p012_km_preview.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_mt9p012_preview.so:/system/lib/libchromatix_mt9p012_preview.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_mt9e013_ar.so:/system/lib/libchromatix_mt9e013_ar.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_mt9e013_default_video.so:/system/lib/libchromatix_mt9e013_default_video.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_mt9e013_preview.so:/system/lib/libchromatix_mt9e013_preview.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_mt9t013_default_video.so:/system/lib/libchromatix_mt9t013_default_video.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_mt9t013_preview.so:/system/lib/libchromatix_mt9t013_preview.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_ov8810_default_video.so:/system/lib/libchromatix_ov8810_default_video.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_ov8810_preview.so:/system/lib/libchromatix_ov8810_preview.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_ov9726_preview.so:/system/lib/libchromatix_ov9726_preview.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_ov9726_video.so:/system/lib/libchromatix_ov9726_video.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_s5k3e2fx_default_video.so:/system/lib/libchromatix_s5k3e2fx_default_video.s \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_s5k3e2fx_preview.so:/system/lib/libchromatix_s5k3e2fx_preview.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_s5k3h1gx_default_video.so:/system/lib/libchromatix_s5k3h1gx_default_video.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_s5k3h1gx_preview.so:/system/lib/libchromatix_s5k3h1gx_preview.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_s5k3h2yx_default_video.so:/system/lib/libchromatix_s5k3h2yx_default_video.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_s5k3h2yx_preview.so:/system/lib/libchromatix_s5k3h2yx_preview.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_s5k4e1gx_default_video.so:/system/lib/libchromatix_s5k4e1gx_default_video.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_s5k4e1gx_preview.so:/system/lib/libchromatix_s5k4e1gx_preview.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_sn12m0pz_default_video.so:/system/lib/libchromatix_sn12m0pz_default_video.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_sn12m0pz_preview.so:/system/lib/libchromatix_sn12m0pz_preview.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_vb6801_default_video.so:/system/lib/libchromatix_vb6801_default_video.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_vb6801_preview.so:/system/lib/libchromatix_vb6801_preview.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_vx6953_default_video.so:/system/lib/libchromatix_vx6953_default_video.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_vx6953_preview.so:/system/lib/libchromatix_vx6953_preview.so \\
     vendor/htc/__DEVICE__/proprietary/libdiag.so:/system/lib/libdiag.so \\
     vendor/htc/__DEVICE__/proprietary/libdll.so:/system/lib/libdll.so \\
     vendor/htc/__DEVICE__/proprietary/libdsutils.so:/system/lib/libdsutils.so \\
@@ -175,6 +244,7 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libmlplatform.so:/system/lib/libmlplatform.so \\
     vendor/htc/__DEVICE__/proprietary/libnetmgr.so:/system/lib/libnetmgr.so \\
     vendor/htc/__DEVICE__/proprietary/liboemcamera.so:/system/lib/liboemcamera.so \\
+    vendor/htc/__DEVICE__/proprietary/libOpenVG.so:/system/lib/libOpenVG.so \\
     vendor/htc/__DEVICE__/proprietary/libqdp.so:/system/lib/libqdp.so \\
     vendor/htc/__DEVICE__/proprietary/libqmi.so:/system/lib/libqmi.so \\
     vendor/htc/__DEVICE__/proprietary/libqmiservices.so:/system/lib/libqmiservices.so \\

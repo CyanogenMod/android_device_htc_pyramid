@@ -1,4 +1,4 @@
-USE_CAMERA_STUB := true
+USE_CAMERA_STUB := false
 
 # inherit from the proprietary version
 -include vendor/htc/pyramid/BoardConfigVendor.mk
@@ -51,7 +51,7 @@ BOARD_USES_QCOM_LIBRPC := true
 #BOARD_USES_QCOM_GPS := true
 BOARD_USE_QCOM_PMEM := true
 BOARD_CAMERA_USE_GETBUFFERINFO := true
-
+BOARD_HAVE_HTC_FFC := true
 
 #BOARD_OVERLAY_FORMAT_YCbCr_420_SP := true
 BOARD_USES_ADRENO_200 := true
