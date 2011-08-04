@@ -113,6 +113,7 @@ adb pull /system/lib/libOmxVdec.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libOmxVenc.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libOpenVG.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/liboverlay.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libposteffect.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libqdp.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libqmi.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libqmiservices.so ../../../vendor/htc/$DEVICE/proprietary
@@ -243,6 +244,7 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libmllite.so:/system/lib/libmllite.so \\
     vendor/htc/__DEVICE__/proprietary/libmlplatform.so:/system/lib/libmlplatform.so \\
     vendor/htc/__DEVICE__/proprietary/libnetmgr.so:/system/lib/libnetmgr.so \\
+    vendor/htc/__DEVICE__/proprietary/libposteffect.so:/system/lib/libposteffect.so \\
     vendor/htc/__DEVICE__/proprietary/liboemcamera.so:/system/lib/liboemcamera.so \\
     vendor/htc/__DEVICE__/proprietary/libOpenVG.so:/system/lib/libOpenVG.so \\
     vendor/htc/__DEVICE__/proprietary/libqdp.so:/system/lib/libqdp.so \\
