@@ -209,7 +209,7 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libchromatix_ov8810_preview.so:/system/lib/libchromatix_ov8810_preview.so \\
     vendor/htc/__DEVICE__/proprietary/libchromatix_ov9726_preview.so:/system/lib/libchromatix_ov9726_preview.so \\
     vendor/htc/__DEVICE__/proprietary/libchromatix_ov9726_video.so:/system/lib/libchromatix_ov9726_video.so \\
-    vendor/htc/__DEVICE__/proprietary/libchromatix_s5k3e2fx_default_video.so:/system/lib/libchromatix_s5k3e2fx_default_video.s \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_s5k3e2fx_default_video.so:/system/lib/libchromatix_s5k3e2fx_default_video.so \\
     vendor/htc/__DEVICE__/proprietary/libchromatix_s5k3e2fx_preview.so:/system/lib/libchromatix_s5k3e2fx_preview.so \\
     vendor/htc/__DEVICE__/proprietary/libchromatix_s5k3h1gx_default_video.so:/system/lib/libchromatix_s5k3h1gx_default_video.so \\
     vendor/htc/__DEVICE__/proprietary/libchromatix_s5k3h1gx_preview.so:/system/lib/libchromatix_s5k3h1gx_preview.so \\
