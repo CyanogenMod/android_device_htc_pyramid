@@ -21,7 +21,7 @@ Record_V_IMIC_Landscape_Stereo,/system/etc/soundimage/Sound_Rec_Landscape.txt
 Record_V_IMIC_Protrait_Stereo,/system/etc/soundimage/Sound_Rec_Portrait.txt
 Record_A_IMIC_Mono,/system/etc/soundimage/Sound_Recording.txt
 Record_A_EMIC_Mono,/system/etc/soundimage/Sound_Recording.txt
-
+Original_Phone_REC,/system/etc/soundimage/Sound_Phone_Original_REC.txt
 ## Group for FM ##
 FM_Headset,
 FM_Speaker,
