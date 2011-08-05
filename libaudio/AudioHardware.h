@@ -130,7 +130,7 @@ enum tty_modes {
 #define AUDIO_HW_IN_BUFFERSIZE 2048                 // Default audio input buffer size
 #define AUDIO_HW_IN_FORMAT (AudioSystem::PCM_16_BIT)  // Default audio input sample format
 	
-#define VOICE_VOLUME_MAX 100  // Maximum voice volume	
+#define VOICE_VOLUME_MAX 0  // Maximum voice volume	
 
 #ifdef WITH_QCOM_SPEECH
 /* AMR frame type definitions */

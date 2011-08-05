@@ -854,7 +854,7 @@ void AudioHardware::closeInputStream(AudioStreamIn* in) {
 
 status_t AudioHardware::setMode(int mode)
 {
-	 int prevMode = mMode;
+    int prevMode = mMode;
     status_t status = AudioHardwareBase::setMode(mode);
     if (status == NO_ERROR) {
         // make sure that doAudioRouteOrMute() is called by doRouting()
@@ -1106,77 +1106,21 @@ status_t AudioHardware::setVoiceVolume(float v)
         LOGW("setVoiceVolume(%f) over 1.0, assuming 1.0\n", v);
         v = 1.0;
     }
-	
-	int vol = lrint(v * 100.0);
-    if (mCurSndDevice == SND_DEVICE_HAC) {
-        LOGI("HAC enable: Setting in-call volume to maximum.\n");
-        if (msm_set_voice_rx_vol(VOICE_VOLUME_MAX)) {
-            LOGE("msm_set_voice_rx_vol(%d) failed errno = %d", VOICE_VOLUME_MAX, errno);
-            return -1;
-        }
-    } else {
-        LOGD("setVoiceVolume(%f)\n", v);
-        LOGI("Setting in-call volume to %d (available range is 0 to 100)\n", vol);
-		
-        if (msm_set_voice_rx_vol(vol)) {
-            LOGE("msm_set_voice_rx_vol(%d) failed errno = %d", vol, errno);
-            return -1;
-        }
-    }
-	
-    mVoiceVolume = vol;
-    LOGV("msm_set_voice_rx_vol(%d) succeeded", vol);
-	
-    if (mMode == AudioSystem::MODE_IN_CALL &&
-        mCurSndDevice != SND_DEVICE_BT &&
-        mCurSndDevice != SND_DEVICE_CARKIT &&
-        mCurSndDevice != SND_DEVICE_BT_EC_OFF)
-    {
-        uint32_t new_tx_acdb = getACDB(MOD_TX, mCurSndDevice);
-        uint32_t new_rx_acdb = getACDB(MOD_RX, mCurSndDevice);
-
-		int (*update_voice_acdb)(uint32_t, uint32_t);
-		
-        update_voice_acdb = (int (*)(uint32_t, uint32_t))::dlsym(acoustic, "update_voice_acdb");
-        if ((*update_voice_acdb) == 0 ) {
-            LOGE("Could not open update_voice_acdb()");
-        }
-		
-        int rc = update_voice_acdb(new_tx_acdb, new_rx_acdb);
-        if (rc < 0)
-            LOGE("Could not set update_voice_acdb: %d", rc);
-        else
-            LOGI("update_voice_acdb(%d, %d) succeeded", new_tx_acdb, new_rx_acdb);
-    }
-    return NO_ERROR;
-}
-
-/*
-status_t AudioHardware::setFmVolume(float v)
-{
-    int vol = AudioSystem::logToLinear( v );
-    if ( vol > 100 ) {
-        vol = 100;
-    }
-    else if ( vol < 0 ) {
-        vol = 0;
-    }
-    LOGV("setFmVolume(%f)\n", v);
-    LOGV("Setting FM volume to %d (available range is 0 to 100)\n", vol);
-    Routing_table* temp = NULL;
-    temp = getNodeByStreamType(FM_RADIO);
-    if(temp == NULL){
-        LOGV("No Active FM stream is running");
-        return NO_ERROR;
-    }
-    if(msm_set_volume(temp->dec_id, vol)) {
-        LOGE("msm_set_volume(%d) failed for FM errno = %d",vol,errno);
+    
+    int vol = lrint(v * 100.0);
+    // Voice volume levels from android are mapped to driver volume levels as follows.
+    // 0 -> 5, 20 -> 4, 40 ->3, 60 -> 2, 80 -> 1, 100 -> 0
+    vol = 5 - (vol/20);
+    LOGD("setVoiceVolume(%f)\n", v);
+    LOGI("Setting in-call volume to %d (available range is 5(MIN VOLUME)  to 0(MAX VOLUME)\n", vol);
+    
+    if(msm_set_voice_rx_vol(vol)) {
+        LOGE("msm_set_voice_rx_vol(%d) failed errno = %d",vol,errno);
         return -1;
     }
-    LOGV("msm_set_volume(%d) for FM succeeded",vol);
+    LOGV("msm_set_voice_rx_vol(%d) succeeded",vol);
     return NO_ERROR;
 }
-*/
 	
 static status_t set_volume_fm(uint32_t volume)
 {
@@ -2020,25 +1964,15 @@ status_t AudioHardware::doRouting(AudioStreamInMSM72xx *input)
             sndDevice = SND_DEVICE_IN_S_SADC_OUT_SPEAKER_PHONE;
         }
     }
-		if (outputDevices & AudioSystem::DEVICE_OUT_FM)
-			enableFM(sndDevice);
-		else
-			disableFM();
-		
-		if ((sndDevice != INVALID_DEVICE && sndDevice != mCurSndDevice)) {
-			ret = doAudioRouteOrMute(sndDevice);
-			mCurSndDevice = sndDevice;
-			if (mMode == AudioSystem::MODE_IN_CALL) {
-				if (mHACSetting && hac_enable && mCurSndDevice == SND_DEVICE_HAC) {
-					LOGD("HAC enable: Setting in-call volume to maximum.\n");
-					if (msm_set_voice_rx_vol(VOICE_VOLUME_MAX))
-						LOGE("msm_set_voice_rx_vol(%d) failed errno = %d", VOICE_VOLUME_MAX, errno);
-				} else {
-					if (msm_set_voice_rx_vol(mVoiceVolume))
-						LOGE("msm_set_voice_rx_vol(%d) failed errno = %d", mVoiceVolume, errno);
-				}
-			}
-		}
+    if (outputDevices & AudioSystem::DEVICE_OUT_FM)
+        enableFM(sndDevice);
+    else
+        disableFM();
+    
+    if ((sndDevice != INVALID_DEVICE && sndDevice != mCurSndDevice)) {
+        ret = doAudioRouteOrMute(sndDevice);
+        mCurSndDevice = sndDevice;
+    }
     return ret;
 }
 
@@ -3281,7 +3215,7 @@ status_t AudioHardware::AudioStreamInMSM72xx::standby()
     LOGD("AudioStreamInMSM72xx::standby()");
     Routing_table* temp = NULL;
 	if (mHardware) {
-        mHardware->set_mRecordState(0);
+        mHardware->set_mRecordState(false);
 		if (support_aic3254) {
             int snd_dev = mHardware->get_snd_dev();
             mHardware->aic3254_config(snd_dev, "", "");
