@@ -11,6 +11,7 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  */
+#ifndef _MSM_MDP_H_
 #define _MSM_MDP_H_
 
 #include <linux/types.h>
@@ -46,7 +47,6 @@
 #define MSMFB_OVERLAY_CHANGE_ZORDER_VG_PIPES	_IOW(MSMFB_IOCTL_MAGIC, 146, unsigned int)
 #define MSMFB_OVERLAY_3D       _IOWR(MSMFB_IOCTL_MAGIC, 147, \
 						struct msmfb_overlay_3d)
-
 
 enum {
 	MDP_RGB_565,      // RGB 565 planer
@@ -229,7 +229,11 @@ struct msmfb_overlay_blt {
 struct mdp_page_protection {
 	uint32_t page_protection;
 };
+#ifdef __KERNEL__
 
 /* get the framebuffer physical address information */
 int get_fb_phys_info(unsigned long *start, unsigned long *len, int fb_num);
 
+
+#endif
+#endif //_MSM_MDP_H_
