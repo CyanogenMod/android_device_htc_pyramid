@@ -35,13 +35,14 @@
 /dev/msm_vidc_dec       0660    system      audio
 /dev/msm_vidc_enc       0660    system      audio
 /dev/tpa2051d3          0660    system      audio
-/dev/control0             0660   system     audio
-/dev/controlC0            0660   system     audio
-/dev/pmem_audio           0660   system     audio
-/dev/tpa2051d3            0660   system     audio
+/dev/control0           0660    system      audio
+/dev/controlC0          0660    system      audio
+/dev/pmem_audio         0660    system      audio
+/dev/tpa2051d3          0660    system      audio
 
 #camera
-/dev/pmem_smipool      0660    system       audio
+/dev/pmem_smipool       0660    system      audio
+/dev/msm_camera/*       0660    system      camera
 
 #graphics
 /dev/msm_rotator        0660    system      graphics
