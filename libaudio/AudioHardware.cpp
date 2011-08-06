@@ -493,7 +493,7 @@ AudioHardware::AudioHardware() :
     mInit(false), mMicMute(true), mBluetoothNrec(true), mBluetoothId(0),
 	mHACSetting(false), mBluetoothIdTx(0), mBluetoothIdRx(0),
     mOutput(0), mCurSndDevice(INVALID_DEVICE), mVoiceVolume(VOICE_VOLUME_MAX),
-    mTtyMode(TTY_OFF), mDualMicEnabled(false),  mRecordState(false), mEffectEnabled(false)
+    mTtyMode(TTY_OFF), mNumPcmRec(0), mDualMicEnabled(false),  mRecordState(false), mEffectEnabled(false)
 {
 	int (*snd_get_num)();
     int (*snd_get_bt_endpoint)(msm_bt_endpoint *);
@@ -1711,16 +1711,16 @@ void AudioHardware::aic3254_config(uint32_t device, const char* active_ap, const
 	
 	if (mMode == AudioSystem::MODE_IN_CALL) {
 		strcpy(base, "Original_Phone");
-		if ( device == SND_DEVICE_HANDSET ||
-			device == SND_DEVICE_HANDSET_BACK_MIC ||
-			device == SND_DEVICE_NO_MIC_HEADSET )
-			strcat(base, "_REC");
-		else if (device == SND_DEVICE_HEADSET ||
-				 device == SND_DEVICE_HEADSET_AND_SPEAKER ||
-				 device == SND_DEVICE_HEADSET_AND_SPEAKER_BACK_MIC)
-			strcat(base, "_HP");
-		else if (device == SND_DEVICE_SPEAKER)
-			strcat(base, "_SPK");
+        if ( device == SND_DEVICE_HANDSET ||
+            device == SND_DEVICE_HANDSET_BACK_MIC)
+            strcat(base, "_REC");
+        else if (device == SND_DEVICE_HEADSET ||
+                 device == SND_DEVICE_HEADSET_AND_SPEAKER ||
+                 device == SND_DEVICE_HEADSET_AND_SPEAKER_BACK_MIC ||
+                 device == SND_DEVICE_NO_MIC_HEADSET)
+            strcat(base, "_HP");
+        else if (device == SND_DEVICE_SPEAKER)
+            strcat(base, "_SPK");
 	} else {
 		if (mRecordState)
 			strcpy(base, "Recording");
@@ -2598,12 +2598,19 @@ status_t AudioHardware::AudioStreamInMSM72xx::set(
     }
     else if(*pFormat == AUDIO_HW_IN_FORMAT)
     {
+        if(mHardware->mNumPcmRec > 0) {
+            /* Only one PCM recording is allowed at a time */
+            LOGE("Multiple PCM recordings is not allowed");
+            status = -1;
+            goto Error;
+        }
         // open audio input device
         status = ::open("/dev/msm_pcm_in", O_RDWR);
         if (status < 0) {
             LOGE("Cannot open /dev/msm_pcm_in errno: %d", errno);
             goto Error;
         }
+        mHardware->mNumPcmRec ++;
         mFd = status;
 
         // configuration
@@ -3227,6 +3234,9 @@ status_t AudioHardware::AudioStreamInMSM72xx::standby()
             mFd = -1;
             LOGV("driver closed");
             isDriverClosed = true;
+            if(mHardware->mNumPcmRec && mFormat == AUDIO_HW_IN_FORMAT) {
+                mHardware->mNumPcmRec --;
+            }
         }
         //mHardware->checkMicMute();
         mState = AUDIO_INPUT_CLOSED;

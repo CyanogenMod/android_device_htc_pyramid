@@ -518,6 +518,7 @@ private:
 			uint32_t    mCurSndDevice;
 			uint32_t    mVoiceVolume;
 			int         mTtyMode;
+            int         mNumPcmRec;
 			int         mNoiseSuppressionState;
 			bool        mDualMicEnabled;
             bool        mRecordState;
