@@ -1,7 +1,7 @@
 # system.prop for pyramid
 #
 
-ro.sf.lcd_density=240
+ro.sf.lcd_density=256
 
 debug.fb.rgb565 = 0
 
@@ -10,9 +10,7 @@ debug.composition.type = c2d
 
 rild.libpath=/system/lib/libhtc_ril.so
 # RilLibPath for Ganlite by Godel_Chen
-rild.libpath.ganlite=/system/lib/librilswitch.so
 rilswitch.vendorlibpath=/system/lib/libhtc_ril.so
-rilswitch.ganlibpath=/system/lib/libganril.so
 
 # Modify MMS APN retry timer from 5s to 2s.
 ro.gsm.2nd_data_retry_config = max_retries=3, 2000, 2000, 2000
