@@ -97,8 +97,8 @@ on boot
     chmod 0660                /dev/rfkill
 
     # bluetooth MAC address programming
-    chown bluetooth bluetooth /sys/module/board_pyramid/parameters/bdaddr
-    setprop ro.bt.bdaddr_path /sys/module/board_pyramid/parameters/bdaddr
+    chown bluetooth bluetooth /sys/module/htc_bdaddress/parameters/bdaddress
+    setprop ro.bt.bdaddr_path /sys/module/htc_bdaddress/parameters/bdaddress
     # bluetooth car dock pin
     #chown system system /sys/class/switch/dock/bt_pin
     
@@ -160,7 +160,7 @@ service bugreport /system/bin/dumpstate -d -v -o /sdcard/bugreports/bugreport
     oneshot
     keycodes 158 139
 
-service hciattach /system/bin/logwrapper /system/bin/brcm_patchram_plus --enable_hci --enable_lpm --baudrate 3000000 --patchram /etc/firmware/bcm4329.hcd /dev/ttyHS0
+service hciattach /system/bin/logwrapper /system/bin/brcm_patchram_plus --enable_hci --enable_lpm --baudrate 3000000 --patchram /etc/firmware/BCM4329B1_002.002.023.0589.0632.hcd /dev/ttyHS0
     user bluetooth
     group bluetooth net_bt_admin
     disabled
