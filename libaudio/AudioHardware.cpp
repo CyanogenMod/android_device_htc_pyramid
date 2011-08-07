@@ -2633,7 +2633,7 @@ status_t AudioHardware::AudioStreamInMSM72xx::set(
         config.buffer_size = bufferSize();
         // Make buffers to be allocated in driver equal to the number of buffers
         // that AudioFlinger allocates (Shared memory)
-        config.buffer_count = 4;
+        config.buffer_count = 2;
         config.codec_type = CODEC_TYPE_PCM;
         status = ioctl(mFd, AUDIO_SET_CONFIG, &config);
         if (status < 0) {
