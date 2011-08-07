@@ -94,10 +94,12 @@ adb pull /system/lib/libdll.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libdsutils.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libdsi_netctrl.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libgemini.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libganril.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libgsl.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libhtc_acoustic.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libhtc_ril.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libidl.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libkineto.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libmmipl.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libmmjpeg.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libmpl.so ../../../vendor/htc/$DEVICE/proprietary
@@ -116,6 +118,7 @@ adb pull /system/lib/libqdp.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libqmi.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libqmiservices.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libril.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/librilswitch.so ../../../vendor/htc/$DEVICE/proprietary
 
 adb pull /system/lib/hw/copybit.msm8660.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/hw/gps.pyramid.so ../../../vendor/htc/$DEVICE/proprietary
@@ -230,7 +233,10 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libhtc_ril.so:/system/lib/libhtc_ril.so \\
     vendor/htc/__DEVICE__/proprietary/libidl.so:/system/lib/libidl.so \\
     vendor/htc/__DEVICE__/proprietary/libril.so:/system/lib/libril.so \\
+    vendor/htc/__DEVICE__/proprietary/librilswitch.so:/system/lib/librilswitch.so \\
     vendor/htc/__DEVICE__/proprietary/liboverlay.so:/system/lib/liboverlay.so \\
+    vendor/htc/__DEVICE__/proprietary/libganril.so:/system/lib/libganril.so \\
+    vendor/htc/__DEVICE__/proprietary/libkineto.so:/system/lib/libkineto.so \\
     vendor/htc/__DEVICE__/proprietary/libmmipl.so:/system/lib/libmmipl.so \\
     vendor/htc/__DEVICE__/proprietary/libmmjpeg.so:/system/lib/libmmjpeg.so \\
     vendor/htc/__DEVICE__/proprietary/libmpl.so:/system/lib/libmpl.so \\
