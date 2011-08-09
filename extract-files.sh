@@ -112,7 +112,6 @@ adb pull /system/lib/libOmxCore.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libOmxVdec.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libOmxVenc.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libOpenVG.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/liboverlay.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libposteffect.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libqdp.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libqmi.so ../../../vendor/htc/$DEVICE/proprietary
@@ -120,12 +119,8 @@ adb pull /system/lib/libqmiservices.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libril.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/librilswitch.so ../../../vendor/htc/$DEVICE/proprietary
 
-adb pull /system/lib/hw/copybit.msm8660.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/hw/gps.pyramid.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/hw/gralloc.default.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/hw/gralloc.msm8660.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/hw/lights.msm8660.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/hw/overlay.default.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/hw/sensors.pyramid.so ../../../vendor/htc/$DEVICE/proprietary
 
 (cat << EOF) | sed s/__DEVICE__/$DEVICE/g > ../../../vendor/htc/$DEVICE/$DEVICE-vendor-blobs.mk
@@ -234,7 +229,6 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libidl.so:/system/lib/libidl.so \\
     vendor/htc/__DEVICE__/proprietary/libril.so:/system/lib/libril.so \\
     vendor/htc/__DEVICE__/proprietary/librilswitch.so:/system/lib/librilswitch.so \\
-    vendor/htc/__DEVICE__/proprietary/liboverlay.so:/system/lib/liboverlay.so \\
     vendor/htc/__DEVICE__/proprietary/libganril.so:/system/lib/libganril.so \\
     vendor/htc/__DEVICE__/proprietary/libkineto.so:/system/lib/libkineto.so \\
     vendor/htc/__DEVICE__/proprietary/libmmipl.so:/system/lib/libmmipl.so \\
@@ -251,12 +245,8 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libqmi.so:/system/lib/libqmi.so \\
     vendor/htc/__DEVICE__/proprietary/libqmiservices.so:/system/lib/libqmiservices.so \\
     vendor/htc/__DEVICE__/proprietary/vpimg:/system/etc/vpimg \\
-    vendor/htc/__DEVICE__/proprietary/gralloc.msm8660.so:/system/lib/hw/gralloc.msm8660.so \\
-    vendor/htc/__DEVICE__/proprietary/copybit.msm8660.so:/system/lib/hw/copybit.msm8660.so \\
     vendor/htc/__DEVICE__/proprietary/gps.pyramid.so:/system/lib/hw/gps.pyramid.so \\
-    vendor/htc/__DEVICE__/proprietary/gralloc.default.so:/system/lib/hw/gralloc.default.so \\
     vendor/htc/__DEVICE__/proprietary/lights.msm8660.so:/system/lib/hw/lights.msm8660.so \\
-    vendor/htc/__DEVICE__/proprietary/overlay.default.so:/system/lib/hw/overlay.default.so \\
     vendor/htc/__DEVICE__/proprietary/sensors.pyramid.so:/system/lib/hw/sensors.pyramid.so
 EOF
 

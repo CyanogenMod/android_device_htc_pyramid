@@ -66,6 +66,9 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libOmxVdec \
     libaudio \
+    gralloc.msm8660 \
+    overlay.default \
+    copybit.msm8660 \
     com.android.future.usb.accessory
 
 # Keylayouts
