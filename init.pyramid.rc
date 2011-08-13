@@ -160,7 +160,7 @@ service bugreport /system/bin/dumpstate -d -v -o /sdcard/bugreports/bugreport
     oneshot
     keycodes 158 139
 
-service hciattach /system/bin/logwrapper /system/bin/brcm_patchram_plus --enable_hci --enable_lpm --baudrate 3000000 --patchram /etc/firmware/BCM4329B1_002.002.023.0589.0632.hcd /dev/ttyHS0
+service hciattach /system/bin/logwrapper /system/bin/brcm_patchram_plus --enable_hci --baudrate 3000000 --patchram /etc/firmware/BCM4329B1_002.002.023.0589.0632.hcd /dev/ttyHS0
     user bluetooth
     group bluetooth net_bt_admin
     disabled
@@ -170,7 +170,7 @@ service hciattach /system/bin/logwrapper /system/bin/brcm_patchram_plus --enable
 # Set target address to emulator host loopback IF
 # Limit baudrate to 460800 to ensure reliable uart operation
 #service btld /system/bin/logwrapper /system/bin/btld -hwtun 10.0.2.2 -hb 460800 3000000 -lpm 1
-service btld /system/bin/logwrapper /system/bin/btld -lpm 1 -hb 3000000
+service btld /system/bin/logwrapper /system/bin/btld -hb 3000000
     user root
     group bluetooth net_bt_admin
     disabled
