@@ -62,13 +62,14 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     librs_jni \
+    gralloc.msm8660 \
+    copybit.msm8660 \
+    overlay.default \
     libOmxCore \
     libOmxVenc \
     libOmxVdec \
+    liboverlay \
     libaudio \
-    gralloc.msm8660 \
-    overlay.default \
-    copybit.msm8660 \
     com.android.future.usb.accessory
 
 # Keylayouts
