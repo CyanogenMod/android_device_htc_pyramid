@@ -4,7 +4,6 @@
 ro.sf.lcd_density=240
 
 debug.fb.rgb565 = 0
-debug.sf.hw = 0
 
 #C2D
 debug.composition.type = c2d
