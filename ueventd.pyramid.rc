@@ -40,18 +40,12 @@
 /dev/pmem_audio         0660    system      audio
 /dev/tpa2051d3          0660    system      audio
 
-# bluetooth
-/dev/ttyHS0             0600    bluetooth   bluetooth
-/dev/uinput             0660    system      bluetooth
-
 #camera
 /dev/pmem_smipool       0660    system      audio
 /dev/msm_camera/*       0660    system      camera
-/dev/pmem               0660    system      graphics
 
 #graphics
 /dev/msm_rotator        0660    system      graphics
 /dev/kgsl-2d0           0666    root        root
 /dev/kgsl-3d0           0666    root        root
-/dev/kgsl-2d1           0666    root        root
 
