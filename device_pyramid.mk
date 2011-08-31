@@ -69,7 +69,7 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libOmxVdec \
     liboverlay \
-    libaudio \
+    lights.pyramid \
     com.android.future.usb.accessory
 
 # Keylayouts
