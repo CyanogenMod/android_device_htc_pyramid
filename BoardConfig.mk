@@ -106,3 +106,6 @@ BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_CUSTOM_GRAPHICS:= ../../../device/htc/pyramid/graphics.c
 BOARD_USES_RECOVERY_CHARGEMODE := true
+
+TARGET_PREBUILT_RECOVERY_KERNEL := device/htc/pyramid/recovery_kernel
+BOARD_HTCBATT := device/htc/pyramid/htcbatt
