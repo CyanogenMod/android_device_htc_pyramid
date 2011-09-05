@@ -54,6 +54,8 @@ adb pull /system/lib/egl/libGLESv2_adreno200.so ../../../vendor/htc/$DEVICE/prop
 adb pull /system/lib/egl/libq3dtools_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
 
 adb pull /system/lib/libaudioalsa.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libacdbloader.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libaudcal.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libC2D2.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libcamera.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libcamera_client.so ../../../vendor/htc/$DEVICE/proprietary
@@ -174,6 +176,8 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libGLESv2_adreno200.so:/system/lib/egl/libGLESv2_adreno200.so \\
     vendor/htc/__DEVICE__/proprietary/libq3dtools_adreno200.so:/system/lib/egl/libq3dtools_adreno200.so \\
     vendor/htc/__DEVICE__/proprietary/libaudioalsa.so:/system/lib/libaudioalsa.so \\
+    vendor/htc/__DEVICE__/proprietary/libaudcal.so:/system/lib/libaudcal.so \\
+    vendor/htc/__DEVICE__/proprietary/libacdbloader.so:/system/lib/libacdbloader.so \\
     vendor/htc/__DEVICE__/proprietary/libC2D2.so:/system/lib/libC2D2.so \\
     vendor/htc/__DEVICE__/proprietary/libcamera.so:/system/lib/libcamera.so \\
     vendor/htc/__DEVICE__/proprietary/libcamera_client.so:/system/lib/libcamera_client.so \\
