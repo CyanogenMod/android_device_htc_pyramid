@@ -52,14 +52,6 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
     frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
-#PRODUCT_PACKAGES += \
-#    gps.pyramid \
-#    librs_jni \
-#    gralloc.msm8660 \
-#    copybit.msm8660 \
-#    overlay.default \
-#    com.android.future.usb.accessory
-
 PRODUCT_PACKAGES += \
     librs_jni \
     gralloc.msm8660 \
@@ -140,10 +132,11 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # The gps config appropriate for this device
-$(call inherit-product, device/common/gps/gps_eu_supl.mk)
+$(call inherit-product, device/common/gps/gps_us_supl.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/htc/pyramid/overlay
-
+# media config xml file
+PRODUCT_COPY_FILES += \
+    device/htc/glacier/media_profiles.xml:system/etc/media_profiles.xml
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := device/htc/pyramid/kernel
