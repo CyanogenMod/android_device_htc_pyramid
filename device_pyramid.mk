@@ -136,7 +136,7 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 # media config xml file
 PRODUCT_COPY_FILES += \
-    device/htc/glacier/media_profiles.xml:system/etc/media_profiles.xml
+    device/htc/pyramid/media_profiles.xml:system/etc/media_profiles.xml
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := device/htc/pyramid/kernel
