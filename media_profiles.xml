@@ -80,9 +80,9 @@
     <CamcorderProfiles cameraId="0">
         <EncoderProfile quality="hd" fileFormat="mp4" duration="60">
             <Video codec="h264"
-                   bitRate="6000000"
-                   width="1280"
-                   height="720"
+                   bitRate="10000000"
+                   width="1920"
+                   height="1088"
                    frameRate="30" />
 
             <Audio codec="aac"
@@ -167,9 +167,9 @@
          or query the capabilities of the codec at all if it is disabled
     -->
     <VideoEncoderCap name="h264" enabled="true"
-        minBitRate="64000" maxBitRate="8000000"
-        minFrameWidth="176" maxFrameWidth="1280"
-        minFrameHeight="144" maxFrameHeight="720"
+        minBitRate="64000" maxBitRate="10000000"
+        minFrameWidth="176" maxFrameWidth="1920"
+        minFrameHeight="144" maxFrameHeight="1088"
         minFrameRate="1" maxFrameRate="30" />
 
     <VideoEncoderCap name="h263" enabled="true"
