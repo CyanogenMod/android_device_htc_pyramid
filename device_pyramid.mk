@@ -57,12 +57,13 @@ PRODUCT_PACKAGES += \
     gralloc.msm8660 \
     copybit.msm8660 \
     overlay.default \
-    # libOmxCore \
-    # libOmxVenc \
-    # libOmxVdec \
     liboverlay \
     lights.pyramid \
     com.android.future.usb.accessory
+
+    # libOmxCore \
+    # libOmxVenc \
+    # libOmxVdec \
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
