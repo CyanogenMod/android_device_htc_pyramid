@@ -24,6 +24,8 @@ ro.ril.hsdpa.category = 10
 ro.ril.hsupa.category = 6
 ro.ril.hsxpa = 3
 
+ro.ril.enable.ganlite = 1
+
 # Default network type.
 # 0 => WCDMA preferred.
 ro.telephony.default_network=0
