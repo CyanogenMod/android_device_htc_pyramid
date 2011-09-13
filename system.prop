@@ -1,8 +1,6 @@
 # system.prop for pyramid
 #
 
-ro.sf.lcd_density=240
-
 debug.fb.rgb565 = 0
 
 #C2D
