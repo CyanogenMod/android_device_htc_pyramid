@@ -112,5 +112,4 @@ BOARD_USES_RECOVERY_CHARGEMODE := true
 TARGET_PREBUILT_RECOVERY_KERNEL := device/htc/pyramid/recovery_kernel
 BOARD_HTCBATT := device/htc/pyramid/htcbatt
 
-BOARD_HAVE_FM_RADIO := true
-BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
+BOARD_NEEDS_CUTILS_LOG := true
