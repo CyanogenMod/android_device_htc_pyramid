@@ -57,6 +57,7 @@ PRODUCT_PACKAGES += \
     gralloc.msm8660 \
     copybit.msm8660 \
     overlay.default \
+    gps.pyramid \
     liboverlay \
     lights.pyramid \
     com.android.future.usb.accessory
