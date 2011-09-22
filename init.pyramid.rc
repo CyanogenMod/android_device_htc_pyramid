@@ -97,8 +97,8 @@ on boot
     chmod 0660                /dev/rfkill
 
     # bluetooth MAC address programming
-    chown bluetooth bluetooth /sys/module/htc_bdaddress/parameters/bdaddress
-    setprop ro.bt.bdaddr_path /sys/module/htc_bdaddress/parameters/bdaddress
+    chown bluetooth bluetooth /sys/module/htc_bdaddress/parameters/bdaddr
+    setprop ro.bt.bdaddr_path /sys/module/htc_bdaddress/parameters/bdaddr
     # bluetooth car dock pin
     #chown system system /sys/class/switch/dock/bt_pin
     
