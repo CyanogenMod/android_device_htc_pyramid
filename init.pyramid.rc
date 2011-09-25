@@ -259,7 +259,7 @@ service dcvs1 /system/bin/dcvs --cpu=1 --slacktime=16
     user root
     disabled
 
-service mpdecision /system/bin/mpdecision --Nw 5.4 --Ts 350 --no_sleep --avg_comp --single_core_while_panel_off
+service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
     user root
     disabled
 
