@@ -21,6 +21,7 @@
 /dev/htc-acdb           0660    system      audio
 /dev/msm_audio_dev_ctrl 0660    system      audio
 /dev/msm_acdb           0660    system      audio
+/dev/msm_fm             0660    system      audio
 /dev/msm_pcm_lp_dec     0660    system      audio
 /dev/codec_aic3254      0660    system      audio
 /dev/pmem_adsp*         0660    system      audio
