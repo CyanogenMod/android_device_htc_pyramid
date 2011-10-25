@@ -52,6 +52,7 @@ BOARD_USE_QCOM_PMEM := true
 BOARD_CAMERA_USE_GETBUFFERINFO := true
 BOARD_USE_ENCODEDATA := TRUE
 BOARD_HAVE_HTC_FFC := true
+BOARD_USE_90_DEGREE_FFC := true
 #BOARD_USE_REVERSE_FFC := true
 
 
@@ -108,10 +109,9 @@ BOARD_SDEXT_DEVICE := /dev/block/mmcblk1p2
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
-BOARD_CUSTOM_GRAPHICS:= ../../../device/htc/pyramid/graphics.c
-BOARD_USES_RECOVERY_CHARGEMODE := true
+BOARD_CUSTOM_GRAPHICS:= ../../../device/htc/pyramid/recovery/graphics.c
+TARGET_RECOVERY_INITRC := device/htc/pyramid/recovery/init.rc
 
 TARGET_PREBUILT_RECOVERY_KERNEL := device/htc/pyramid/recovery_kernel
-BOARD_HTCBATT := device/htc/pyramid/htcbatt
 
 BOARD_NEEDS_CUTILS_LOG := true
