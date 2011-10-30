@@ -95,4 +95,5 @@ lib/libqdp.so
 lib/libqmi.so
 lib/libqmiservices.so
 lib/librilswitch.so
+lib/libwebkitaccel.so
 lib/hw/sensors.pyramid.so
