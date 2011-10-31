@@ -2,6 +2,7 @@
 #
 
 debug.fb.rgb565 = 0
+debug.sf.hw=1
 
 #C2D
 debug.composition.type = c2d
