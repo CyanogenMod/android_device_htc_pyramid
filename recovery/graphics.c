@@ -367,3 +367,9 @@ gr_pixel *gr_fb_data(void)
 {
     return (unsigned short *) gr_mem_surface.data;
 }
+void gr_fb_blank(bool blank)
+{
+}
+void gr_font_size(int *x, int *y)
+{
+}
