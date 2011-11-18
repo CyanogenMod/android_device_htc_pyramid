@@ -34,7 +34,6 @@ lib/libacdbloader.so
 lib/libaudcal.so
 lib/libC2D2.so
 lib/libcamera.so
-lib/libcamera_client.so
 lib/libchromatix_imx074_default_video.so
 lib/libchromatix_imx074_preview.so
 lib/libchromatix_imx105_default_video.so
@@ -90,10 +89,13 @@ lib/libOmxCore.so
 lib/libOmxVdec.so
 lib/libOmxVenc.so
 lib/libOpenVG.so
+lib/liboverlay.so
 lib/libposteffect.so
 lib/libqdp.so
 lib/libqmi.so
 lib/libqmiservices.so
 lib/librilswitch.so
 lib/libwebkitaccel.so
+lib/hw/gralloc.msm8660.so
+lib/hw/lights.msm8660.so
 lib/hw/sensors.pyramid.so

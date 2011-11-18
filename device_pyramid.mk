@@ -39,7 +39,6 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     device/htc/pyramid/init.pyramid.rc:root/init.pyramid.rc \
-    device/htc/pyramid/init.rc:root/init.rc \
     device/htc/pyramid/ueventd.pyramid.rc:root/ueventd.pyramid.rc
 
 ## (2) Also get non-open-source GSM-specific aspects if available
@@ -61,6 +60,7 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
     frameworks/base/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \
     frameworks/base/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
+    frameworks/base/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
     frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
 PRODUCT_PACKAGES += \
@@ -132,8 +132,8 @@ PRODUCT_COPY_FILES += \
     device/htc/pyramid/modules/bcm4329.ko:system/lib/modules/bcm4329.ko
 
 # Wifi Calling
-PRODUCT_COPY_FILES += \
-    device/htc/pyramid/prebuilt/MS-HTCDP-KNT20-02-A0-GB.apk:/system/app/MS-HTCDP-KNT20-02-A0-GB.apk
+#PRODUCT_COPY_FILES += \
+#    device/htc/pyramid/prebuilt/MS-HTCDP-KNT20-02-A0-GB.apk:/system/app/MS-HTCDP-KNT20-02-A0-GB.apk
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
