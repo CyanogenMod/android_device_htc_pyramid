@@ -233,7 +233,6 @@ else
 
         // PMEM buffers are always mmapped
         lockState |= private_handle_t::LOCK_STATE_MAPPED;
-              LOGE("// PMEM buffers are always mmapped 2.");
         // Allocate the buffer from pmem
         err = pma->alloc_pmem_buffer(size, usage, &base, &offset, &fd);
         if (err < 0) {

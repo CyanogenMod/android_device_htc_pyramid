@@ -29,9 +29,9 @@ LOCAL_SRC_FILES := 	\
 	mapper.cpp		\
 	pmemalloc.cpp
 	
-LOCAL_MODULE := gralloc.shooter
+LOCAL_MODULE := gralloc.$(TARGET_BOOTLOADER_BOARD_NAME)
 LOCAL_MODULE_TAGS := optional
-LOCAL_CFLAGS:= -DLOG_TAG=\"shooter.gralloc\"
+LOCAL_CFLAGS:= -DLOG_TAG=\"$(TARGET_BOOTLOADER_BOARD_NAME).gralloc\"
 
 ifneq (, $(filter msm7625_ffa msm7625_surf msm7627_ffa msm7627_surf msm7627_7x_ffa msm7627_7x_surf, $(QCOM_TARGET_PRODUCT)))
 LOCAL_CFLAGS += -DTARGET_MSM7x27
@@ -52,16 +52,3 @@ LOCAL_CFLAGS += -DUSE_ASHMEM
 endif
 include $(BUILD_SHARED_LIBRARY)
 
-
-# Build a host library for testing
-ifeq ($(HOST_OS),linux)
-include $(CLEAR_VARS)
-LOCAL_SRC_FILES :=		\
-    gpu.cpp				\
-	pmemalloc.cpp
-
-LOCAL_MODULE_TAGS := tests
-LOCAL_MODULE := libgralloc_shooter_host
-LOCAL_CFLAGS:= -DLOG_TAG=\"gralloc-qsd8k\"
-include $(BUILD_HOST_STATIC_LIBRARY)
-endif

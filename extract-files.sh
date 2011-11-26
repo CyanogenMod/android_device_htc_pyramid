@@ -1,7 +1,7 @@
 #!/bin/sh
 
 BASE=../../../vendor/htc/pyramid/proprietary
-rm -rf $BASE/*
+#rm -rf $BASE/*
 
 for FILE in `cat proprietary-files.txt`; do
     DIR=`dirname $FILE`

@@ -25,13 +25,16 @@ bin/usbnet
 xbin/wireless_modem
 etc/agps_rm
 etc/vpimg
+lib/egl/eglsubAndroid.so
 lib/egl/libEGL_adreno200.so
 lib/egl/libGLESv1_CM_adreno200.so
 lib/egl/libGLESv2_adreno200.so
 lib/egl/libq3dtools_adreno200.so
+lib/liba2dp.so
 lib/libaudioalsa.so
 lib/libacdbloader.so
 lib/libaudcal.so
+lib/libaudiopolicy.so
 lib/libC2D2.so
 lib/libcamera.so
 lib/libchromatix_imx074_default_video.so

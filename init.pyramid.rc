@@ -1,3 +1,14 @@
+on early-init
+	export EXTERNAL_STORAGE /mnt/sdcard
+	mkdir /mnt/sdcard 0000 system system
+	# for backwards compatibility
+	symlink /mnt/sdcard /sdcard
+
+on boot
+    mount debugfs /sys/kernel/debug /sys/kernel/debug
+    service post-boot /system/bin/sh /system/etc/init.post_boot.sh
+    user root
+    oneshot
 on early-fs
     mkdir /system
     mkdir /data 0771 system system
@@ -40,10 +51,11 @@ on fs
     symlink /vendor/firmware/misc/modem.b00 /vendor/firmware/modem.b00
     symlink /vendor/firmware/misc/modem.mdt /vendor/firmware/modem.mdt
 
-on init
     # double check the perms and set owner
     chown root root /devlog
     chmod 0700 /devlog
+
+    mount rootfs rootfs / remount
 
     # for Invense MPU3050
     chmod 0664 /dev/mpu
@@ -138,11 +150,13 @@ service wpa_supplicant /system/bin/logwrapper /system/bin/wpa_supplicant \
 #   after setting up the capabilities required for WEXT
 #   user wifi
 #   group wifi inet keystore
+    class main
     socket wpa_eth0 dgram 660 wifi wifi
     disabled
     oneshot
 
 service dhcpcd_eth0 /system/bin/dhcpcd -ABKL eth0
+    class main 
     disabled
     oneshot
 
@@ -156,11 +170,13 @@ service dhcpcd_eth0 /system/bin/dhcpcd -ABKL eth0
 
 # bugreport is triggered by the KEY_BACK and KEY_MENU keycodes
 service bugreport /system/bin/dumpstate -d -v -o /sdcard/bugreports/bugreport
+    class main
     disabled
     oneshot
     keycodes 158 139
 
 service hciattach /system/bin/logwrapper /system/bin/brcm_patchram_plus --enable_hci --baudrate 3000000 --patchram /etc/firmware/BCM4329B1_002.002.023.0589.0632.hcd /dev/ttyHS0
+    class main
     user bluetooth
     group bluetooth net_bt_admin
     disabled
@@ -171,12 +187,14 @@ service hciattach /system/bin/logwrapper /system/bin/brcm_patchram_plus --enable
 # Limit baudrate to 460800 to ensure reliable uart operation
 #service btld /system/bin/logwrapper /system/bin/btld -hwtun 10.0.2.2 -hb 460800 3000000 -lpm 1
 service btld /system/bin/logwrapper /system/bin/btld -hb 3000000
+    class main
     user root
     group bluetooth net_bt_admin
     disabled
     oneshot
 
 service udhcpd /system/bin/udhcpd
+    class core
     disabled
     oneshot
 
@@ -190,6 +208,7 @@ service udhcpd /system/bin/udhcpd
 #    stop srv_ser2net
 
 service rmt_storage /system/bin/rmt_storage /dev/block/mmcblk0p25 /dev/block/mmcblk0p26 /dev/block/mmcblk0p18
+    class core
     user root
     disabled
 
@@ -216,6 +235,7 @@ service hdmid /system/bin/hdmid
     start hdmid
 
 service htcbatt /system/bin/htcbatt
+    class charger
     user root
 
 on property:ro.build.tags=test-keys
@@ -243,8 +263,10 @@ on property:service.modem.enable=0
     
 # + SSD_RIL: Otis: from Qualcomm QMI and Netmgrd
 service qmuxd /system/bin/qmuxd
+    class main
 
 service netmgrd /system/bin/netmgrd
+    class main
 
 on property:ro.use_data_netmgrd=false
     # netmgr not supported on specific target

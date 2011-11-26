@@ -18,6 +18,9 @@
 PRODUCT_COPY_FILES += \
     device/htc/pyramid/gps.conf:system/etc/gps.conf
 
+PRODUCT_AAPT_CONFIG := normal hdpi
+PRODUCT_AAPT_PREF_CONFIG := hdpi
+
 ## (1) First, the most specific values, i.e. the aspects that are specific to GSM
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=240 \
@@ -38,8 +41,11 @@ PRODUCT_COPY_FILES += \
     device/htc/pyramid/recovery/sbin/htcbatt:recovery/root/sbin/htcbatt
 
 PRODUCT_COPY_FILES += \
+    device/htc/pyramid/init.rc:root/init.rc \
     device/htc/pyramid/init.pyramid.rc:root/init.pyramid.rc \
-    device/htc/pyramid/ueventd.pyramid.rc:root/ueventd.pyramid.rc
+    device/htc/pyramid/ueventd.pyramid.rc:root/ueventd.pyramid.rc \
+    device/htc/pyramid/prebuilt/cyc8-touchscreen.idc:system/usr/idc/cyc8-touchscreen.idc
+    
 
 ## (2) Also get non-open-source GSM-specific aspects if available
 $(call inherit-product-if-exists, vendor/htc/pyramid/pyramid-vendor.mk)
@@ -64,14 +70,14 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
 PRODUCT_PACKAGES += \
+    audio.a2dp.default \
+    libaudioutils \
+    audio.primary.shooter \
     librs_jni \
-    gralloc.msm8660 \
-    copybit.msm8660 \
-    overlay.default \
     gps.pyramid \
-    liboverlay \
-    lights.pyramid \
-    com.android.future.usb.accessory
+    gralloc.pyramid \
+    com.android.future.usb.accessory \
+    libaudio
 
     # libOmxCore \
     # libOmxVenc \
@@ -173,6 +179,8 @@ $(call inherit-product, device/htc/pyramid/media_htcaudio.mk)
 $(call inherit-product, device/htc/common/common.mk)
 
 $(call inherit-product, build/target/product/full_base.mk)
+
+$(call inherit-product, frameworks/base/build/phone-hdpi-512-dalvik-heap.mk)
 
 PRODUCT_NAME := full_pyramid
 PRODUCT_DEVICE := pyramid
