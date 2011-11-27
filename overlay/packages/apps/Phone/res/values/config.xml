@@ -14,10 +14,24 @@
      limitations under the License.
 -->
 
-<!-- Tuna-specific phone app resources. -->
+<!-- Passion-specific phone app resources. -->
 <resources>
 
-    <!-- Flag indicating if the tty is enabled -->
-    <bool name="tty_enabled">true</bool>
+    <!-- Enable the onscreen touch UI for all states of the in-call UI. -->
+    <bool name="allow_incoming_call_touch_ui">true</bool>
+    <bool name="allow_in_call_touch_ui">true</bool>
+
+    <bool name="allow_back_key_to_reject_incoming_call">true</bool>
+
+    <!-- Enable the onscreen "Dial" button in the emergency dialer. -->
+    <bool name="config_show_onscreen_dial_button">true</bool>
+
+    <!-- This device uses libaudio-qsd8k which implements
+         AudioHardware::setMicMute(bool state) and AudioHardware::getMicMute(bool* state)
+         so microphone muting calls should be routed through the AudioManager API. -->
+    <bool name="send_mic_mute_to_AudioManager">true</bool>
+
+    <!-- This device implements a noise suppression device for in call audio-->
+    <bool name="has_in_call_noise_suppression">true</bool>
 
 </resources>
