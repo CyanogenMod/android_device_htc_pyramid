@@ -99,5 +99,4 @@ lib/libqmi.so
 lib/libqmiservices.so
 lib/librilswitch.so
 lib/libwebkitaccel.so
-lib/hw/gralloc.msm8660.so
 lib/hw/sensors.pyramid.so

@@ -93,7 +93,9 @@ PRODUCT_COPY_FILES += \
     device/htc/pyramid/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
     device/htc/pyramid/keylayout/pyramid-keypad.kl:system/usr/keylayout/pyramid-keypad.kl \
     device/htc/pyramid/keylayout/BT_HID.kl:system/usr/keylayout/BT_HID.kl \
-    device/htc/pyramid/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl
+    device/htc/pyramid/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
+    device/htc/pyramid/keylayout/cy8c-touchscreen.kl:system/usr/keylayout/cy8c-touchscreen.kl
+
 # Firmware
 PRODUCT_COPY_FILES += \
     device/htc/pyramid/firmware/BCM4329B1_002.002.023.0589.0632.hcd:system/etc/firmware/BCM4329B1_002.002.023.0589.0632.hcd \
