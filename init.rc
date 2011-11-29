@@ -33,9 +33,6 @@ loglevel 3
     mount cgroup none /acct cpuacct
     mkdir /acct/uid
 
-# Backwards Compat - XXX: Going away in G*
-    symlink /mnt/sdcard /sdcard
-
     mkdir /system
     mkdir /data 0771 system system
     mkdir /cache 0770 system cache
@@ -120,7 +117,7 @@ on post-fs
     chown root system /proc/sysrq-trigger
     chmod 0220 /proc/sysrq-trigger
     
-     # create the lost+found directories, so as to enforce our permissions
+     #create the lost+found directories, so as to enforce our permissions
     mkdir /cache/lost+found 0770 root root
 
 on post-fs-data
@@ -150,7 +147,7 @@ on post-fs-data
     mkdir /data/misc/bluetoothd 0770 bluetooth bluetooth
     mkdir /data/misc/bluetooth 0770 system system
     mkdir /data/misc/keystore 0700 keystore keystore
-    mkdir /data/misc/keychan 0771 system system
+    mkdir /data/misc/keychain 0771 system system
     mkdir /data/misc/vpn 0770 system vpn
     mkdir /data/misc/systemkeys 0700 system system
     # give system access to wpa_supplicant.conf for backup and restore
@@ -163,7 +160,7 @@ on post-fs-data
     mkdir /data/app 0771 system system
     mkdir /data/property 0700 root root
 
-    # create dalvik-cache and double-check the perms
+    # create dalvik-cache, so as to enforce our permissions 
     mkdir /data/dalvik-cache 0771 system system
 
     # create resource-cache and double-check the perms
@@ -344,7 +341,7 @@ service console /system/bin/sh
 on property:ro.debuggable=1
     start console
 
-# adbd is controlled by the persist.service.adb.enable system property
+# adbd is controlled via property triggers in init.<platform>.usb.rc
 service adbd /sbin/adbd
     class core
     disabled
@@ -453,7 +450,7 @@ service flash_recovery /system/etc/install-recovery.sh
 service racoon /system/bin/racoon
     class main
     socket racoon stream 600 system system
-    group vpn net_admin inetn
+    group vpn net_admin inet
     disabled
     oneshot
 
@@ -477,11 +474,3 @@ service dumpstate /system/bin/dumpstate -s
     disabled
     oneshot
     
-service ipd /system/bin/ipd
-    socket ipd stream 666 root inet
-    
-service charging /system/bin/charging
-    user root
-    group root
-    disabled
-    oneshot
