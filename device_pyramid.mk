@@ -79,6 +79,7 @@ PRODUCT_PACKAGES += \
     audio.primary.pyramid \
     copybit.msm8660 \
     hwcomposer.msm8660 \
+    gralloc.msm8660 \
     liboverlay \
     libmemalloc \
     com.android.future.usb.accessory
