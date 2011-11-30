@@ -45,7 +45,7 @@ PRODUCT_COPY_FILES += \
     device/htc/pyramid/init.pyramid.rc:root/init.pyramid.rc \
     device/htc/pyramid/init.pyramid.usb.rc:root/init.pyramid.usb.rc \
     device/htc/pyramid/ueventd.pyramid.rc:root/ueventd.pyramid.rc \
-    device/htc/pyramid/prebuilt/cyc8-touchscreen.idc:system/usr/idc/cyc8-touchscreen.idc
+    device/htc/pyramid/prebuilt/cy8c-touchscreen.idc:system/usr/idc/cy8c-touchscreen.idc
     
 
 ## (2) Also get non-open-source GSM-specific aspects if available
