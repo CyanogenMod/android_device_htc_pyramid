@@ -76,7 +76,10 @@ PRODUCT_PACKAGES += \
     audio.primary.shooter \
     librs_jni \
     gps.pyramid \
-    gralloc.pyramid \
+    copybit.msm8660 \
+    hwcomposer.msm8660 \
+    liboverlay \
+    libmemalloc \
     com.android.future.usb.accessory
 
     # libOmxCore \

@@ -93,7 +93,6 @@ lib/libOmxCore.so
 lib/libOmxVdec.so
 lib/libOmxVenc.so
 lib/libOpenVG.so
-lib/liboverlay.so
 lib/libposteffect.so
 lib/libqdp.so
 lib/libqmi.so
