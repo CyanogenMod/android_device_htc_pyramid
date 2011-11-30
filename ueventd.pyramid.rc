@@ -52,3 +52,5 @@
 /dev/kgsl-2d1           0666    root        root
 /dev/pmem               0660    system      graphics
 
+#bluetooth
+/dev/ttyHS0             0600    bluetooth   bluetooth

@@ -30,7 +30,7 @@ ro.ril.enable.ganlite = 1
 # 0 => WCDMA preferred.
 ro.telephony.default_network=0
 
-wifi.interface=eth0
+wifi.interface=wlan0
 wifi.supplicant_scan_interval=15
 
 mobiledata.interfaces=gannet0,rmnet0,rmnet1,rmnet2

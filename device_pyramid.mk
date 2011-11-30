@@ -77,8 +77,7 @@ PRODUCT_PACKAGES += \
     librs_jni \
     gps.pyramid \
     gralloc.pyramid \
-    com.android.future.usb.accessory \
-    libaudio
+    com.android.future.usb.accessory
 
     # libOmxCore \
     # libOmxVenc \
@@ -99,9 +98,7 @@ PRODUCT_COPY_FILES += \
 
 # Firmware
 PRODUCT_COPY_FILES += \
-    device/htc/pyramid/firmware/BCM4329B1_002.002.023.0589.0632.hcd:system/etc/firmware/BCM4329B1_002.002.023.0589.0632.hcd \
-    device/htc/pyramid/firmware/fw_bcm4329.bin:system/etc/firmware/fw_bcm4329.bin \
-    device/htc/pyramid/firmware/fw_bcm4329_apsta.bin:system/etc/firmware/fw_bcm4329_apsta.bin \
+    device/htc/pyramid/firmware/bcm4329.hcd:system/etc/firmware/bcm4329.hcd \
     device/htc/pyramid/firmware/vidc_1080p.fw:system/etc/firmware/vidc_1080p.fw \
     device/htc/pyramid/firmware/leia_pfp_470.fw:system/etc/firmware/leia_pfp_470.fw \
     device/htc/pyramid/firmware/leia_pm4_470.fw:system/etc/firmware/leia_pm4_470.fw
@@ -181,7 +178,7 @@ $(call inherit-product, device/htc/pyramid/media_htcaudio.mk)
 # stuff common to all HTC phones
 $(call inherit-product, device/htc/common/common.mk)
 
-$(call inherit-product, build/target/product/full_base.mk)
+$(call inherit-product, build/target/product/full_base_telephony.mk)
 
 $(call inherit-product, frameworks/base/build/phone-hdpi-512-dalvik-heap.mk)
 

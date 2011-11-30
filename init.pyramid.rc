@@ -51,6 +51,10 @@ on fs
     symlink /vendor/firmware/misc/modem.b00 /vendor/firmware/modem.b00
     symlink /vendor/firmware/misc/modem.mdt /vendor/firmware/modem.mdt
 
+    symlink /system/vendor/firmware/fw_bcm4329.bin /vendor/firmware/fw_bcm4329.bin
+    symlink /system/vendor/firmware/fw_bcm4329_apsta.bin /vendor/firmware/fw_bcm4329_apsta.bin
+    symlink /system/vendor/firmware/bcm4329.hcd /vendor/firmware/bcm4329.hcd
+
     # double check the perms and set owner
     chown root root /devlog
     chmod 0700 /devlog
@@ -144,21 +148,21 @@ on boot
 service load-modem /system/bin/load-modem.sh
     oneshot
 
-service wpa_supplicant /system/bin/logwrapper /system/bin/wpa_supplicant \
-    -Dwext -ieth0 -c/data/misc/wifi/wpa_supplicant.conf
-#   we will start as root and wpa_supplicant will switch to user wifi
-#   after setting up the capabilities required for WEXT
-#   user wifi
-#   group wifi inet keystore
+service wpa_supplicant /system/bin/wpa_supplicant -Dwext -iwlan0 -c/data/misc/wifi/wpa_supplicant.conf
     class main
-    socket wpa_eth0 dgram 660 wifi wifi
+    socket wpa_wlan0 dgram 660 wifi wifi
     disabled
     oneshot
 
-service dhcpcd_eth0 /system/bin/dhcpcd -ABKL eth0
+service dhcpcd_wlan0 /system/bin/dhcpcd -ABKL
     class main 
     disabled
     oneshot
+
+service iprenew_wlan0 /system/bin/dhcpcd -n
+     class main
+     disabled
+     oneshot
 
 # for Invense MPU3050
     chmod 0664 /dev/mpu
@@ -175,20 +179,9 @@ service bugreport /system/bin/dumpstate -d -v -o /sdcard/bugreports/bugreport
     oneshot
     keycodes 158 139
 
-service hciattach /system/bin/logwrapper /system/bin/brcm_patchram_plus --enable_hci --baudrate 3000000 --patchram /etc/firmware/BCM4329B1_002.002.023.0589.0632.hcd /dev/ttyHS0
+service hciattach /system/bin/brcm_patchram_plus --enable_hci --baudrate 3000000 --patchram /vendor/firmware/bcm4329.hcd /dev/ttyHS0
     class main
     user bluetooth
-    group bluetooth net_bt_admin
-    disabled
-    oneshot
-
-# Make sure we startup btld before hcid
-# Set target address to emulator host loopback IF
-# Limit baudrate to 460800 to ensure reliable uart operation
-#service btld /system/bin/logwrapper /system/bin/btld -hwtun 10.0.2.2 -hb 460800 3000000 -lpm 1
-service btld /system/bin/logwrapper /system/bin/btld -hb 3000000
-    class main
-    user root
     group bluetooth net_bt_admin
     disabled
     oneshot
@@ -235,7 +228,7 @@ service hdmid /system/bin/hdmid
     start hdmid
 
 service htcbatt /system/bin/htcbatt
-    class charger
+    class core
     user root
 
 on property:ro.build.tags=test-keys
