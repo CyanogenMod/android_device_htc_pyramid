@@ -76,6 +76,7 @@ PRODUCT_PACKAGES += \
     audio.primary.shooter \
     librs_jni \
     gps.pyramid \
+    audio.primary.pyramid \
     copybit.msm8660 \
     hwcomposer.msm8660 \
     liboverlay \
