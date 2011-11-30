@@ -129,6 +129,8 @@ typedef struct framebuffer_device_t {
 
     int (*compositionComplete)(struct framebuffer_device_t* dev);
 
+    int (*lockBuffer) (struct framebuffer_device_t* dev, int);
+
     /*
      * This hook is OPTIONAL.
      *
@@ -146,7 +148,11 @@ typedef struct framebuffer_device_t {
 
     int (*dequeueBuffer) (struct framebuffer_device_t* dev, int);
 
-    void* reserved_proc[6];
+    int (*orientationChanged) (struct framebuffer_device_t* dev, int);
+    int (*videoOverlayStarted) (struct framebuffer_device_t* dev, int);
+    int (*enableHDMIOutput) (struct framebuffer_device_t* dev, int);
+    int (*setActionSafeWidthRatio) (struct framebuffer_device_t* dev, float);
+    int (*setActionSafeHeightRatio) (struct framebuffer_device_t* dev, float);
 
 } framebuffer_device_t;
 
