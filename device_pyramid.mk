@@ -73,7 +73,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
     libaudioutils \
-    audio.primary.shooter \
     librs_jni \
     gps.pyramid \
     audio.primary.pyramid \
@@ -82,6 +81,7 @@ PRODUCT_PACKAGES += \
     gralloc.msm8660 \
     liboverlay \
     libmemalloc \
+    lights.pyramid \
     com.android.future.usb.accessory
 
     # libOmxCore \
