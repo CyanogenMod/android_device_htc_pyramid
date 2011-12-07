@@ -2,7 +2,8 @@
 #
 
 debug.fb.rgb565 = 0
-ro.telephony.ril.v3=facilitylock,signalstrength,icccardstatus
+ro.telephony.ril.v3=signalstrength
+hwui.render_dirty_regions=false
 debug.sf.hw=1
 
 #C2D

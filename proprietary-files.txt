@@ -100,4 +100,3 @@ lib/libqmiservices.so
 lib/librilswitch.so
 lib/libwebkitaccel.so
 lib/hw/sensors.pyramid.so
-lib/hw/hwcomposer.msm8660.so
