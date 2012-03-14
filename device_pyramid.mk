@@ -14,23 +14,20 @@
 # limitations under the License.
 #
 
-# The gps config appropriate for this device
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
+$(call inherit-product, device/htc/msm8660-common/msm8660.mk)
+
+DEVICE_PACKAGE_OVERLAYS += device/htc/pyramid/overlay
+
+# Boot ramdisk setup
 PRODUCT_COPY_FILES += \
-    device/htc/pyramid/gps.conf:system/etc/gps.conf
+    	device/htc/pyramid/prebuilt/init:root/init \
+	device/htc/pyramid/ramdisk/init.rc:root/init.rc \
+	device/htc/pyramid/ramdisk/init.pyramid.rc:root/init.pyramid.rc \
+	device/htc/pyramid/ramdisk/init.pyramid.usb.rc:root/init.pyramid.usb.rc \
+	device/htc/pyramid/ramdisk/ueventd.pyramid.rc:root/ueventd.pyramid.rc
 
-PRODUCT_AAPT_CONFIG := normal hdpi
-PRODUCT_AAPT_PREF_CONFIG := hdpi
-
-## (1) First, the most specific values, i.e. the aspects that are specific to GSM
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=240 \
-    ro.com.google.clientidbase=android-htc \
-    ro.com.google.locationfeatures=1 \
-    ro.com.google.networklocation=1 \
-    ro.setupwizard.enable_bypass=1 \
-    dalvik.vm.lockprof.threshold=500 \
-    dalvik.vm.dexopt-flags=m=y
-    
 ## recovery and custom charging
 PRODUCT_COPY_FILES += \
     device/htc/pyramid/prebuilt/init:recovery/root/init \
@@ -40,154 +37,90 @@ PRODUCT_COPY_FILES += \
     device/htc/pyramid/recovery/sbin/detect_key:recovery/root/sbin/detect_key \
     device/htc/pyramid/recovery/sbin/htcbatt:recovery/root/sbin/htcbatt
 
+# Some misc configeration files
 PRODUCT_COPY_FILES += \
-    device/htc/pyramid/init.rc:root/init.rc \
-    device/htc/pyramid/init.pyramid.rc:root/init.pyramid.rc \
-    device/htc/pyramid/init.pyramid.usb.rc:root/init.pyramid.usb.rc \
-    device/htc/pyramid/ueventd.pyramid.rc:root/ueventd.pyramid.rc \
-    device/htc/pyramid/prebuilt/cy8c-touchscreen.idc:system/usr/idc/cy8c-touchscreen.idc
-    
+	device/htc/pyramid/prebuilt/vold.fstab:system/etc/vold.fstab \
+	device/htc/pyramid/prebuilt/media_profiles.xml:system/etc/media_profiles.xml \
+    	device/htc/pyramid/prebuilt/gps.conf:system/etc/gps.conf
 
-## (2) Also get non-open-source GSM-specific aspects if available
-$(call inherit-product-if-exists, vendor/htc/pyramid/pyramid-vendor.mk)
-
-## (3)  Finally, the least specific parts, i.e. the non-GSM-specific aspects
-
-DEVICE_PACKAGE_OVERLAYS += device/htc/pyramid/overlay
-
+# Keylayouts and Keychars
 PRODUCT_COPY_FILES += \
-    frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
-    frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-    frameworks/base/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
-    frameworks/base/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
-    frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
-    frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-    frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
-    frameworks/base/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
-    frameworks/base/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
-    frameworks/base/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \
-    frameworks/base/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
-    frameworks/base/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
-    frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
+	device/htc/pyramid/keychars/pyramid-keypad.kcm:system/usr/keychars/pyramid-keypad.kcm \
+	device/htc/pyramid/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
+	device/htc/pyramid/keylayout/cy8c-touchscreen.kl:system/usr/keylayout/cy8c-touchscreen.kl \
+	device/htc/pyramid/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
+	device/htc/pyramid/keylayout/pyramid-keypad.kl:system/usr/keylayout/pyramid-keypad.kl
 
-PRODUCT_PACKAGES += \
-    audio.a2dp.default \
-    libaudioutils \
-    librs_jni \
-    gps.pyramid \
-    audio.primary.pyramid \
-    copybit.msm8660 \
-    hwcomposer.msm8660 \
-    gralloc.msm8660 \
-    liboverlay \
-    libmemalloc \
-    lights.pyramid \
-    com.android.future.usb.accessory
+#Bluetooth Firmwhere File (disabled while bt is broken)
+#PRODUCT_COPY_FILES += \
+#	device/htc/pyramid/prebuilt/bcm4329.hcd:system/etc/bcm4329.hcd \
 
-    # libOmxCore \
-    # libOmxVenc \
-    # libOmxVdec \
-
-# Keylayouts
+# Input device config
 PRODUCT_COPY_FILES += \
-    device/htc/pyramid/keychars/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin \
-    device/htc/pyramid/keychars/qwerty.kcm.bin:system/usr/keychars/qwerty.kcm.bin \
-    device/htc/pyramid/keychars/pyramid-keypad.kcm.bin:system/usr/keychars/pyramid-keypad.kcm.bin \
-    device/htc/pyramid/keychars/BT_HID.kcm.bin:system/usr/keychars/BT_HID.kcm.bin \
-    device/htc/pyramid/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
-    device/htc/pyramid/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
-    device/htc/pyramid/keylayout/pyramid-keypad.kl:system/usr/keylayout/pyramid-keypad.kl \
-    device/htc/pyramid/keylayout/BT_HID.kl:system/usr/keylayout/BT_HID.kl \
-    device/htc/pyramid/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
-    device/htc/pyramid/keylayout/cy8c-touchscreen.kl:system/usr/keylayout/cy8c-touchscreen.kl
+	device/htc/pyramid/prebuilt/cy8c-touchscreen.idc:system/usr/idc/cy8c-touchscreen.idc \
+	device/htc/pyramid/prebuilt/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc
 
-# Firmware
+# Sound configs
 PRODUCT_COPY_FILES += \
-    device/htc/pyramid/firmware/bcm4329.hcd:system/etc/firmware/bcm4329.hcd \
-    device/htc/pyramid/firmware/vidc_1080p.fw:system/etc/firmware/vidc_1080p.fw \
-    device/htc/pyramid/firmware/leia_pfp_470.fw:system/etc/firmware/leia_pfp_470.fw \
-    device/htc/pyramid/firmware/leia_pm4_470.fw:system/etc/firmware/leia_pm4_470.fw
-    
-# Audio DSP Profiles
-PRODUCT_COPY_FILES += \
+    device/htc/pyramid/dsp/AdieHWCodec.csv:system/etc/AdieHWCodec.csv \
     device/htc/pyramid/dsp/AIC3254_REG.csv:system/etc/AIC3254_REG.csv \
     device/htc/pyramid/dsp/AIC3254_REG_DualMic.csv:system/etc/AIC3254_REG_DualMic.csv \
-    device/htc/pyramid/dsp/AdieHWCodec.csv:system/etc/AdieHWCodec.csv \
     device/htc/pyramid/dsp/AudioBTID.csv:system/etc/AudioBTID.csv \
     device/htc/pyramid/dsp/CodecDSPID.txt:system/etc/CodecDSPID.txt \
     device/htc/pyramid/dsp/CodecDSPID_WB.txt:system/etc/CodecDSPID_WB.txt \
     device/htc/pyramid/dsp/TPA2051_CFG.csv:system/etc/TPA2051_CFG.csv \
     device/htc/pyramid/dsp/TPA2051_CFG_XC.csv:system/etc/TPA2051_CFG_XC.csv \
-    device/htc/pyramid/dsp/soundimage/Sound_Beats.txt:system/etc/soundimage/Sound_Beats.txt \
     device/htc/pyramid/dsp/soundimage/Sound_MFG.txt:system/etc/soundimage/Sound_MFG.txt \
     device/htc/pyramid/dsp/soundimage/Sound_Original_Recording.txt:system/etc/soundimage/Sound_Original_Recording.txt \
     device/htc/pyramid/dsp/soundimage/Sound_Original_SPK.txt:system/etc/soundimage/Sound_Original_SPK.txt \
     device/htc/pyramid/dsp/soundimage/Sound_Original.txt:system/etc/soundimage/Sound_Original.txt \
-    device/htc/pyramid/dsp/soundimage/Sound_Phone_Original_HP_WB.txt:system/etc/soundimage/Sound_Phone_Original_HP_WB.txt \
+    device/htc/pyramid/dsp/soundimage/Sound_Phone_Original_HP_LE.txt:system/etc/soundimage/Sound_Phone_Original_HP_LE.txt \
     device/htc/pyramid/dsp/soundimage/Sound_Phone_Original_HP.txt:system/etc/soundimage/Sound_Phone_Original_HP.txt \
-    device/htc/pyramid/dsp/soundimage/Sound_Phone_Original_REC_WB.txt:system/etc/soundimage/Sound_Phone_Original_REC_WB.txt \
+    device/htc/pyramid/dsp/soundimage/Sound_Phone_Original_HP_WB_LE.txt:system/etc/soundimage/Sound_Phone_Original_HP_WB_LE.txt \
+    device/htc/pyramid/dsp/soundimage/Sound_Phone_Original_HP_WB.txt:system/etc/soundimage/Sound_Phone_Original_HP_WB.txt \
+    device/htc/pyramid/dsp/soundimage/Sound_Phone_Original_REC_NEL.txt:system/etc/soundimage/Sound_Phone_Original_REC_NEL.txt \
     device/htc/pyramid/dsp/soundimage/Sound_Phone_Original_REC.txt:system/etc/soundimage/Sound_Phone_Original_REC.txt \
-    device/htc/pyramid/dsp/soundimage/Sound_Phone_Original_SPK_WB.txt:system/etc/soundimage/Sound_Phone_Original_SPK_WB.txt \
+    device/htc/pyramid/dsp/soundimage/Sound_Phone_Original_REC_WB.txt:system/etc/soundimage/Sound_Phone_Original_REC_WB.txt \
     device/htc/pyramid/dsp/soundimage/Sound_Phone_Original_SPK.txt:system/etc/soundimage/Sound_Phone_Original_SPK.txt \
+    device/htc/pyramid/dsp/soundimage/Sound_Phone_Original_SPK_WB.txt:system/etc/soundimage/Sound_Phone_Original_SPK_WB.txt \
     device/htc/pyramid/dsp/soundimage/Sound_Rec_Landscape.txt:system/etc/soundimage/Sound_Rec_Landscape.txt \
-    device/htc/pyramid/dsp/soundimage/Sound_Rec_Portrait.txt:system/etc/soundimage/Sound_Rec_Portrait.txt \
     device/htc/pyramid/dsp/soundimage/Sound_Recording.txt:system/etc/soundimage/Sound_Recording.txt \
-    device/htc/pyramid/dsp/soundimage/srs_geq10.cfg:system/etc/soundimage/srs_geq10.cfg \
-    device/htc/pyramid/dsp/soundimage/srsfx_trumedia_51.cfg:system/etc/soundimage/srsfx_trumedia_51.cfg \
-    device/htc/pyramid/dsp/soundimage/srsfx_trumedia_movie.cfg:system/etc/soundimage/srsfx_trumedia_movie.cfg \
-    device/htc/pyramid/dsp/soundimage/srsfx_trumedia_music.cfg:system/etc/soundimage/srsfx_trumedia_music.cfg \
-    device/htc/pyramid/prebuilt/snd3254:system/bin/snd3254
+    device/htc/pyramid/dsp/soundimage/Sound_Rec_Portrait.txt:system/etc/soundimage/Sound_Rec_Portrait.txt
 
-# Wifi Module
+#Copy any kernel modules
 PRODUCT_COPY_FILES += \
-    device/htc/pyramid/modules/bcm4329.ko:system/lib/modules/bcm4329.ko
+	device/htc/pyramid/modules/bcm4329.ko:system/lib/modules/bcm4329.ko \
+	device/htc/pyramid/modules/kineto_gan.ko:system/lib/modules/kineto_gan.ko
 
-# Wifi Calling
-#PRODUCT_COPY_FILES += \
-#    device/htc/pyramid/prebuilt/MS-HTCDP-KNT20-02-A0-GB.apk:/system/app/MS-HTCDP-KNT20-02-A0-GB.apk
+#Overrides
+PRODUCT_PROPERTY_OVERRIDES := \
+    	ro.opengles.version=131072 \
+	persist.sys.usb.config=mtp \
+	ro.setupwizard.enable_bypass=1 \
+        dalvik.vm.lockprof.threshold=500 \
+        dalvik.vm.dexopt-flags=m=y
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
-# device uses high-density artwork where available
-PRODUCT_LOCALES += hdpi
-
-PRODUCT_COPY_FILES += \
-    device/htc/pyramid/vold.fstab:system/etc/vold.fstab
-
-
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-
-# The gps config appropriate for this device
-$(call inherit-product, device/common/gps/gps_us_supl.mk)
-
-# media config xml file
-PRODUCT_COPY_FILES += \
-    device/htc/pyramid/media_profiles.xml:system/etc/media_profiles.xml
+# Device uses high-density artwork where available
+PRODUCT_AAPT_CONFIG := normal hdpi
+PRODUCT_AAPT_PREF_CONFIG := hdpi
+PRODUCT_LOCALES += en_US hdpi
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := device/htc/pyramid/kernel
+LOCAL_KERNEL := device/htc/pyramid/prebuilt/kernel
 else
-	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
-# media profiles and capabilities spec
-$(call inherit-product, device/htc/pyramid/media_a1026.mk)
-
-# htc audio settings
-$(call inherit-product, device/htc/pyramid/media_htcaudio.mk)
-
-# stuff common to all HTC phones
-$(call inherit-product, device/htc/common/common.mk)
-
-$(call inherit-product, build/target/product/full_base_telephony.mk)
+# call the proprietary setup
+$(call inherit-product-if-exists, vendor/htc/pyramid/pyramid-vendor.mk)
 
 $(call inherit-product, frameworks/base/build/phone-hdpi-512-dalvik-heap.mk)
 
-PRODUCT_NAME := full_pyramid
+PRODUCT_NAME := htc_pyramid
 PRODUCT_DEVICE := pyramid
-PRODUCT_MODEL := HTC Sensation
-PRODUCT_MANUFACTURER := HTC

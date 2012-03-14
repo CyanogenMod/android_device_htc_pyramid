@@ -1,5 +1,3 @@
-#!/bin/sh
-
 VENDOR=htc
 DEVICE=pyramid
 OUTDIR=vendor/$VENDOR/$DEVICE
@@ -12,7 +10,7 @@ MAKEFILE=../../../$OUTDIR/$DEVICE-vendor-blobs.mk
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
+# http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -24,23 +22,8 @@ MAKEFILE=../../../$OUTDIR/$DEVICE-vendor-blobs.mk
 
 # Prebuilt libraries that are needed to build open-source libraries
 PRODUCT_COPY_FILES += \\
-    $OUTDIR/proprietary/lib/libcamera.so:obj/lib/libcamera.so \\
-    $OUTDIR/proprietary/lib/libaudio.so:obj/lib/libaudio.so \\
-    $OUTDIR/proprietary/lib/libaudioalsa.so:obj/lib/libaudioalsa.so \\
-    $OUTDIR/proprietary/lib/libaudiopolicy.so:obj/lib/libaudiopolicy.so
-
-
-# Live wallpaper packages
-PRODUCT_PACKAGES := \\
-    LiveWallpapers \\
-    LiveWallpapersPicker \\
-    MagicSmokeWallpapers \\
-    VisualizationWallpapers \\
-    librs_jni
-
-# Publish that we support the live wallpaper feature.
-PRODUCT_COPY_FILES += \\
-    packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:/system/etc/permissions/android.software.live_wallpaper.xml
+    $OUTDIR/proprietary/lib/libril.so:obj/lib/libril.so
+#   vendor/__MANUFACTURER__/__DEVICE__/proprietary/libaudioalsa.so:obj/lib/libaudioalsa.so \\
 
 PRODUCT_COPY_FILES += \\
 EOF
@@ -48,11 +31,11 @@ EOF
 LINEEND=" \\"
 COUNT=`wc -l proprietary-files.txt | awk {'print $1'}`
 for FILE in `cat proprietary-files.txt`; do
-    COUNT=`expr $COUNT - 1`
+COUNT=`expr $COUNT - 1`
     if [ $COUNT = "0" ]; then
-        LINEEND=""
+LINEEND=""
     fi
-    echo "    $OUTDIR/proprietary/$FILE:system/$FILE$LINEEND" >> $MAKEFILE
+echo " $OUTDIR/proprietary/$FILE:system/$FILE$LINEEND" >> $MAKEFILE
 done
 
 (cat << EOF) > ../../../$OUTDIR/$DEVICE-vendor.mk
@@ -62,7 +45,7 @@ done
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
+# http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -85,7 +68,7 @@ EOF
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
+# http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -97,4 +80,5 @@ EOF
 
 USE_CAMERA_STUB := false
 EOF
+
 

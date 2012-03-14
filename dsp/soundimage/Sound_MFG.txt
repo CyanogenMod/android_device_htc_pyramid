@@ -4,7 +4,7 @@ w 30 00 01 # Page Select Register
 w 30 01 08 # Power Configuration Register
 w 30 02 21 # LDO Control Register
 w 30 7b 01 # Reference Power-up Configuration Register
-w 30 0a 3b # Common Mode Control Register
+w 30 0a 33 # Common Mode Control Register
 w 30 00 00 # Page Select Register
 w 30 1b 00 # Audio Interface Setting Register 1
 w 30 3c 00 # DAC Signal Processing Block Control Register
