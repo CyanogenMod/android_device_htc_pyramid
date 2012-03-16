@@ -41,9 +41,8 @@ TARGET_USES_OVERLAY := false
 # Qcom GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := pyramid
 
-# HTC RIL
-BOARD_USE_NEW_LIBRIL_HTC := true
-TARGET_PROVIDES_LIBRIL := vendor/htc/pyramid/proprietary/libril.so
+# RIL
+BOARD_PROVIDES_LIBRIL := true
 
 # Filesystem
 TARGET_USERIMAGES_USE_EXT4 := true

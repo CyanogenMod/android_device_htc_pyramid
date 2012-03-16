@@ -1,30 +1,91 @@
+#
 # system.prop for pyramid
+#
 
-# Radio
-rild.libpath=/system/lib/libhtc_ril.so
-ro.ril.set.mtu1472=1
-ro.ril.def.agps.mode=2
-ro.telephony.ril.v3=signalstrength
-ro.telephony.default_network=0
-mobiledata.interfaces=gannet0,rmnet0,rmnet1,rmnet2
-
-# Product Info
-ro.sf.lcd_density=240
-
-#VM Hax for now
-dalvik.vm.dexopt-data-only=1
-
-#QCOM Display Setings
 debug.fb.rgb565=0
 debug.sf.hw=1
 debug.composition.type=c2d
-ro.sf.compbypass.enable=1
-debug.enabletr=true
-com.qc.hardware=true
-com.qc.hdmi_out=false
+#ro.sf.compbypass.enable=1
+#debug.enabletr=true
+dev.pm.dyn_samplingrate=1
 
-# We have emmc storage
+#cm qcom build lub
+com.qc.hardware=true
+com.qc.hdmi_out=true
+
+rild.libpath=/system/lib/libhtc_ril.so
+# htc v4 ril
+ro.telephony.ril.v3=signalstrength
+ro.ril.enable.garbage.filter=0
+
+ro.ril.ecc.HTC-GCC=999,112,997
+ro.ril.ecc.HTC-WWE=999
+ro.ril.ecc.HTC-Dutch=112
+ro.ril.ecc.HTC-FRA=112
+ro.ril.ecc.HTC-ITA=112,911
+ro.ril.ecc.HTC-EastEurope=112
+ro.ril.enable.a52.HTC-ITA=1
+ro.ril.enable.a53.HTC-ITA=1
+ro.ril.enable.a52=0
+ro.ril.enable.a53=1
+
+ro.ril.fast.dormancy.rule=1
+ro.ril.disable.fd.plmn.prefix=23402,23410,23411,23420
+ro.ril.enable.sdr=1
+ro.ril.enable.amr.wideband=0
+
+# Modify MMS APN retry timer from 5s to 2s.
+ro.gsm.2nd_data_retry_config=max_retries=3, 2000, 2000, 2000
+
+# pyramidu RF team request
+ro.ril.enable.dtm=0
+ro.ril.gprsclass=12
+ro.ril.hsdpa.category=10
+ro.ril.hsupa.category=6
+ro.ril.hsxpa=3
+
+# Default network type.
+# 0 => WCDMA preferred.
+ro.telephony.default_network=0
+
+# Modify MTU from 1500 to 1472 on 3G network
+ro.ril.set.mtu1472=1
+
+# For HSDPA low throughput
+ro.ril.disable.power.collapse=1
+
+# For China NEL
+ro.ril.enable.prl.recognition=1
+
+wifi.interface=wlan0
+wifi.supplicant_scan_interval=30
+
+# density in DPI of the LCD of this board. This is used to scale the UI
+# appropriately. If this property is not defined, the default value is 160 dpi.
+ro.sf.lcd_density=240
+
+# For auto backlight default value
+settings.display.autobacklight=1
+
+# For the default value of agps
+ro.ril.def.agps.mode=2
+
+# The OpenGL ES API level that is natively supported by this device.
+# This is a 16.16 fixed point number
+ro.opengles.version=131072
+
+mobiledata.interfaces=rmnet0,wlan0,gprs,ppp0
+
+# For emmc phone storage
 ro.phone_storage=0
 
-# Kick Start rmt_storage for radio
+# Make rmt_storage start at init
 ro.emmc=1
+
+# System property for cabl
+ro.qualcomm.cabl=1
+
+ro.com.google.locationfeatures=1
+
+# UMS
+persist.sys.usb.config=mass_storage,adb
