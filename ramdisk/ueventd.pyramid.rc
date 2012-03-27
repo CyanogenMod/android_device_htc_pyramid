@@ -74,3 +74,6 @@
 
 /dev/msm_dsps           0660    system      system
 /dev/rtc0               0600    system      system
+
+# wifi
+/dev/rfkill             0660    root        wifi
