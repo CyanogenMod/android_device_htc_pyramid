@@ -17,14 +17,6 @@ lib/libacdbmapper.so
 lib/libaudcal.so
 lib/libaudioalsa.so
 lib/libhtc_acoustic.so
-lib/bluez-plugin/audio.so
-lib/bluez-plugin/bluetooth-health.so
-lib/bluez-plugin/input.so
-lib/bluez-plugin/network.so
-lib/libbluedroid.so
-lib/libbluetoothd.so
-lib/libbluetooth.so
-lib/libglib.so
 lib/hw/camera.default.so
 lib/libcamera_client.so
 lib/libcameraface.so
@@ -60,11 +52,8 @@ lib/libqdp.so
 lib/libqmiservices.so
 lib/libqmi.so
 lib/libhtc_ril.so
-lib/libril.so
 lib/hw/sensors.pyramid.so
 lib/libmllite.so
 lib/libmlplatform.so
 lib/libmpl_jni.so
 lib/libmpl.so
-lib/libv8.so
-xbin/wireless_modem
