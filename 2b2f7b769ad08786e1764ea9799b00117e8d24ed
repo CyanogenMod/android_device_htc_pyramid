@@ -1,0 +1,11 @@
+Change-Id: I2b2f7b769ad08786e1764ea9799b00117e8d24ed
+Code-Review+2: Ed Carrigan <cretin45@gmail.com>
+Verified+1: Ed Carrigan <cretin45@gmail.com>
+Code-Review+1: Mark Pyne <vorbeth@gmail.com>
+Code-Review+1: Matt Filetto <matt.filetto@gmail.com>
+Code-Review+1: Ethan Chen <intervigil@gmail.com>
+Submitted-by: Ed Carrigan <cretin45@gmail.com>
+Submitted-at: Wed, 28 Mar 2012 20:28:10 +0400
+Reviewed-on: http://review.cyanogenmod.com/14073
+Project: CyanogenMod/android_device_htc_pyramid
+Branch: refs/heads/ics
