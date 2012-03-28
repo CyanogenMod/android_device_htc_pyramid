@@ -29,10 +29,10 @@ PRODUCT_COPY_FILES += device/common/gps/gps.conf_EU:system/etc/gps.conf
 
 # Boot ramdisk setup
 PRODUCT_COPY_FILES += \
-	device/htc/pyramid/prebuilt/init:root/init \
-	device/htc/pyramid/ramdisk/init.pyramid.rc:root/init.pyramid.rc \
-	device/htc/pyramid/ramdisk/init.pyramid.usb.rc:root/init.pyramid.usb.rc \
-	device/htc/pyramid/ramdisk/ueventd.pyramid.rc:root/ueventd.pyramid.rc
+    device/htc/pyramid/prebuilt/init:root/init \
+    device/htc/pyramid/ramdisk/init.pyramid.rc:root/init.pyramid.rc \
+    device/htc/pyramid/ramdisk/init.pyramid.usb.rc:root/init.pyramid.usb.rc \
+    device/htc/pyramid/ramdisk/ueventd.pyramid.rc:root/ueventd.pyramid.rc
 
 ## recovery and custom charging
 PRODUCT_COPY_FILES += \
@@ -45,20 +45,20 @@ PRODUCT_COPY_FILES += \
 
 # Some misc configeration files
 PRODUCT_COPY_FILES += \
-	device/htc/pyramid/vold.fstab:system/etc/vold.fstab
+    device/htc/pyramid/vold.fstab:system/etc/vold.fstab
 
 # Keylayouts and Keychars
 PRODUCT_COPY_FILES += \
-	device/htc/pyramid/keychars/pyramid-keypad.kcm:system/usr/keychars/pyramid-keypad.kcm \
-	device/htc/pyramid/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
-	device/htc/pyramid/keylayout/cy8c-touchscreen.kl:system/usr/keylayout/cy8c-touchscreen.kl \
-	device/htc/pyramid/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
-	device/htc/pyramid/keylayout/pyramid-keypad.kl:system/usr/keylayout/pyramid-keypad.kl
+    device/htc/pyramid/keychars/pyramid-keypad.kcm:system/usr/keychars/pyramid-keypad.kcm \
+    device/htc/pyramid/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
+    device/htc/pyramid/keylayout/cy8c-touchscreen.kl:system/usr/keylayout/cy8c-touchscreen.kl \
+    device/htc/pyramid/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
+    device/htc/pyramid/keylayout/pyramid-keypad.kl:system/usr/keylayout/pyramid-keypad.kl
 
 # Input device config
 PRODUCT_COPY_FILES += \
-	device/htc/pyramid/idc/cy8c-touchscreen.idc:system/usr/idc/cy8c-touchscreen.idc \
-	device/htc/pyramid/idc/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc
+    device/htc/pyramid/idc/cy8c-touchscreen.idc:system/usr/idc/cy8c-touchscreen.idc \
+    device/htc/pyramid/idc/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc
 
 # HTC BT Audio tune
 PRODUCT_COPY_FILES += device/htc/pyramid/configs/AudioBTID.csv:system/etc/AudioBTID.csv
@@ -116,8 +116,8 @@ endif
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel \
-		device/htc/pyramid/modules/bcmdhd.ko:/system/lib/modules/bcmdhd.ko \
-                device/htc/pyramid/modules/kineto_gan.ko:/system/lib/modules/kineto_gan.ko
+    device/htc/pyramid/modules/bcmdhd.ko:/system/lib/modules/bcmdhd.ko \
+    device/htc/pyramid/modules/kineto_gan.ko:/system/lib/modules/kineto_gan.ko
 
 # call the proprietary setup
 $(call inherit-product-if-exists, vendor/htc/pyramid/pyramid-vendor.mk)
