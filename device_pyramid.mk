@@ -132,6 +132,3 @@ $(call inherit-product, device/htc/pyramid/media_a1026.mk)
 $(call inherit-product, device/htc/pyramid/media_htcaudio.mk)
 
 $(call inherit-product, frameworks/base/build/phone-xhdpi-1024-dalvik-heap.mk)
-
-PRODUCT_NAME := htc_pyramid
-PRODUCT_DEVICE := pyramid
