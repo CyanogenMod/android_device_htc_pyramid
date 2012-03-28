@@ -4,7 +4,6 @@ $(call inherit-product, vendor/cm/config/gsm.mk)
 # Release name
 PRODUCT_RELEASE_NAME := pyramid
 
-
 TARGET_BOOTANIMATION_NAME := vertical-540x960
 
 # Inherit some common CM stuff.
@@ -21,9 +20,4 @@ PRODUCT_MODEL := HTC Sensation
 PRODUCT_MANUFACTURER := HTC
 
 # Set build fingerprint / ID / Product Name ect.
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=htc_pyramid BUILD_ID=IML74K BUILD_FINGERPRINT=htc_europe/htc_pyramid/pyramid:4.0.3/IML74K/275847.101:user/release-keys PRIVATE_BUILD_DESC="3.25.401.101 CL275847 release-keys" BUILD_NUMBER=275847
-
-
-
-
-
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=htc_pyramid BUILD_FINGERPRINT=htc_europe/htc_pyramid/pyramid:4.0.3/IML74K/275847.101:user/release-keys PRIVATE_BUILD_DESC="3.25.401.101 CL275847 release-keys" BUILD_NUMBER=275847
