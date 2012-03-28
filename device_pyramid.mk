@@ -116,8 +116,7 @@ endif
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel \
-    device/htc/pyramid/modules/bcmdhd.ko:/system/lib/modules/bcmdhd.ko \
-    device/htc/pyramid/modules/kineto_gan.ko:/system/lib/modules/kineto_gan.ko
+    device/htc/pyramid/modules/bcmdhd.ko:/system/lib/modules/bcmdhd.ko
 
 # call the proprietary setup
 $(call inherit-product-if-exists, vendor/htc/pyramid/pyramid-vendor.mk)
