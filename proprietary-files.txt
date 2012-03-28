@@ -1,5 +1,3 @@
-bin/bluetoothd
-bin/btld
 bin/charging
 bin/htcbatt
 bin/ipd
