@@ -31,12 +31,14 @@ EOF
 
 LINEEND=" \\"
 COUNT=`wc -l proprietary-files.txt | awk {'print $1'}`
-for FILE in `cat proprietary-files.txt`; do
-COUNT=`expr $COUNT - 1`
-    if [ $COUNT = "0" ]; then
-LINEEND=""
-    fi
-echo " $OUTDIR/proprietary/$FILE:system/$FILE$LINEEND" >> $MAKEFILE
+DISM=`egrep -c '(^#|^$)' proprietary-files.txt`
+COUNT=`expr $COUNT - $DISM`
+for FILE in `egrep -v '(^#|^$)' proprietary-files.txt`; do
+  COUNT=`expr $COUNT - 1`
+  if [ $COUNT = "0" ]; then
+    LINEEND=""
+  fi
+  echo "  $OUTDIR/proprietary/$FILE:system/$FILE$LINEEND" >> $MAKEFILE
 done
 
 (cat << EOF) > ../../../$OUTDIR/$DEVICE-vendor.mk
