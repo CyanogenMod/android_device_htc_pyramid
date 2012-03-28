@@ -31,6 +31,7 @@ PRODUCT_COPY_FILES += device/common/gps/gps.conf_EU:system/etc/gps.conf
 PRODUCT_COPY_FILES += \
 	device/htc/pyramid/prebuilt/init:root/init \
 	device/htc/pyramid/ramdisk/init.pyramid.rc:root/init.pyramid.rc \
+	device/htc/pyramid/ramdisk/init.pyramid.usb.rc:root/init.pyramid.usb.rc \
 	device/htc/pyramid/ramdisk/ueventd.pyramid.rc:root/ueventd.pyramid.rc
 
 ## recovery and custom charging

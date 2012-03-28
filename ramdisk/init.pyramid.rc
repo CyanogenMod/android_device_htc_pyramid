@@ -1,4 +1,4 @@
-import init.htc8660.usb.rc
+import init.pyramid.usb.rc
 
 on early-init
     export EXTERNAL_STORAGE /mnt/sdcard
