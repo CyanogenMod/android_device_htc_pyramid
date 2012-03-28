@@ -37,7 +37,7 @@ ro.ril.enable.amr.wideband=0
 # Modify MMS APN retry timer from 5s to 2s.
 ro.gsm.2nd_data_retry_config=max_retries=3, 2000, 2000, 2000
 
-# pyramidu RF team request
+# pyramid RF team request
 ro.ril.enable.dtm=0
 ro.ril.gprsclass=12
 ro.ril.hsdpa.category=10
