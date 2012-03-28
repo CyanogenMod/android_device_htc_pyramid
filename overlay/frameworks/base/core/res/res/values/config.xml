@@ -32,6 +32,9 @@
 
     <!-- Our amoled doesn't animate well. -->
     <bool name="config_animateScreenLights">true</bool>
+    
+    <!-- disable menu hard key on Pyramid in non-pattern lockscreen -->
+    <bool name="config_disableMenuKeyInLockScreen">true</bool>
 
     <!-- Control whether being in the desk dock (and powered) always
          keeps the screen on.  By default it stays on when plugged in to
