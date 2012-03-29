@@ -27,6 +27,12 @@ PRODUCT_PACKAGES += \
 ## The gps config appropriate for this device
 PRODUCT_COPY_FILES += device/common/gps/gps.conf_EU:system/etc/gps.conf
 
+# Wifi
+PRODUCT_COPY_FILES += \
+    device/htc/pyramid/prebuilt/bcm4329.hcd:system/vendor/firmware/bcm4329.hcd
+
+$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
+
 # Boot ramdisk setup
 PRODUCT_COPY_FILES += \
     device/htc/pyramid/prebuilt/init:root/init \
