@@ -38,6 +38,9 @@ BOARD_KERNEL_CMDLINE := console=ttyHSL0 androidboot.hardware=pyramid no_console_
 # QCOM Gralloc/Copybit/HWcomposer
 TARGET_USES_OVERLAY := false
 
+#Camera
+BOARD_HAVE_HTC_FFC := true
+
 # Qcom GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := pyramid
 
