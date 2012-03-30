@@ -14,5 +14,9 @@
 # limitations under the License.
 #
 
+# Torch
+PRODUCT_PACKAGES += \
+    Torch
+
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/device_pyramid.mk
