@@ -24,6 +24,10 @@ PRODUCT_PACKAGES += \
     gps.pyramid \
     lights.pyramid
 
+# Torch
+PRODUCT_PACKAGES += \
+    Torch
+
 ## The gps config appropriate for this device
 PRODUCT_COPY_FILES += device/common/gps/gps.conf_EU:system/etc/gps.conf
 
