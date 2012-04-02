@@ -89,3 +89,6 @@ ro.com.google.locationfeatures=1
 
 # UMS
 persist.sys.usb.config=mass_storage,adb
+
+# Don't set /proc/sys/vm/dirty_ratio to 0 when USB mounting
+ro.vold.umsdirtyratio=20
