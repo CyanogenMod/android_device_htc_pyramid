@@ -104,7 +104,7 @@
         <item>255</item>
         <item>255</item>
         <item>255</item>
-        <item>-1</item>
+        <item>0</item>
         <item>0</item>
         <item>0</item>
         <item>0</item>
@@ -115,14 +115,13 @@
     <!-- Array of output values for keyboard backlight corresponding to the LUX values
          in the config_autoBrightnessLevels array.  This array should have size one greater
          than the size of the config_autoBrightnessLevels array.
-         Crespo has no keyboard so all values are zero.
     -->
     <integer-array name="config_autoBrightnessKeyboardBacklightValues">
         <item>255</item>
         <item>255</item>
         <item>255</item>
         <item>255</item>
-        <item>-1</item>
+        <item>0</item>
         <item>0</item>
         <item>0</item>
         <item>0</item>
