@@ -60,6 +60,7 @@ lib/libOpenVG.so
 lib/libqdp.so
 lib/libqmiservices.so
 lib/libqmi.so
+lib/libv8.so
 
 # Radio
 lib/libhtc_ril.so
