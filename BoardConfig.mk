@@ -60,3 +60,6 @@ BOARD_CUSTOM_GRAPHICS:= ../../../device/htc/pyramid/recovery/graphics.c
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
+
+# Dynamic shared V8 library 
+DYNAMIC_SHARED_LIBV8SO := false
