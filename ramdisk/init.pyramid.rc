@@ -247,12 +247,9 @@ service hciattach /system/bin/brcm_patchram_plus --enable_hci \
     oneshot
 
 service rmt_storage /system/bin/rmt_storage /dev/block/mmcblk0p26 /dev/block/mmcblk0p27 /dev/block/mmcblk0p18
-    class late_start
+    class core
     user root
     disabled
-
-on property:ro.emmc=1
-    start rmt_storage
 
 service modem /system/bin/wireless_modem
     user system
