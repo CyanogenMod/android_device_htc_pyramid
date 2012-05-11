@@ -51,10 +51,12 @@ on early-fs
     symlink /system/vendor/firmware/bcm4329.hcd /vendor/firmware/bcm4329.hcd
 
     mount ext4 /dev/block/mmcblk0p22 /system wait ro data=ordered noauto_da_alloc
+    setprop ro.crypto.tmpfs_options size=128m,mode=0771,uid=1000,gid=1000
     mount ext4 /dev/block/mmcblk0p23 /data wait noatime nosuid nodev data=ordered noauto_da_alloc
     mount ext4 /dev/block/mmcblk0p24 /cache wait noatime nosuid nodev data=ordered noauto_da_alloc
     mount ext4 /dev/block/mmcblk0p27 /devlog wait noatime nosuid nodev data=ordered noauto_da_alloc
 
+on post-fs-data
     # double check the perms and set owner
     chown root root /devlog
     chmod 0700 /devlog
@@ -82,6 +84,9 @@ on early-fs
 
     mkdir /data/radio 0770 radio radio
     chmod 2770 /data/radio
+
+    # Set indication (checked by vold) that we have finished this action
+    setprop vold.post_fs_data_done 1
 
 on init
     # bluetooth power up/down interface
