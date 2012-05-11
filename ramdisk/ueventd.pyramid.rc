@@ -19,6 +19,9 @@
 /dev/pmem_smipool*      0660    system      camera
 /dev/pmem_camera*       0660    system      camera
 
+# DIAG device node is world readable/writable
+/dev/diag               0666    root        root
+
 # sensors
 /dev/akm8975_daemon     0640    compass     system
 /dev/akm8975_aot        0640    compass     system
