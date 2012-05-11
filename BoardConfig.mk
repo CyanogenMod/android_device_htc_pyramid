@@ -38,6 +38,7 @@ TARGET_PREBUILT_KERNEL := device/htc/pyramid/prebuilt/kernel
 
 # QCOM Gralloc/Copybit/HWcomposer
 TARGET_USES_OVERLAY := false
+COMMON_GLOBAL_CFLAGS += -DQCOM_ROTATOR_KERNEL_FORMATS
 
 #Camera
 BOARD_HAVE_HTC_FFC := true
