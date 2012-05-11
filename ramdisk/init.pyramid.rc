@@ -105,6 +105,20 @@ on init
     chown system camera /sys/class/leds/flashlight/brightness
     chmod 0660          /sys/class/leds/flashlight/brightness
 
+    # symlink for HDMI
+    symlink /dev/graphics/fb1 /dev/graphics/hdmi
+
+    # remove write permissions to video nodes
+    chmod 0664 /sys/devices/virtual/graphics/fb1/hpd
+    chmod 0664 /sys/devices/virtual/graphics/fb1/video_mode
+    chmod 0664 /sys/devices/virtual/graphics/fb1/format_3d
+
+    # change owner and group for media server and surfaceflinger
+    chown system system /sys/devices/virtual/graphics/fb1/format_3d
+
+    chown system system /sys/devices/platform/panel_3d/3D_mode
+    chmod 0664 /sys/devices/platform/panel_3d/3D_mode
+
     # for wireless modem
     chown system system /sys/module/serial/parameters/modem_enabled
     chown system system /dev/ttyHSUSB0
@@ -146,14 +160,28 @@ on init
     # for Slate charging timer
     chown radio /sys/class/power_supply/battery/charger_timer
 
+    chown system /sys/devices/platform/rs300000a7.65536/force_sync
+    chown system /sys/devices/platform/rs300000a7.65536/sync_sts
+
+    chmod 0664 /sys/devices/platform/msm_sdcc.1/polling
+    chmod 0664 /sys/devices/platform/msm_sdcc.2/polling
+    chmod 0664 /sys/devices/platform/msm_sdcc.3/polling
+    chmod 0664 /sys/devices/platform/msm_sdcc.4/polling
+
+    # Chown polling nodes as needed from UI running on system server
+    chown system system /sys/devices/platform/msm_sdcc.1/polling
+    chown system system /sys/devices/platform/msm_sdcc.2/polling
+    chown system system /sys/devices/platform/msm_sdcc.3/polling
+    chown system system /sys/devices/platform/msm_sdcc.4/polling
+
     # Overwrite framework low memory killer setting
     write /sys/module/lowmemorykiller/parameters/minfree 2048,3072,4096,6144,8192,12288
     write /sys/module/lowmemorykiller/parameters/minfile 2048,3072,4096,6144,8192,12288
     write /sys/module/lowmemorykiller/parameters/check_filepages 1
 
 on early-boot
-    # set RLIMIT_MEMLOCK to 256MB
-    setrlimit 8 268435456 268435456
+    # set RLIMIT_MEMLOCK to 64MB
+    setrlimit 8 67108864 67108864
 
 on boot
     mount debugfs /sys/kernel/debug /sys/kernel/debug
@@ -204,12 +232,14 @@ service bugreport /system/bin/dumpstate -d -v -o /sdcard/bugreports/bugreport
     oneshot
     keycodes 114 115
 
-service hciattach /system/bin/brcm_patchram_plus /dev/ttyHS0 --enable_hci \
-        --baudrate 3000000 --patchram /vendor/firmware/bcm4329.hcd
-    class late_start
+service hciattach /system/bin/brcm_patchram_plus --enable_hci \
+        --tosleep 50000 --baudrate 3000000 --use_baudrate_for_download \
+        --patchram /vendor/firmware/bcm4329.hcd /dev/ttyHS0
+    class main
     user bluetooth
     group bluetooth net_bt_admin
     disabled
+    oneshot
 
 service rmt_storage /system/bin/rmt_storage /dev/block/mmcblk0p26 /dev/block/mmcblk0p27 /dev/block/mmcblk0p18
     class late_start
@@ -240,18 +270,23 @@ service htcbatt /system/bin/htcbatt
     user root
 
 service mpdecision /system/bin/mpdecision --no_sleep --avg_comp --single_core_while_panel_off
-    class late_start
+    class main
     user root
     disabled
 
 service thermald /system/bin/thermald
-    class late_start
+    class main
+    user root
+    group root
+    disabled
+
+service qcom-post-boot /system/bin/sh /system/etc/init.qcom.post_boot.sh
+    class main
     user root
     disabled
 
 on property:init.svc.bootanim=stopped
-    start thermald
-    start mpdecision
+    start qcom-post-boot
 
 service htc_ebdlogd /system/bin/htc_ebdlogd -s -k -P 7 -n 10 -N 10
     user root
@@ -275,11 +310,12 @@ on property:ro.build.tags=release-keys
 service qmuxd /system/bin/qmuxd
     class late_start
     user radio
-    group radio audio
+    group radio audio bluetooth gps
 
 service netmgrd /system/bin/netmgrd
     class late_start
 
 on property:sys.radio.shutdown=true
-    write /sys/devices/platform/rs300000a7.65536/force_sync 1
-    write /sys/devices/platform/rs300100a7.65536/force_sync 1
+    exec /system/bin/sh /system/etc/init.qcom.efs.sync.sh
+    user root
+    group root

@@ -4,14 +4,15 @@
 
 debug.fb.rgb565=0
 debug.sf.hw=1
-debug.composition.type=c2d
-#ro.sf.compbypass.enable=1
-#debug.enabletr=true
+debug.composition.type=dyn
+ro.sf.compbypass.enable=1
 dev.pm.dyn_samplingrate=1
+debug.enabletr=true
 
 #cm qcom build lub
 com.qc.hardware=true
 com.qc.hdmi_out=true
+ro.hdmi.enable=true
 
 rild.libpath=/system/lib/libhtc_ril.so
 # htc v4 ril
