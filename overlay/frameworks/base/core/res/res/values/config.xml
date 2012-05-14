@@ -129,6 +129,9 @@
         <item>0</item>
     </integer-array>
 
+<!-- Needed for capacitive buttons to work without toggling auto-brightness -->
+    <bool name="config_autoBrightnessButtonKeyboard">false</bool>
+
     <!-- Minimum screen brightness allowed by the power manager. -->
     <integer name="config_screenBrightnessDim">10</integer>
 
