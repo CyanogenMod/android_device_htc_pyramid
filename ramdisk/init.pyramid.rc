@@ -266,6 +266,9 @@ service hdmid /system/bin/hdmid
     socket hdmid stream 0660 root system graphics
     disabled
 
+on property:ro.hdmi.enable=true
+    start hdmid
+
 service htcbatt /system/bin/htcbatt
     class late_start
     user root
