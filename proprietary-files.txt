@@ -71,3 +71,9 @@ lib/libmllite.so
 lib/libmlplatform.so
 lib/libmpl_jni.so
 lib/libmpl.so
+
+# Wifi calling
+app/HTC-PYRTM-ICS-4.0.1-2.3-49986-4.3.apk
+lib/libganril.so
+lib/libkineto.so
+lib/librilswitch.so
