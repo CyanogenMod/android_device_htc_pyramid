@@ -6,22 +6,28 @@ on early-init
     # for backwards compatibility
     symlink /mnt/sdcard /sdcard
 
-on early-fs
+on emmc
     mkdir /system
     mkdir /data 0771 system system
     mkdir /cache 0770 system cache
     mkdir /devlog 0700 root root
+    devwait emmc@system
+	mount ext4 emmc@system /system ro noatime barrier=0
+    devwait emmc@userdata
+	mount ext4 emmc@userdata /data noatime nosuid nodev barrier=0 noauto_da_alloc
+	mount ext4 emmc@cache /cache noatime nosuid nodev barrier=0
+	mount ext4 emmc@devlog /devlog noatime nosuid nodev barrier=0
 
-    #8x60: firmware
-    rm /vendor
+    #8x60: mount radio partition and create links for modem/q6 firmwares
     mkdir /vendor               0771 system system
+    mkdir /vendor/etc           0771 system system
     mkdir /vendor/firmware      0771 system system
     mkdir /vendor/firmware/misc 0771 system system
     mkdir /vendor/firmware/adsp 0771 system system
-    wait /dev/block/mmcblk0p17
-    wait /dev/block/mmcblk0p19
-    mount vfat /dev/block/mmcblk0p17 /vendor/firmware/misc ro shortname=lower
-    mount vfat /dev/block/mmcblk0p19 /vendor/firmware/adsp ro shortname=lower
+    devwait emmc@radio
+    devwait emmc@adsp
+    mount vfat emmc@radio /vendor/firmware/misc ro shortname=lower
+    mount vfat emmc@adsp /vendor/firmware/adsp ro shortname=lower
     symlink /vendor/firmware/adsp/q6.b09 /vendor/firmware/q6.b09
     symlink /vendor/firmware/adsp/q6.b08 /vendor/firmware/q6.b08
     symlink /vendor/firmware/adsp/q6.b07 /vendor/firmware/q6.b07
@@ -49,12 +55,6 @@ on early-fs
     symlink /system/vendor/firmware/fw_bcmdhd_apsta.bin /vendor/firmware/fw_bcmdhd_apsta.bin
     symlink /system/vendor/firmware/fw_bcmdhd_p2p.bin /vendor/firmware/fw_bcmdhd_p2p.bin
     symlink /system/vendor/firmware/bcm4329.hcd /vendor/firmware/bcm4329.hcd
-
-    mount ext4 /dev/block/mmcblk0p22 /system wait ro data=ordered noauto_da_alloc
-    setprop ro.crypto.tmpfs_options size=128m,mode=0771,uid=1000,gid=1000
-    mount ext4 /dev/block/mmcblk0p23 /data wait noatime nosuid nodev data=ordered noauto_da_alloc
-    mount ext4 /dev/block/mmcblk0p24 /cache wait noatime nosuid nodev data=ordered noauto_da_alloc
-    mount ext4 /dev/block/mmcblk0p27 /devlog wait noatime nosuid nodev data=ordered noauto_da_alloc
 
 on post-fs-data
     # double check the perms and set owner
