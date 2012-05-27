@@ -15,6 +15,7 @@ on early-fs
     #8x60: firmware
     rm /vendor
     mkdir /vendor               0771 system system
+    mkdir /vendor/etc           0771 system system
     mkdir /vendor/firmware      0771 system system
     mkdir /vendor/firmware/misc 0771 system system
     mkdir /vendor/firmware/adsp 0771 system system
@@ -49,6 +50,7 @@ on early-fs
     symlink /system/vendor/firmware/fw_bcmdhd_apsta.bin /vendor/firmware/fw_bcmdhd_apsta.bin
     symlink /system/vendor/firmware/fw_bcmdhd_p2p.bin /vendor/firmware/fw_bcmdhd_p2p.bin
     symlink /system/vendor/firmware/bcm4329.hcd /vendor/firmware/bcm4329.hcd
+    symlink /system/vendor/etc/audio_effects.conf /vendor/etc/audio_effects.conf
 
     mount ext4 /dev/block/mmcblk0p22 /system wait ro data=ordered noauto_da_alloc
     setprop ro.crypto.tmpfs_options size=128m,mode=0771,uid=1000,gid=1000
