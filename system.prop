@@ -34,3 +34,7 @@ persist.sys.usb.config=mass_storage,adb
 
 # System property for cabl
 ro.qualcomm.cabl=1
+
+#Low Power Audio
+lpa.decode=true
+lpa.use-stagefright=true
