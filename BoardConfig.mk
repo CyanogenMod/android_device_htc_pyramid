@@ -43,9 +43,6 @@ WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/bcmdhd.ko"
 TARGET_USES_OVERLAY := false
 COMMON_GLOBAL_CFLAGS += -DQCOM_ROTATOR_KERNEL_FORMATS
 
-#Camera
-BOARD_HAVE_HTC_FFC := true
-
 # Qcom GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := pyramid
 
