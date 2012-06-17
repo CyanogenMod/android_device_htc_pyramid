@@ -27,10 +27,6 @@ PRODUCT_PACKAGES += \
     gps.pyramid \
     lights.pyramid
 
-# Torch
-PRODUCT_PACKAGES += \
-    Torch
-
 # Wifi Calling
 PRODUCT_PACKAGES += \
     GanOptimizer
