@@ -6,7 +6,6 @@ etc/vpimg
 bin/charging
 bin/htcbatt
 bin/ipd
-bin/load-modem.sh
 bin/mpdecision
 bin/netmgrd
 bin/netsharing

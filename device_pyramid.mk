@@ -43,14 +43,12 @@ $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329
 
 # Boot ramdisk setup
 PRODUCT_COPY_FILES += \
-    device/htc/pyramid/prebuilt/init:root/init \
     device/htc/pyramid/ramdisk/init.pyramid.rc:root/init.pyramid.rc \
     device/htc/pyramid/ramdisk/init.pyramid.usb.rc:root/init.pyramid.usb.rc \
     device/htc/pyramid/ramdisk/ueventd.pyramid.rc:root/ueventd.pyramid.rc
 
 ## recovery and custom charging
 PRODUCT_COPY_FILES += \
-    device/htc/pyramid/prebuilt/init:recovery/root/init \
     device/htc/pyramid/recovery/sbin/choice_fn:recovery/root/sbin/choice_fn \
     device/htc/pyramid/recovery/sbin/power_test:recovery/root/sbin/power_test \
     device/htc/pyramid/recovery/sbin/offmode_charging:recovery/root/sbin/offmode_charging \
