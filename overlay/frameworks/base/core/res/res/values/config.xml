@@ -21,6 +21,10 @@
      for different hardware and product builds. -->
 <resources>
 
+    <!-- Boolean indicating if current platform supports quick switch-on/off of
+         Bluetooth module -->
+    <bool name="config_bluetooth_adapter_quick_switch">false</bool>
+
     <!-- Default color for notification LED is green. -->
     <color name="config_defaultNotificationColor">#ff00ff00</color>
 
