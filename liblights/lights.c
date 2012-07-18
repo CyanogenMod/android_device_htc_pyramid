@@ -220,7 +220,7 @@ static int set_light_backlight(struct light_device_t* dev,
 		struct light_state_t const* state) {
 	int err = 0;
 	int brightness = rgb_to_brightness(state);
-	LOGV("%s brightness=%d color=0x%08x",
+	ALOGV("%s brightness=%d color=0x%08x",
 		__func__,brightness, state->color);
 	pthread_mutex_lock(&g_lock);
 	g_backlight = brightness;
