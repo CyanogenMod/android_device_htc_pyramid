@@ -46,12 +46,6 @@
          in to AC and 2 to stay on when plugged in to USB.  (So 3 for both.) -->
     <integer name="config_deskDockKeepsScreenOn">0</integer>
 
-    <!-- Component name of the service providing network location support. -->
-    <string name="config_networkLocationProvider">com.google.android.location.NetworkLocationProvider</string>
-
-    <!-- Component name of the service providing geocoder API support. -->
-    <string name="config_geocodeProvider">com.google.android.location.GeocodeProvider</string>
-
     <!-- Flag indicating whether we should enable the automatic brightness in Settings.
          config_hardware_automatic_brightness_available is not set, so we will use software implementation -->
     <bool name="config_automatic_brightness_available">true</bool>
@@ -203,13 +197,7 @@
     <!-- Enables or disables fading edges when marquee is enabled in TextView. -->
     <bool name="config_ui_enableFadingMarquee">false</bool>
 
-    <!-- Component name of the service providing network location support. -->
-    <string name="config_networkLocationProvider">com.google.android.location.NetworkLocationProvider</string>
-
-    <!-- Component name of the service providing geocoder API support. -->
-    <string name="config_geocodeProvider">com.google.android.location.GeocodeProvider</string>
-
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
-    <bool name="config_intrusiveNotificationLed">true</bool>
+    <!-- <bool name="config_intrusiveNotificationLed">true</bool> -->
 
 </resources>
