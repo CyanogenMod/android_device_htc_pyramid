@@ -251,17 +251,6 @@ service rmt_storage /system/bin/rmt_storage /dev/block/mmcblk0p26 /dev/block/mmc
     class core
     user root
 
-service modem /system/bin/wireless_modem
-    user system
-    group system radio
-    disabled
-
-on property:service.modem.enable=1
-    start modem
-
-on property:service.modem.enable=0
-    stop modem
-
 service hdmid /system/bin/hdmid
     class late_start
     socket hdmid stream 0660 root system graphics
@@ -292,24 +281,6 @@ service qcom-post-boot /system/bin/sh /system/etc/init.qcom.post_boot.sh
 
 on property:init.svc.bootanim=stopped
     start qcom-post-boot
-
-service htc_ebdlogd /system/bin/htc_ebdlogd -s -k -P 7 -n 10 -N 10
-    user root
-    disabled
-    oneshot
-    ioprio idle 0
-
-service htc_ebdlogd_rel /system/bin/htc_ebdlogd -s -k -n 10 -N 10
-    user root
-    disabled
-    oneshot
-    ioprio idle 0
-
-on property:ro.build.tags=test-keys
-    start htc_ebdlogd
-
-on property:ro.build.tags=release-keys
-    start htc_ebdlogd_rel
 
 # QMUX must be in multiple groups to support external process connections
 service qmuxd /system/bin/qmuxd
