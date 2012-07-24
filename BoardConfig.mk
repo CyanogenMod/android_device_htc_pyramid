@@ -36,18 +36,19 @@ BOARD_KERNEL_PAGE_SIZE := 2048
 BOARD_KERNEL_CMDLINE := console=ttyHSL0 androidboot.hardware=pyramid no_console_suspend=1
 TARGET_PREBUILT_KERNEL := device/htc/pyramid/prebuilt/kernel
 
-WIFI_DRIVER_MODULE_NAME          := bcmdhd
-WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/bcmdhd.ko"
-
 # QCOM Gralloc/Copybit/HWcomposer
 TARGET_USES_OVERLAY := false
 COMMON_GLOBAL_CFLAGS += -DQCOM_ROTATOR_KERNEL_FORMATS
 
-# Qcom GPS
+# GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := pyramid
 
 # RIL
 BOARD_PROVIDES_LIBRIL := true
+
+# Wifi
+WIFI_DRIVER_MODULE_NAME          := bcmdhd
+WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/bcmdhd.ko"
 
 # Filesystem
 TARGET_USERIMAGES_USE_EXT4 := true
