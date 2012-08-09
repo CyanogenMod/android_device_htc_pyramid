@@ -246,5 +246,3 @@ on property:ro.hdmi.enable=true
 
 on property:sys.radio.shutdown=true
     exec /system/bin/sh /system/etc/init.qcom.efs.sync.sh
-    user root
-    group root
