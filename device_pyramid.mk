@@ -27,10 +27,6 @@ PRODUCT_PACKAGES += \
     gps.pyramid \
     lights.pyramid
 
-# Wifi Calling
-PRODUCT_PACKAGES += \
-    GanOptimizer
-
 ## The gps config appropriate for this device
 PRODUCT_COPY_FILES += device/common/gps/gps.conf_EU:system/etc/gps.conf
 
