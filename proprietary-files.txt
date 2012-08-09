@@ -43,6 +43,9 @@ lib/egl/libGLESv1_CM_adreno200.so
 lib/egl/libGLESv2_adreno200.so
 lib/egl/libq3dtools_adreno200.so
 lib/libC2D2.so
+lib/libc2d2_z180.so
+lib/libgsl.so
+lib/libOpenVG.so
 lib/libsc-a2xx.so
 
 # Misc libraries
@@ -51,11 +54,9 @@ lib/libdll.so
 lib/libdsi_netctrl.so
 lib/libdsutils.so
 lib/libgemini.so
-lib/libgsl.so
 lib/libidl.so
 lib/libmm-color-convertor.so
 lib/libnetmgr.so
-lib/libOpenVG.so
 lib/libqdp.so
 lib/libqmiservices.so
 lib/libqmi.so
