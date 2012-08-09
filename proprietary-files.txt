@@ -9,9 +9,9 @@ bin/ipd
 bin/mpdecision
 bin/netmgrd
 bin/netsharing
+bin/qmuxd
 bin/rmt_storage
 bin/thermald
-bin/qmuxd
 
 # Audio
 lib/libacdbloader.so
@@ -24,6 +24,8 @@ lib/libhtc_acoustic.so
 lib/hw/camera.default.so
 lib/libcameraface.so
 lib/libcamerapp.so
+lib/libgemini.so
+lib/libidl.so
 lib/libmmipl.so
 lib/libmmjpeg.so
 lib/liboemcamera.so
@@ -49,21 +51,19 @@ lib/libOpenVG.so
 lib/libsc-a2xx.so
 
 # Misc libraries
+lib/libmm-color-convertor.so
+
+# Radio
 lib/libdiag.so
 lib/libdll.so
 lib/libdsi_netctrl.so
 lib/libdsutils.so
-lib/libgemini.so
 lib/libidl.so
-lib/libmm-color-convertor.so
+lib/libhtc_ril.so
 lib/libnetmgr.so
 lib/libqdp.so
 lib/libqmiservices.so
 lib/libqmi.so
-lib/libv8.so
-
-# Radio
-lib/libhtc_ril.so
 
 # Sensors
 lib/hw/sensors.pyramid.so
