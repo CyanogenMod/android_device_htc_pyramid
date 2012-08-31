@@ -28,7 +28,7 @@ on emmc-fs
     mount ext4 /dev/block/mmcblk0p22 /system wait ro data=ordered noauto_da_alloc
     mount ext4 /dev/block/mmcblk0p23 /data wait noatime nosuid nodev data=ordered noauto_da_alloc
     mount ext4 /dev/block/mmcblk0p24 /cache wait noatime nosuid nodev data=ordered noauto_da_alloc
-    mount ext4 /dev/block/mmcblk0p27 /devlog wait noatime nosuid nodev data=ordered noauto_da_alloc
+    mount ext4 /dev/block/mmcblk0p28 /devlog wait noatime nosuid nodev data=ordered noauto_da_alloc
 
     mount debugfs /sys/kernel/debug /sys/kernel/debug
 
