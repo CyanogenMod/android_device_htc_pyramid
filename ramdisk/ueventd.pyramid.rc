@@ -80,3 +80,11 @@
 
 # wifi
 /dev/rfkill             0660    root        wifi
+
+# MPU3050
+/dev/mpu                0664    system      system
+/dev/mpuirq             0664    system      system
+/dev/timerirq           0664    system      system
+
+# simlock
+/dev/simlock            0660    radio       radio

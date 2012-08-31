@@ -11,12 +11,12 @@ rild.libpath=/system/lib/librilswitch.so
 ro.telephony.ril.v3=signalstrength
 ro.telephony.default_network=0
 
-# wifi calling
-rilswitch.vendorlibpath=/system/lib/libhtc_ril.so
-rilswitch.ganlibpath=/system/lib/libganril.so
+# audio
+lpa.decode=true
+lpa.use-stagefright=true
 
-# wifi
-wifi.interface=wlan0
+# bluetooth
+ro.bt.bdaddr_path=/sys/module/htc_bdaddress/parameters/bdaddress
 
 # graphics
 debug.composition.type=dyn
@@ -34,12 +34,12 @@ ro.hdmi.enable=true
 # qcom cpugovernor service
 dev.pm.dyn_samplingrate=1
 
+# wifi
+wifi.interface=wlan0
+
+# wifi calling
+rilswitch.vendorlibpath=/system/lib/libhtc_ril.so
+rilswitch.ganlibpath=/system/lib/libganril.so
+
 # UMS
 persist.sys.usb.config=mass_storage,adb
-
-# System property for cabl
-ro.qualcomm.cabl=1
-
-#Low Power Audio
-lpa.decode=true
-lpa.use-stagefright=true
