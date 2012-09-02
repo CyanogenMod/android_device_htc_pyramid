@@ -34,7 +34,9 @@ TARGET_BOOTLOADER_BOARD_NAME := pyramid
 BOARD_KERNEL_BASE := 0x48000000
 BOARD_KERNEL_PAGE_SIZE := 2048
 BOARD_KERNEL_CMDLINE := console=ttyHSL0 androidboot.hardware=pyramid no_console_suspend=1
+
 TARGET_PREBUILT_KERNEL := device/htc/pyramid/prebuilt/kernel
+TARGET_KERNEL_CONFIG := pyramid_defconfig
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 960
