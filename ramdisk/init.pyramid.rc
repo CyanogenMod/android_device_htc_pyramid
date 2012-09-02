@@ -244,5 +244,10 @@ on property:init.svc.bootanim=stopped
 on property:ro.hdmi.enable=true
     start hdmid
 
+on property:service.adb.root=1
+    write /sys/class/android_usb/android0/enable 0
+    restart adbd
+    write /sys/class/android_usb/android0/enable 1
+
 on property:sys.radio.shutdown=true
     exec /system/bin/sh /system/etc/init.qcom.efs.sync.sh
