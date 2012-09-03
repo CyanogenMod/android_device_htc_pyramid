@@ -7,18 +7,11 @@ ro.sf.lcd_density=240
 # radio
 mobiledata.interfaces=rmnet0
 rild.libpath=/system/lib/libhtc_ril.so
-#rild.libpath=/system/lib/librilswitch.so
 ro.telephony.ril.v3=signalstrength
 ro.telephony.default_network=0
 
-# wifi calling
-rilswitch.vendorlibpath=/system/lib/libhtc_ril.so
-rilswitch.ganlibpath=/system/lib/libganril.so
-
-# wifi
-wifi.interface=wlan0
-
 # graphics
+com.qc.hardware=true
 debug.composition.type=dyn
 debug.enabletr=true
 debug.fb.rgb565=0
@@ -26,20 +19,11 @@ debug.sf.hw=1
 ro.opengles.version=131072
 ro.sf.compbypass.enable=1
 
-# hdmi
-com.qc.hardware=true
-com.qc.hdmi_out=true
-ro.hdmi.enable=true
-
 # qcom cpugovernor service
 dev.pm.dyn_samplingrate=1
 
+# wifi
+wifi.interface=wlan0
+
 # UMS
 persist.sys.usb.config=mass_storage,adb
-
-# System property for cabl
-ro.qualcomm.cabl=1
-
-#Low Power Audio
-lpa.decode=true
-lpa.use-stagefright=true
