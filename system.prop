@@ -7,17 +7,16 @@ ro.sf.lcd_density=240
 # radio
 mobiledata.interfaces=rmnet0
 rild.libpath=/system/lib/libhtc_ril.so
-ro.telephony.ril.v3=signalstrength
-ro.telephony.default_network=0
+ro.telephony.ril.v3=datacallapn,signalstrength
 
 # graphics
 com.qc.hardware=true
 debug.composition.type=dyn
+#debug.mdpcomp.maxlayer=2
+#debug.mdpcomp.logs=0
 debug.enabletr=true
-debug.fb.rgb565=0
 debug.sf.hw=1
 ro.opengles.version=131072
-ro.sf.compbypass.enable=1
 
 # qcom cpugovernor service
 dev.pm.dyn_samplingrate=1
