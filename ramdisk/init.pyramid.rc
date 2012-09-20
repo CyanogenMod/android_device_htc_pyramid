@@ -74,6 +74,9 @@ on post-fs-data
     setprop vold.post_fs_data_done 1
 
 on boot
+    # for systrace
+    mount debugfs /sys/kernel/debug /sys/kernel/debug
+
     # Chown polling nodes as needed from UI running on system server
     chmod 0664 /sys/devices/platform/msm_sdcc.1/polling
     chmod 0664 /sys/devices/platform/msm_sdcc.2/polling
