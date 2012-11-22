@@ -5,6 +5,6 @@
 #/dev/block/mmcblk0p19	/vendor/firmware/adsp	vfat	ro,shortname=lower				wait
 
 /dev/block/mmcblk0p22	/system		ext4	ro,data=ordered,noauto_da_alloc				wait
-/dev/block/mmcblk0p23	/data		ext4	noatime,nosuid,nodev,data=ordered,noauto_da_alloc	wait
+/dev/block/mmcblk0p23	/data		ext4	noatime,nosuid,nodev,data=ordered,noauto_da_alloc	wait,encryptable=footer
 /dev/block/mmcblk0p24	/cache		ext4	noatime,nosuid,nodev,data=ordered,noauto_da_alloc	wait
 /dev/block/mmcblk0p28	/devlog		ext4	noatime,nosuid,nodev,data=ordered,noauto_da_alloc	wait
