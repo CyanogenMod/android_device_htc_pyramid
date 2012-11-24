@@ -127,3 +127,10 @@ $(call inherit-product, device/htc/pyramid/media_a1026.mk)
 $(call inherit-product, device/htc/pyramid/media_htcaudio.mk)
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
+
+# Discard inherited values and use our own instead.
+PRODUCT_DEVICE := pyramid
+PRODUCT_NAME := pyramid
+PRODUCT_BRAND := htc
+PRODUCT_MODEL := Sensation
+PRODUCT_MANUFACTURER := HTC
