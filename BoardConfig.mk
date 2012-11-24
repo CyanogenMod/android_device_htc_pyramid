@@ -39,10 +39,6 @@ BOARD_KERNEL_CMDLINE := console=ttyHSL0 androidboot.hardware=pyramid no_console_
 TARGET_KERNEL_CONFIG := pyramid_defconfig
 TARGET_PREBUILT_KERNEL := device/htc/pyramid/prebuilt/kernel
 
-# Boot animation
-TARGET_SCREEN_HEIGHT := 960
-TARGET_SCREEN_WIDTH := 540
-
 # GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := pyramid
 
