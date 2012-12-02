@@ -22,10 +22,9 @@ $(call inherit-product, device/htc/msm8660-common/msm8660.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/htc/pyramid/overlay
 
-# GPS and Light
+# GPS
 PRODUCT_PACKAGES += \
-    gps.pyramid \
-    lights.pyramid
+    gps.pyramid
 
 ## The gps config appropriate for this device
 PRODUCT_COPY_FILES += device/common/gps/gps.conf_EU:system/etc/gps.conf
