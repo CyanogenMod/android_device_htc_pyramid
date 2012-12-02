@@ -70,3 +70,6 @@ lib/libmllite.so
 lib/libmlplatform.so
 lib/libmpl_jni.so
 lib/libmpl.so
+
+# Webkit
+lib/libv8.so

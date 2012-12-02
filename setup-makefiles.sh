@@ -24,7 +24,8 @@ MAKEFILE=../../../$OUTDIR/$DEVICE-vendor-blobs.mk
 PRODUCT_COPY_FILES += \\
 	$OUTDIR/proprietary/lib/libacdbloader.so:obj/lib/libacdbloader.so \\
 	$OUTDIR/proprietary/lib/libacdbmapper.so:obj/lib/libacdbmapper.so \\
-	$OUTDIR/proprietary/lib/libaudioalsa.so:obj/lib/libaudioalsa.so
+	$OUTDIR/proprietary/lib/libaudioalsa.so:obj/lib/libaudioalsa.so \\
+	$OUTDIR/proprietary/lib/libv8.so:obj/lib/libv8.so
 
 PRODUCT_COPY_FILES += \\
 EOF
