@@ -45,7 +45,7 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := pyramid
 # RIL
 BOARD_USES_LEGACY_RIL := true
 
-# Wifi
+# Bluetooth/Wifi
 -include device/htc/msm8660-common/bcmdhd.mk
 
 # Filesystem

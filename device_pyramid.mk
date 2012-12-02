@@ -26,10 +26,6 @@ DEVICE_PACKAGE_OVERLAYS += device/htc/pyramid/overlay
 PRODUCT_PACKAGES += \
     gps.pyramid
 
-# Bluetooth
-PRODUCT_COPY_FILES += \
-    device/htc/msm8660-common/firmware/bcm4329.hcd:system/vendor/firmware/bcm4329.hcd
-
 # Wifi
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
 
