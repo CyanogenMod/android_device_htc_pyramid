@@ -26,9 +26,6 @@ DEVICE_PACKAGE_OVERLAYS += device/htc/pyramid/overlay
 PRODUCT_PACKAGES += \
     gps.pyramid
 
-## The gps config appropriate for this device
-PRODUCT_COPY_FILES += device/common/gps/gps.conf_EU:system/etc/gps.conf
-
 # Bluetooth
 PRODUCT_COPY_FILES += \
     device/htc/msm8660-common/firmware/bcm4329.hcd:system/vendor/firmware/bcm4329.hcd
